@@ -1,0 +1,145 @@
+.header{
+  height: 60px;
+  &--nav{
+    &__fix{
+      display: flex;
+      justify-content: space-between;
+      &--logo{
+        display: block;
+        margin: 18px 18px;
+      }
+      &--menu{
+        display: block;
+        margin: 18px 18px;
+      }
+    }
+  }
+}
+
+.swipe-img{
+  height: 600px;
+  width: 100%;
+  background-image: url(mina.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.catchcopy{
+  width: 100%;
+  &__fix{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    &__text1{
+      font-size: 30px;
+      padding: 20px 0 10px;
+    }
+    &__text2{
+      font-size: 30px;
+      padding: 10px 0 20px;
+    }
+  }
+}
+
+.intro{
+  width: 100%;
+  &__fix{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    &__title{
+      font-size: 20px;
+      padding: 20px 0 10px;
+      display: inline-block;
+      border-bottom: 2px solid #e4e4e4;
+    }
+    &__contents{
+      text-align: initial;
+      .contents__user{
+        padding: 10px 0 10px;
+        &--title{
+          display: inline-block;
+          border-bottom: 1px solid #e4e4e4;
+          margin-bottom: 10px;
+          font-size: 20px;
+        }
+        &--box{
+          display: flex;
+          align-items: center;
+          text-align: center;
+          &--img{
+            width: 50%;
+            height: 350px;
+            background-image: url(mina.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+          &--text{
+            display: block;
+            width: 50%;
+          }
+        }
+      }
+      .contents__shop{
+        padding: 10px 0 10px;
+        &--title{
+          display: inline-block;
+          border-bottom: 1px solid #e4e4e4;
+          margin-bottom: 10px;
+          font-size: 20px;
+        }
+        &--box{
+          display: flex;
+          align-items: center;
+          &--img{
+            width: 50%;
+            height: 350px;
+            background-image: url(mina.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+          &--text{
+            display: block;
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.trying{
+  width: 100%;
+  padding: 20px 0 20px;
+  &--box{
+    width: 80%;
+    margin: 0 auto;
+    &--fix{
+      display: flex;
+      text-align: center;
+      justify-content: space-evenly;
+      .user-button{
+        display: inline-block;
+        padding: 20px 30px 20px;
+        background: rgb(255, 191, 72);
+        color: white;
+      }
+      .shop-button{
+        display: inline-block;
+        padding: 20px 30px 20px;
+        background: rgb(255, 191, 72);
+        color: white;
+      }
+    }
+  }
+}
+
+.footer{
+  height: 100px;
+  &--box{
+    text-align: center;
+    &--copy{
+      line-height: 100px;
+    }
+  }
+}
