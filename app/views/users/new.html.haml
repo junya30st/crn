@@ -1,7 +1,65 @@
-テスト
+-# テスト
   
-%h1 New User
+-# %h1 New User
 
-= render 'form', user: @user
+-# = render 'form', user: @user
 
-= link_to 'Back', users_path
+-# = link_to 'Back', users_path
+
+%header.header
+  %nav.header--nav
+    .header--nav__fix
+      .header--nav__fix--logo
+        食らうどファンディング
+      .header--nav__fix--menu
+        MENU
+
+%section.swipe-img
+
+%section.catchcopy
+  .catchcopy__fix
+    .catchcopy__fix__text1
+      大好きなお店に元気な経営を!!
+    .catchcopy__fix__text2
+      大好きな顧客に最高の環境を!!
+
+%section.intro
+  .intro__fix
+    .intro__fix__title
+      食らうどファンディングとは？
+    .intro__fix_title__content
+      飲食店専門のクラウドファンディングサイトです。
+    .intro__fix__contents
+      .contents__user
+        .contents__user--title
+          顧客視点
+        .contents__user--box
+          .contents__user--box--img
+          .contents__user--box--text
+            よく行くお店・大好きなお店の支援をしながら様々な特典を受ける事ができます。
+            特典の内容は利用店舗によって異なりますが、例えば割引や料理、ドリンクのサービス。
+            メニュー開発の企画に加わることもできるかも！？
+      .contents__shop
+        .contents__shop--title
+          店舗視点
+        .contents__shop--box
+          .contents__shop--box--img
+          .contents__shop--box--text
+            食事提供以外の経営資金の確保や新たな価値の創造に役立ててください。
+            店舗やスタッフについてより知ってもらうことで、新規顧客とリピーターの獲得に繋がるかも！？
+            また、特典の内容は店舗の自由です。ご自身のお店の新たな広告の場としてご活用ください。
+
+%section.trying
+  .trying--box
+    .trying--box--fix
+      = link_to "#" do
+        .user-button
+          顧客として登録する
+      = link_to "#" do
+        .shop-button
+          店舗を登録する
+
+%footer.footer
+  .footer--box
+    .footer--box--copy
+      コピーライト
