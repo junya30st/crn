@@ -1,21 +1,56 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+= render "shared/header"
+
+.signup
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .signup--wrapper
+      .signup--wrapper--fix
+        .signup--wrapper__fix--title
+          ユーザー新規登録
+        .signup--wrapper__fix--contents
+          .signup-form
+            %label{class: 'label-up'} 名前
+            %span{class: 'form-must'} 必須
+            %br
+            = f.text_field :name, autofocus: true, placeholder: "ニックネーム（5文字以上）", class: "form-box"
+          .signup-form
+            %label{class: 'label-up'} メールアドレス
+            %span{class: 'form-must'} 必須
+            %br
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例) xxx@xxx.com", class: "form-box"
+          .signup-form
+            %label{class: 'label-up'} パスワード
+            %span{class: 'form-must'} 必須
+            %br
+            = f.password_field :password, autocomplete: "new-password", class: "form-box"
+          .signup-form
+            %label{class: 'label-up'} パスワード確認
+            %span{class: 'form-must'} 必須
+            %br
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-box"
+          .button-register
+            = f.submit "登録する", class: "submit-button"
+
+= render "shared/footer"
+
+-# %h2 Sign up
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} characters minimum)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "Sign up"
+-# = render "devise/shared/links"

@@ -1,0 +1,103 @@
+//サインアップ・サインインページ
+
+// サインアップページ
+
+.signup{
+  width: 100%;
+  height: calc(100vh - 210px);
+  &--wrapper{
+    width: 30%;
+    margin: 0 auto;
+    &__fix{
+      padding: 20px 0 20px;
+      &--title{
+        margin: 50px 0 20px;
+        text-align: center;
+        font-size: 25px;
+      }
+      &--contents{
+        background-color: rgb(184, 184, 184);
+        text-align: center;
+        padding-bottom: 20px;
+        .signup-form{
+          width: 90%;
+          margin: 0 auto;
+          padding-top: 30px;
+          text-align: left;
+          .label-up{
+          }
+          .form-must{
+            padding: 3px;
+            border-radius: 4px;
+            background-color: rgb(243, 86, 65);
+            color: white;
+          }
+          .form-box{
+            margin-top: 8px;
+            width: 100%;
+            height: 30px;
+          }
+        }
+        .button-register{
+          padding-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+.submit-button{
+  background: rgb(253, 196, 37);
+  height: 40px;
+  width: 100px;
+  border: 1px solid rgb(253, 196, 37);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+// サインインページ
+
+.signin{
+  width: 100%;
+  height: calc(100vh - 210px);
+  &--wrapper{
+    width: 30%;
+    margin: 0 auto;
+    &__fix{
+      padding: 20px 0 20px;
+      &--title{
+        margin: 50px 0 20px;
+        text-align: center;
+        font-size: 25px;
+      }
+      &--contents{
+        background-color: rgb(184, 184, 184);
+        text-align: center;
+        padding-bottom: 20px;
+        .signin-form{
+          width: 90%;
+          margin: 0 auto;
+          padding-top: 30px;
+          text-align: left;
+          .label-up{
+          }
+          .form-must{
+            padding: 3px;
+            border-radius: 4px;
+            background-color: rgb(243, 86, 65);
+            color: white;
+          }
+          .form-box{
+            margin-top: 8px;
+            width: 100%;
+            height: 30px;
+          }
+        }
+        .button-register{
+          padding-top: 30px;
+        }
+      }
+    }
+  }
+}
