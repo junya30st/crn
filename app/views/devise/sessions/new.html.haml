@@ -1,17 +1,50 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+= render "shared/header"
+
+.signin
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .signin--wrapper
+      .signin--wrapper--fix
+        .signin--wrapper__fix--title
+          ログイン
+        .signin--wrapper__fix--contents
+          .signin-form
+            %label{class: 'label-up'} メールアドレス
+            %span{class: 'form-must'} 必須
+            %br
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例) xxx@xxx.com", class: "form-box"
+          .signin-form
+            %label{class: 'label-up'} パスワード
+            %span{class: 'form-must'} 必須
+            %br
+            = f.password_field :password, autocomplete: "new-password", class: "form-box"
+          .signin-form
+            %label{class: 'label-up'} パスワード確認
+            %span{class: 'form-must'} 必須
+            %br
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-box"
+          .button-register
+            = f.submit "ログイン", class: "submit-button"
+
+= render "shared/footer"
+
+
+
+
+
+
+
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     %br/
+-#     = f.password_field :password, autocomplete: "current-password"
+-#   - if devise_mapping.rememberable?
+-#     .field
+-#       = f.check_box :remember_me
+-#       = f.label :remember_me
+-#   .button-register
+-#     = f.submit "Log in"
+-# = render "devise/shared/links"

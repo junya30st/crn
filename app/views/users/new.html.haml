@@ -6,13 +6,7 @@
 
 -# = link_to 'Back', users_path
 
-%header.header
-  %nav.header--nav
-    .header--nav__fix
-      .header--nav__fix--logo
-        食らうどファンディング
-      .header--nav__fix--menu
-        MENU
+= render "shared/header"
 
 %section.swipe-img
 
@@ -59,7 +53,4 @@
         .shop-button
           店舗を登録する
 
-%footer.footer
-  .footer--box
-    .footer--box--copy
-      コピーライト
+= render "shared/footer"
