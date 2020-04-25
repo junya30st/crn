@@ -1,0 +1,44 @@
+= render "shared/header"
+
+%section.product-show
+  .product-show--wrapper
+    .product-show--wrapper__fix
+      .product-show--wrapper__fix--name
+        新規メニューの命名権+お食事1回30%OFF！(1回限り)
+      .product-show--wrapper__fix--contents
+        .product-show--wrapper__fix--contents__left
+          .left-contents
+            .left-contents--image
+              = image_tag 'mina.png',class: 'product-show-img'
+            .left-contents--small
+              .left-contents--small__img
+                = image_tag 'mina.png', class: 'product-show-img-sml'
+                .left-contents--small__img
+                = image_tag 'mina.png', class: 'product-show-img-sml'
+                .left-contents--small__img
+                = image_tag 'mina.png', class: 'product-show-img-sml'
+                .left-contents--small__img
+                = image_tag 'mina.png', class: 'product-show-img-sml'
+                .left-contents--small__img
+                = image_tag 'mina.png', class: 'product-show-img-sml__last'
+                
+        .product-show--wrapper__fix--contents__right
+          .right-contents
+            .right-contents--category
+              カテゴリ：
+            %br
+            .right-contents--intro
+              当店では毎月新規メニューを考案しています！その新規メニューの命名権を差し上げます！
+            %br
+            .right-contents--price
+              1 万円
+            %br
+            .right-contents--limit
+              5月15日
+            %br
+      .product-show--wrapper__fix--submit
+        -# = f.submit
+        .product-show--wrapper__fix--submit__button
+          この特典をゲットしてお店を応援する
+
+= render "shared/footer"

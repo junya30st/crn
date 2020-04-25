@@ -1,0 +1,27 @@
+= render "shared/header"
+
+.customer-show
+  .customer-show__wrapper
+    .customer-show__wrapper__fix
+      .customer-show__wrapper__fix--title
+        .customer-show--title
+          プロフィール
+        .customer-show--menu
+          = link_to edit_customer_registration_path do
+            .customer-show--menu--edit
+              編集する
+          = link_to customers_path, method: :delete do
+            .customer-show--menu--destroy
+              ユーザーを削除する
+
+      .customer-show__wrapper__fix--contents
+        .customer-img
+          = image_tag "mina.png", class: "customer-img-show"
+        .customer-texts
+          .customer-texts--name
+            じゅんや
+          .customer-texts--intro
+            こんにちは。宜しくお願い致します。
+
+= render "shared/footer"
+
