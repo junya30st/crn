@@ -1,0 +1,85 @@
+= render "shared/header"
+
+%section.shop-show
+  .shop-show--wrapper
+    .shop-show--wrapper__fix
+      .shop-show--wrapper__fix--name
+        店名
+      .shop-show--wrapper__fix--contents
+        .shop-show--wrapper__fix--contents__left
+          .left-contents
+            .left-contents--image
+              = image_tag 'mina.png',class: 'shop-show-img'
+            .left-contents--small
+              .left-contents--small__img
+                = image_tag 'mina.png', class: 'shop-show-img-sml'
+                .left-contents--small__img
+                = image_tag 'mina.png', class: 'shop-show-img-sml'
+                .left-contents--small__img
+                = image_tag 'mina.png', class: 'shop-show-img-sml'
+                .left-contents--small__img
+                = image_tag 'mina.png', class: 'shop-show-img-sml'
+                .left-contents--small__img
+                = image_tag 'mina.png', class: 'shop-show-img-sml__last'
+                
+        .shop-show--wrapper__fix--contents__right
+          .right-contents
+            .right-contents--category
+              カテゴリ：焼き鳥
+            %br
+            .right-contents--intro
+              紹介文：こんにちは。宜しくお願いします。
+            %br
+            .right-contents--location
+              所在地：東京都渋谷区〇〇1-1-1
+            %br
+            .right-contents--time
+              営業時間:17:00〜24：00
+            %br
+            .right-contents--url
+              URL：http://aaaaaaaaaaaaaaaaaaaaa
+            %br
+            .right-contents--tel
+              TEL：080-1234-5678
+
+%section.shop-products
+  .shop-products__wrapper
+    .shop-products__wrapper__fix
+      .product__box
+        .product__box--image
+          = image_tag 'mina.png', class: 'product_box_img'
+        .product__box--intro
+          メニューの命名権を差し上げます！
+        .product__box--name
+          メニューの命名権
+        .product__box--price
+          5,000  円
+      .product__box
+        .product__box--image
+          = image_tag 'mina.png', class: 'product_box_img'
+        .product__box--intro
+          メニューの命名権を差し上げます！
+        .product__box--name
+          メニューの命名権
+        .product__box--price
+          5,000  円
+      .product__box
+        .product__box--image
+          = image_tag 'mina.png', class: 'product_box_img'
+        .product__box--intro
+          メニューの命名権を差し上げます！
+        .product__box--name
+          メニューの命名権
+        .product__box--price
+          5,000  円
+      .product__box
+        .product__box--image
+          = image_tag 'mina.png', class: 'product_box_img'
+        .product__box--intro
+          メニューの命名権を差し上げます！
+        .product__box--name
+          メニューの命名権
+        .product__box--price
+          5,000  円
+
+= render "shared/footer"
