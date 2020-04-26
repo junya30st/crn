@@ -1,4 +1,4 @@
-.product-new{
+.product-edit{
   width: 100%;
   &__wrapper{
     width: 80%;
@@ -7,7 +7,7 @@
       padding: 20px 0 20px;
       &--title{
         text-align: center;
-        .product-new__title{
+        .product-edit__title{
           font-size: 25px;
           margin: 50px 0 20px;
         }
@@ -16,13 +16,13 @@
         display: flex;
         background-color: #dddddd;
         padding-bottom: 30px;
-        .product-new__contents--left{
+        .product-edit__contents--left{
           width: 50%;
-          .product-new__contents--left__forms{
+          .product-edit__contents--left__forms{
             width: 90%;
             margin: 0 auto;
             text-align: left;
-            .product-new--form{
+            .product-edit--form{
               .form-must{
                 padding: 3px;
                 border-radius: 4px;
@@ -37,7 +37,7 @@
                 height: 2rem;
               }
             }
-            .product-new--price{
+            .product-edit--price{
               .form-must{
                 padding: 3px;
                 border-radius: 4px;
@@ -52,7 +52,7 @@
                 height: 2rem;
               }
             }
-            .product-new--limit{
+            .product-edit--limit{
               width: 100%;
               padding-top: 30px;
               .form-want{
@@ -64,7 +64,7 @@
             }
           }
         }
-        .product-new__contents--right{
+        .product-edit__contents--right{
           width: 50%;
           .form-must{
             padding: 3px;
@@ -85,7 +85,7 @@
           }
         }
       }
-      .product-new--submit{
+      .product-edit--submit{
         
       }
     }

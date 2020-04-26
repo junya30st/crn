@@ -22,7 +22,7 @@
               %label{class: 'label-up'} 開店時刻
               %span{class: 'form-want'} 任意
               %br
-              = f.time_select :open_tome
+              = f.time_select :open_time
               -# , class: "form-box"
             .shop-create-form
               %label{class: 'label-up'} 閉店時刻
@@ -48,7 +48,7 @@
               = f.file_field :image
               -# , class: "form-box"
             .shop-create-form
-              %label{class: 'label-up'} 所在地
+              %label{class: 'label-up'} 店舗紹介
               %span{class: 'form-want'} 任意
               %br
               = f.text_area :introduction, placeholder: "閲覧ありがとうございます。宜しくお願いします。", class: "shop-r-intro"

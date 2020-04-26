@@ -1,7 +1,7 @@
 class ShopsController < ApplicationController
 
   def index
-    @shops = Shop.include(:user).order('id DESC')
+    @shops = Shop.all
   end
 
   def new
@@ -10,7 +10,7 @@ class ShopsController < ApplicationController
 
   def create
     @shop = Shop.create(shop_params)
-    redirect_to shops_path
+    redirect_to new_user_path
   end
 
   def show

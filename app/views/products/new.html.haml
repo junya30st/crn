@@ -1,20 +1,37 @@
 = render "shared/header"
 
 .product-new
-  .product-new__wrapper
-    .product-new__wrapper__fix
-      .product-new__wrapper__fix--title
-      .product-new__wrapper__fix--contens
-        .product-new__forms
-          .product-new__forms--form
-            新規メニューの命名権+お食事1回30%OFF！(1回限り)
-          .producy-new__forms--area
-            当店では毎月新規メニューを考案しています！その新規メニューの命名権を差し上げます！
-          .product-new__forms--price
-            1 万円
-          .product-new__forms--limit
-            5月15日まで
-      .product-new--submit
+  = form_with model: @product do |f|
+    .product-new__wrapper
+      .product-new__wrapper__fix
+        .product-new__wrapper__fix--title
+          .product-new__title
+            プロダクト作成
+        .product-new__wrapper__fix--contents
+          .product-new__contents--left
+            .product-new__contents--left__forms
+              .product-new--form
+                %label{class: 'label-product'} 名前
+                %span{class: 'form-must'} 必須
+                %br
+                = f.text_field :name, placeholder: 'プロダクト名', class: 'form-box'
+              .product-new--price
+                %label{class: 'label-product'} 価格
+                %span{class: 'form-must'} 必須
+                %br
+                = f.text_field :price, placeholder: '例）1000', class: 'form-box'
+              .product-new--limit
+                %label{class: 'label-product'} 期限
+                %span{class: 'form-want'} 任意
+                %br
+                = f.date_select :limit
+          .product-new__contents--right
+            .product-new__contents--right--area
+              %label{class: 'label-product'} 商品説明
+              %span{class: 'form-must'} 必須
+              %br
+              = f.text_area :introduction, placeholder: '商品の詳細を入力してください。', class: 'form-area'
+        .product-new--submit
 
 
 = render "shared/footer"
