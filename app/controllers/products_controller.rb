@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+
   end
 
   def show
@@ -14,5 +15,7 @@ class ProductsController < ApplicationController
 
   def edit
   end
+
+  private
   
 end

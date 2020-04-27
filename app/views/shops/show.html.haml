@@ -41,6 +41,9 @@
             %br
             .right-contents--tel
               TEL：080-1234-5678
+      = link_to new_product_path(@shop.id) do
+        プロダクトを作成する
+
 
 %section.shop-products
   .shop-products__wrapper
@@ -81,5 +84,6 @@
           メニューの命名権
         .product__box--price
           5,000  円
+
 
 = render "shared/footer"
