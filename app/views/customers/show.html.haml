@@ -19,9 +19,11 @@
           = image_tag "mina.png", class: "customer-img-show"
         .customer-texts
           .customer-texts--name
-            じゅんや
+            = @customer.name
           .customer-texts--intro
-            こんにちは。宜しくお願い致します。
+            = @customer.introduction
+      .new
+        = link_to 'ショップを作る', new_shop_path
 
 = render "shared/footer"
 

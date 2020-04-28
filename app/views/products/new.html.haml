@@ -1,7 +1,7 @@
 = render "shared/header"
 
 .product-new
-  = form_with url:'/products', local: true, method: :post  do |f|
+  = form_with(model: [@shop, @product], local: true, method: :post)  do |f|
     .product-new__wrapper
       .product-new__wrapper__fix
         .product-new__wrapper__fix--title

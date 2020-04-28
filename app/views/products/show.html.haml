@@ -4,7 +4,7 @@
   .product-show--wrapper
     .product-show--wrapper__fix
       .product-show--wrapper__fix--name
-        新規メニューの命名権+お食事1回30%OFF！(1回限り)
+        = @product.name
       .product-show--wrapper__fix--contents
         .product-show--wrapper__fix--contents__left
           .left-contents
@@ -28,10 +28,10 @@
               カテゴリ：
             %br
             .right-contents--intro
-              当店では毎月新規メニューを考案しています！その新規メニューの命名権を差し上げます！
+              = @product.introduction
             %br
             .right-contents--price
-              1 万円
+              = @product.price
             %br
             .right-contents--limit
               5月15日

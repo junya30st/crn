@@ -14,13 +14,13 @@
                 = image_tag "mina.png", class: "index-img"
               .text-box
                 .name
-                  10%OFF
+                  = @product.name
                 .shop-name
-                  居酒屋
+                  = @product.shop.name
                 .category
                   焼き鳥
                 .intro
-                  横浜西口の居酒屋
+                  = @product.introduction
           .contents-p-index__box
             .contents-p-index__box__in
               .image

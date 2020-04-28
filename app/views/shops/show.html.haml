@@ -4,7 +4,7 @@
   .shop-show--wrapper
     .shop-show--wrapper__fix
       .shop-show--wrapper__fix--name
-        店名
+        = @shop.name
       .shop-show--wrapper__fix--contents
         .shop-show--wrapper__fix--contents__left
           .left-contents
@@ -28,10 +28,10 @@
               カテゴリ：焼き鳥
             %br
             .right-contents--intro
-              紹介文：こんにちは。宜しくお願いします。
+              = @shop.introduction
             %br
             .right-contents--location
-              所在地：東京都渋谷区〇〇1-1-1
+              = @shop.location
             %br
             .right-contents--time
               営業時間:17:00〜24：00
@@ -41,7 +41,7 @@
             %br
             .right-contents--tel
               TEL：080-1234-5678
-      = link_to new_product_path(@shop.id) do
+      = link_to new_shop_product_path(@shop.id) do
         プロダクトを作成する
 
 
