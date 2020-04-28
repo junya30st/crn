@@ -5,16 +5,16 @@ class ShopsController < ApplicationController
   end
 
   def new
-    @shop = Shop.new
+    # @shop = Shop.new
   end
 
   def create
     @shop = Shop.create(shop_params)
-    redirect_to new_user_path
+    redirect_to shop_path(@shop.id)
   end
 
   def show
-    # @shop = Shop.find(params[:id])
+    @shop = Shop.find(params[:id])
   end
 
   def edit

@@ -1,7 +1,7 @@
 = render "shared/header"
 
 .product-new
-  = form_with model: @product do |f|
+  = form_with(model: [@shop, @product], local: true, method: :post)  do |f|
     .product-new__wrapper
       .product-new__wrapper__fix
         .product-new__wrapper__fix--title
@@ -32,6 +32,7 @@
               %br
               = f.text_area :introduction, placeholder: '商品の詳細を入力してください。', class: 'form-area'
         .product-new--submit
+          = f.submit "登録する", class: "submit-button-shop"
 
 
 = render "shared/footer"
