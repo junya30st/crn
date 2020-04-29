@@ -8,55 +8,19 @@
           最新のプロダクト
       .product-index__wrapper__fix--contents
         .contents-p-index
-          .contents-p-index__box
-            .contents-p-index__box__in
-              .image
-                = image_tag "mina.png", class: "index-img"
-              .text-box
-                .name
-                  = @product.name
-                .shop-name
-                  = @product.shop.name
-                .category
-                  焼き鳥
-                .intro
-                  = @product.introduction
-          .contents-p-index__box
-            .contents-p-index__box__in
-              .image
-              .text-box
-                .name
-                  10%OFF
-                .shop-name
-                  居酒屋
-                .category
-                  焼き鳥
-                .intro
-                  横浜西口の居酒屋
-          .contents-p-index__box
-            .contents-p-index__box__in
-              .image
-              .text-box
-                .name
-                  10%OFF
-                .shop-name
-                  居酒屋
-                .category
-                  焼き鳥
-                .intro
-                  横浜西口の居酒屋
-          .contents-p-index__box
-            .contents-p-index__box__in
-              .image
-              .text-box
-                .name
-                  10%OFF
-                .shop-name
-                  居酒屋
-                .category
-                  焼き鳥
-                .intro
-                  横浜西口の居酒屋
-
+          - @products.each do |product|
+            .contents-p-index__box
+              .contents-p-index__box__in
+                .image
+                  = image_tag "mina.png", class: "index-img"
+                .text-box
+                  .name
+                    = product.name
+                  .shop-name
+                    = product.shop.name
+                  .category
+                    焼き鳥
+                  .intro
+                    = product.introduction
 
 = render "shared/footer"

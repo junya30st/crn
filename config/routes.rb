@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :customers
 
-  root 'products#index'
+  root 'shops#index'
   resources :customers
   resources :users
   resources :shops do

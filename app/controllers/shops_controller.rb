@@ -1,7 +1,7 @@
 class ShopsController < ApplicationController
 
   def index
-    @shops = Shop.all
+    @shops = Shop.where(params[:id])
   end
 
   def new
@@ -10,7 +10,7 @@ class ShopsController < ApplicationController
 
   def create
     @shop = Shop.create(shop_params)
-    redirect_to shop_path(@shop.id)
+    redirect_to root_path
   end
 
   def show
@@ -40,7 +40,7 @@ class ShopsController < ApplicationController
   private
 
   def shop_params
-    params.permit(:name, :introduction, :location, :open_time, :close_time, :url, :tel)
+    params.permit(:name, :introduction, :location, :open_time, :close_time, :url, :tel).merge(customer_id: current_customer.id)
   end
 
 end
