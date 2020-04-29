@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_shop, only: [:new, :create]
 
   def index
-    @product = Product.find_by(params[:id])
+    @products = Product.where(params[:id])
   end
 
   def new

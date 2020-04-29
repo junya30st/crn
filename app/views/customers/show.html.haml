@@ -22,8 +22,10 @@
             = @customer.name
           .customer-texts--intro
             = @customer.introduction
-      .new
+      .shopnew
         = link_to 'ショップを作る', new_shop_path
+      .shopindex
+        = link_to 'マイショップ一覧', shop_path
 
 = render "shared/footer"
 

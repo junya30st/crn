@@ -1,0 +1,27 @@
+= render "shared/header"
+
+.shop-index
+  .shop-index__wrapper
+    .shop-index__wrapper__fix
+      .shop-index__wrapper__fix--title
+        .title-p-index
+          最新のショップ
+      .shop-index__wrapper__fix--contents
+        .contents-p-index
+          - @shops.each do |shop|
+            .contents-p-index__box
+              = link_to shop_path(shop.id) do
+                .contents-p-index__box__in
+                  .image
+                    = image_tag "mina.png", class: "index-img"
+                  .text-box
+                    .name
+                      = shop.name
+                    .shop-name
+                      = shop.name
+                    .category
+                      焼き鳥
+                    .intro
+                      = shop.introduction
+
+= render "shared/footer"

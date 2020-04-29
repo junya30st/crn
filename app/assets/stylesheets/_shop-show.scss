@@ -62,6 +62,19 @@
           }
         }
       }
+      &--submit{
+        text-align: center;
+        .show-submit{
+          line-height: 42px;
+          margin: 20px auto 0;
+          width: 200px;
+          text-decoration: none;
+        }
+      }
+      &--submit a{
+        text-decoration: none;
+        color: #222222;
+      }
     }
   }
 }

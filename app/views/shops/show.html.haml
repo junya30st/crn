@@ -41,49 +41,26 @@
             %br
             .right-contents--tel
               TEL：080-1234-5678
-      = link_to new_shop_product_path(@shop.id) do
-        プロダクトを作成する
+
+      .shop-show--wrapper__fix--submit
+        = link_to new_shop_product_path(@shop.id) do
+          .submit-button.show-submit
+            プロダクトを作成する
 
 
 %section.shop-products
   .shop-products__wrapper
     .shop-products__wrapper__fix
-      .product__box
-        .product__box--image
-          = image_tag 'mina.png', class: 'product_box_img'
-        .product__box--intro
-          メニューの命名権を差し上げます！
-        .product__box--name
-          メニューの命名権
-        .product__box--price
-          5,000  円
-      .product__box
-        .product__box--image
-          = image_tag 'mina.png', class: 'product_box_img'
-        .product__box--intro
-          メニューの命名権を差し上げます！
-        .product__box--name
-          メニューの命名権
-        .product__box--price
-          5,000  円
-      .product__box
-        .product__box--image
-          = image_tag 'mina.png', class: 'product_box_img'
-        .product__box--intro
-          メニューの命名権を差し上げます！
-        .product__box--name
-          メニューの命名権
-        .product__box--price
-          5,000  円
-      .product__box
-        .product__box--image
-          = image_tag 'mina.png', class: 'product_box_img'
-        .product__box--intro
-          メニューの命名権を差し上げます！
-        .product__box--name
-          メニューの命名権
-        .product__box--price
-          5,000  円
-
+      - @shop.products.each do |product|
+        .product__box
+          .product__box--image
+            = image_tag 'mina.png', class: 'product_box_img'
+          .product__box--intro
+            = product.introduction
+          .product__box--name
+            = product.name
+          .product__box--price
+            = product.price
+            円
 
 = render "shared/footer"
