@@ -5,15 +5,16 @@
     width: 60%;
     margin: 0 auto;
     &__fix{
-      padding: 20px 0 20px;
+      padding: 50px 0 20px;
       &--title{
-        // text-align: left;
         display: flex;
         justify-content: space-between;
         .customer-show--title{
-          font-size: 25px;
+          font-size: 28px;
+          font-weight: bold;
         }
         .customer-show--menu{
+          font-size: 14px;
           display: flex;
           &--edit{
             margin-right: 10px;
@@ -47,6 +48,7 @@
         .customer-texts{
           width: 70%;
           padding: 20px;
+          font-weight: bold;
           &--name{
             font-size: 20px;
           }
@@ -69,4 +71,36 @@
 
 .show-link{
   text-decoration: none;
+}
+
+.customers-shop{
+  width: 100%;
+  &__wrapper{
+    width: 60%;
+    margin: 0 auto;
+    &__fix{
+      padding: 20px 0 20px;
+      display: flex;
+      .product__box{
+        font-size: 14px;
+        box-sizing: border-box;
+        width: 25%;
+        height: 380px;
+        padding: 10px;
+        &--image{
+          // padding: 0 10px 0;
+        }
+        &--intro{
+          padding: 10px;
+          height: 60px;
+        }
+        &--name{
+          padding: 10px;
+        }
+        &--price{
+          padding: 10px;
+        }
+      }
+    }
+  }
 }
