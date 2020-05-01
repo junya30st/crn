@@ -22,10 +22,18 @@
             = @customer.name
           .customer-texts--intro
             = @customer.introduction
-      .shopnew
-        = link_to 'ショップを作る', new_shop_path
-      .shopindex
-        = link_to 'マイショップ一覧', shop_path
+
+%section.customers-shop
+  .customers-shop__wrapper
+    .customers-shop__wrapper__fix
+      - @customer.shops.each do |product|
+        .product__box
+          .product__box--image
+            = image_tag 'mina.png', class: 'product_box_img'
+          .product__box--intro
+            = product.introduction
+          .product__box--name
+            = product.name
 
 = render "shared/footer"
 
