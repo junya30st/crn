@@ -52,16 +52,18 @@
 %section.shop-products
   .shop-products__wrapper
     .shop-products__wrapper__fix
-      - @shop.products.each do |product|
+      - @shop.products.each do |product| 
         .product__box
-          .product__box--image
-            = image_tag 'mina.png', class: 'product_box_img'
-          .product__box--intro
-            = product.introduction
-          .product__box--name
-            = product.name
-          .product__box--price
-            = product.price
-            円
+          = link_to shop_product_path(@shop, product) do
+            .product__box__in
+              .product__box__in--image
+                = image_tag 'mina.png', class: 'product_box_img'
+              .product__box__in--intro
+                = product.introduction
+              .product__box__in--name
+                = product.name
+              .product__box__in--price
+                = product.price
+                円
 
 = render "shared/footer"
