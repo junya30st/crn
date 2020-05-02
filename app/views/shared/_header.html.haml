@@ -3,17 +3,23 @@
     .header--nav__fix
       .header--nav__fix--logo
         = link_to '食らうどファンディング', root_path
-      - if customer_signed_in?
-        %li
-          = link_to "マイページ", customer_path(current_customer)
-        %li
-          = link_to "ショップ作成", new_shop_path
-        %li
-          = link_to "Sign-out", destroy_customer_session_path, method: :delete
-      - else
-        %li
-          = link_to "Sign-up", new_customer_registration_path
-        %li
-          = link_to "Sign-in", customer_session_path
-      .header--nav__fix--menu
+      #header-menu.header--nav__fix--menu
         MENU
+      #menu-lists
+        - if customer_signed_in?
+          %ul.header-menu
+            = link_to customer_path(current_customer) do
+              %li.header-menu__list
+                マイページ
+            = link_to new_shop_path do
+              %li.header-menu__list
+                店舗作成画面
+            = link_to destroy_customer_session_path, method: :delete, data: { confirm: 'ログアウトしてよろしいですか？' }  do
+              %li.header-menu__list--last
+                ログアウト
+        - else
+          %li
+            = link_to "Sign-up", new_customer_registration_path
+          %li
+            = link_to "Sign-in", customer_session_path
+

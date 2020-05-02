@@ -1,0 +1,44 @@
+.header{
+  height: 60px;
+  &--nav{
+    &__fix{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      &--logo{
+        display: block;
+        margin: 18px 18px;
+      }
+      &--menu{
+        display: block;
+        margin: 18px 18px;
+        cursor: pointer;
+      }
+      #menu-lists{
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        .header-menu{
+          padding: 0;
+          &__list{
+            list-style: none;
+            padding: 10px;
+            border-bottom: 1px solid #dddddd;
+          }
+          &__list--last{
+            list-style: none;
+            padding: 10px;
+          }
+        }
+        .header-menu a{
+          text-decoration: none;
+          color: #222222;
+        }
+      }
+    }
+  }
+}
+

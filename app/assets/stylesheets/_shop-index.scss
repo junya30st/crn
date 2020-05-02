@@ -1,10 +1,11 @@
 .shop-index{
   width: 100%;
+  border-top: 1px solid #dddddd;
   &__wrapper{
     width: 80%;
     margin: 0 auto;
     &__fix{
-      padding: 20px 0 20px;
+      padding: 50px 0 20px;
       &--title{
         text-align: center;
         .title-p-index{
