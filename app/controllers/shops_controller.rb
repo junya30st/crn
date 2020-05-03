@@ -1,7 +1,8 @@
 class ShopsController < ApplicationController
+  protect_from_forgery except: :index
 
   def index
-    @shops = Shop.where(params[:id])
+    @shop = Shop.where(params[:id])
   end
 
   def new
@@ -34,6 +35,13 @@ class ShopsController < ApplicationController
     if shop.id == current_user.id
       shop.destroy(shop_params)
       redirect_to shops_path
+    end
+  end
+
+  def search
+    respond_to do |format|
+      format.html
+      format.json
     end
   end
 
