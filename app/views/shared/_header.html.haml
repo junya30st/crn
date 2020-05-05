@@ -3,6 +3,15 @@
     .header--nav__fix
       .header--nav__fix--logo
         = link_to '食らうどファンディング', root_path
+
+      = form_with url: search_shops_path do |f|
+        .search-field
+          .fas.fa-search
+          .shop_search
+            = f.text_field :text, placeholder: "店舗を検索", id: "shop_search"
+          #shop_search--result
+            .shop-search-list
+
       #header-menu.header--nav__fix--menu
         MENU
       #menu-lists
@@ -10,13 +19,20 @@
           %ul.header-menu
             = link_to customer_path(current_customer) do
               %li.header-menu__list
-                マイページ
+                .fas.fa-address-card
+                  マイページ
+            = link_to edit_customer_registration_path(current_customer) do
+              %li.header-menu__list
+                .fas.fa-user-edit
+                  プロフィール編集
             = link_to new_shop_path do
               %li.header-menu__list
-                店舗作成画面
+                .fas.fa-store
+                  店舗作成画面
             = link_to destroy_customer_session_path, method: :delete, data: { confirm: 'ログアウトしてよろしいですか？' }  do
               %li.header-menu__list--last
-                ログアウト
+                .fas.fa-sign-out-alt
+                  ログアウト
         - else
           %li
             = link_to "Sign-up", new_customer_registration_path

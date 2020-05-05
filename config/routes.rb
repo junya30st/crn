@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   devise_for :customers
 
-  root 'shops#index'
+  root 'users#new'
   resources :customers
   resources :users
   resources :shops do
+    collection do
+      get 'search'
+    end
     resources :products
   end
   

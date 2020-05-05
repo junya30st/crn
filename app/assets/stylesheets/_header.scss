@@ -3,16 +3,54 @@
   &--nav{
     &__fix{
       display: flex;
-      justify-content: space-between;
       position: relative;
       &--logo{
         display: block;
         margin: 18px 18px;
       }
+      .search-field{
+        position: relative;
+        .fas{
+          position: absolute;
+          top: 23px;
+          color: #bbbbbb;
+        }
+        .shop_search{
+          // line-height: 60px;
+          line-height: 60px;
+          #shop_search{
+            padding: 0 0 0 25px;
+            height: 40px;
+            width: 200px;
+            border: none;
+            border-bottom: 1px solid #dddddd;
+            font-size: 14px;
+          }
+          #shop_search:focus {
+            outline: none;
+          }
+        }
+        #shop_search--result{
+          .shop-search-list {
+            
+          }
+        }
+        #shop_search--result a{
+          display: block;
+          padding: 5px 0 5px 5px;
+          text-decoration: none;
+          color: #222222;
+          border-bottom: 1px solid #222222;
+          background: #dddddd;
+        }
+      }
       &--menu{
+        position: absolute;
+        right: 18px;
         display: block;
-        margin: 18px 18px;
+        margin: 18px 0 18px;
         cursor: pointer;
+        user-select: none;
       }
       #menu-lists{
         display: none;
@@ -21,6 +59,8 @@
         right: 0;
         border: 1px solid #dddddd;
         border-radius: 4px;
+        z-index: 100;
+        background: white;
         .header-menu{
           padding: 0;
           &__list{

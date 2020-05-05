@@ -8,17 +8,24 @@
           最新のショップ
       .shop-index__wrapper__fix--contents
         .contents-p-index
-          - @shops.each do |shop|
+          - @shop.each do |shop|
             .contents-p-index__box
               = link_to shop_path(shop.id) do
                 .contents-p-index__box__in
                   .image
-                    = image_tag "mina.png", class: "index-img"
+                    - if shop.image.present?
+                      = image_tag "#{shop.image}", class: "index-img"
+                    - else
+                      = image_tag("noImage.png", class: "index-img")
                   .text-box
-                    .name
-                      = shop.name
-                    .category
-                      焼き鳥
+                    .text-box__name
+                      .fas.fa-store
+                      .name
+                        = shop.name
+                    .text-box__category
+                      .fas.fa-tag
+                      .category
+                        焼き鳥
                     .intro
                       = shop.introduction
 
