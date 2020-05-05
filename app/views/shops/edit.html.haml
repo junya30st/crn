@@ -1,11 +1,11 @@
 = render "shared/header"
 
-= form_with url: '/shops', local: true, method: :post do |f|
+= form_with url: "/shops/#{@shop.id}", local: true, method: :patch do |f|
   .shop-create
     .shop-create--wrapper
       .shop-create--wrapper--fix
         .shop-create--wrapper__fix--title
-          店舗登録
+          店舗情報の編集
         .shop-create--wrapper__fix--contents
           .shop-create--wrapper__fix--contents__left
             .shop-create-form

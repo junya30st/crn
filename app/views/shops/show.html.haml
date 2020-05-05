@@ -6,11 +6,17 @@
       .shop-show--wrapper__fix--name
         .shop-show--wrapper__fix--name--top
           = @shop.name
+        = link_to edit_shop_path(@shop.id) do
+          .link_shop-edit
+            編集する
       .shop-show--wrapper__fix--contents
         .shop-show--wrapper__fix--contents__left
           .left-contents
             .left-contents--image
-              = image_tag 'mina.png',class: 'shop-show-img'
+              - if @shop.image.present?
+                = image_tag "#{@shop.image}", class: 'shop-show-img'
+              - else
+                = image_tag("noImage.png", class: 'shop-show-img')
             .left-contents--small
               .left-contents--small__img
                 = image_tag 'mina.png', class: 'shop-show-img-sml'

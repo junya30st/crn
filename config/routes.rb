@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :customers
   resources :users
   resources :shops do
+    collection do
+      get 'search'
+    end
     resources :products
   end
   

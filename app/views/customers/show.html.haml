@@ -16,7 +16,7 @@
 
       .customer-show__wrapper__fix--contents
         .customer-img
-          = image_tag "mina.png", class: "customer-img-show"
+          = image_tag "#{@customer.image}", class: "customer-img-show"
         .customer-texts
           .customer-texts--name
             = @customer.name

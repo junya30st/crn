@@ -3,10 +3,15 @@
     .header--nav__fix
       .header--nav__fix--logo
         = link_to '食らうどファンディング', root_path
-      = form_with(url: shops_path, method: 'get') do |f|
-        .shop_search
-          = f.search_field :text, placeholder: "キーワードを入力", class: "seach_field"
-          = f.submit "検索", class: "search_btn"
+
+      = form_with url: search_shops_path do |f|
+        .search-field
+          .fas.fa-search
+          .shop_search
+            = f.text_field :text, placeholder: "店舗を検索", id: "shop_search"
+          #shop_search--result
+            .shop-search-list
+
       #header-menu.header--nav__fix--menu
         MENU
       #menu-lists
