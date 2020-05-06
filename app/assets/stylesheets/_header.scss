@@ -6,7 +6,11 @@
       position: relative;
       &--logo{
         display: block;
-        margin: 18px 18px;
+        margin: 0 18px 0;
+        .logo-image{
+          height: 60px;
+
+        }
       }
       .search-field{
         position: relative;

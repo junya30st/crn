@@ -1,6 +1,6 @@
 class Shop < ApplicationRecord
   belongs_to :customer
-  has_many :products
+  has_many :products, dependent: :delete_all
   
   mount_uploader :image, ImageUploader
 

@@ -9,6 +9,7 @@
         = link_to edit_shop_path(@shop.id) do
           .link_shop-edit
             編集する
+        = link_to "削除する", shop_path(@shop.id),method: :delete
       .shop-show--wrapper__fix--contents
         .shop-show--wrapper__fix--contents__left
           .left-contents
