@@ -2,7 +2,7 @@ $(function(){
   function addShop(shop) {
     let html = `
       <a href="/shops/${shop.id} class="shop_search-list">
-        ${shop.name}
+        ${shop.name}：${shop.introduction}
       </a>
       `;
       $("#shop_search--result").append(html);
@@ -30,7 +30,6 @@ $(function(){
         shops.forEach(function(shop){
           console.log(shop)
           addShop(shop);
-          // let id = shop.data('shop-id')
         });
       } 
       else if (input.length == 0){

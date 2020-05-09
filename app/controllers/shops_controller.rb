@@ -1,25 +1,30 @@
 class ShopsController < ApplicationController
   protect_from_forgery except: :index
+  before_action :set_shops,only: [:show, :edit, :update, :destroy]
 
   def index
-    @shop = Shop.all
+    @shop = Shop.includes(:customer).order("id DESC")
   end
 
   def new
     @shop = Shop.new
+    6.times {@shop.shop_images.build}
+    @category = Category.all
   end
 
   def create
-    @shop = Shop.create(shop_params)
+    @shop = current_customer.shops.build(shop_params)
+    @shop.save
     redirect_to root_path
   end
 
   def show
-    @shop = Shop.find(params[:id])
+    # @shop = Shop.find(params[:id])
+
   end
 
   def edit
-    @shop = Shop.find(params[:id])
+    # @shop = Shop.find(params[:id])
   end
 
   def update
@@ -31,16 +36,14 @@ class ShopsController < ApplicationController
   end
 
   def destroy
-    shop = Shop.find(params[:id])
-    if shop.id == current_user.id
-      shop.destroy(shop_params)
-      redirect_to shops_path
-    end
+    @shop = Shop.find(params[:id])
+    @shop.destroy
+    redirect_to shops_path
   end
 
   def search
     return nil if params[:keyword] == ""
-    @shops = Shop.where('name LIKE(?)', "%#{params[:keyword]}%").limit(10)
+    @shops = Shop.where('name LIKE ? OR introduction LIKE ?', "%#{params[:keyword]}%", "%#{params[:keyword]}%").limit(10)
     respond_to do |format|
       format.html
       format.json
@@ -49,8 +52,13 @@ class ShopsController < ApplicationController
 
   private
 
+  def set_shops
+    @shop = Shop.find(params[:id])
+  end
+
   def shop_params
-    params.permit(:name, :introduction, :image, :location, :open_time, :close_time, :url, :tel).merge(customer_id: current_customer.id)
+    params.require(:shop).permit(:name, :introduction, :image, :location, :open_time, :close_time, :url, :tel, :category_id,
+    shop_images_attributes: [:image])
   end
 
 end

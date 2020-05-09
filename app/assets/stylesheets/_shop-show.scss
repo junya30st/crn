@@ -37,16 +37,30 @@
         &__left{
           width: 50%;
           .left-contents{
-            // width: 90%;
-            // margin: 0 auto;
+            width: 500px;
+            margin: 0 auto;
             padding: 0 10px 0;
             &--image{
-              // height: 300px;
-            }
-            &--small{
-              display: flex;
-              &__img{
+              width: 500px;
+              overflow: hidden;
+              border-radius: 4px;
+              &--main{
+                width: 2000px;
+                height: 300px;
                 display: flex;
+                position: relative;
+                &--box{
+                  width: 500px;
+                  height: 300px;
+                  // position: absolute;
+                }
+              }
+              &--small{
+                width: 500px;
+                display: flex;
+                &--box{
+                  width: 100px
+                }
               }
             }
           }
@@ -105,19 +119,24 @@
 }
 
 .shop-show-img{
-  width: 100%;
-  height: 20rem;
+  width: 500px;
+  height: 300px;
   object-fit: cover;
   border-radius: 4px;
+  // position: absolute;
 }
 
 .shop-show-img-sml{
   box-sizing: border-box;
-  width: 20%;
+  width: 100px;
   height: auto;
-  padding-right: 1px;
   border-radius: 4px;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
 }
+
 
 .shop-show-img-sml__last{
   width: 20%;

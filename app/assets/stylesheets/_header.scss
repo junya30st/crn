@@ -6,14 +6,17 @@
       position: relative;
       &--logo{
         display: block;
-        margin: 18px 18px;
+        margin: 0 18px 0;
+        .logo-image{
+          height: 60px;
+        }
       }
       .search-field{
         position: relative;
         .fas{
           position: absolute;
           top: 23px;
-          color: #bbbbbb;
+          color: #a3a3a3;
         }
         .shop_search{
           // line-height: 60px;
@@ -45,6 +48,8 @@
         }
       }
       &--menu{
+        font-size: larger;
+        color: #aaaaaa;
         position: absolute;
         right: 18px;
         display: block;
