@@ -14,7 +14,7 @@
             .shop-search-list
 
       #header-menu.header--nav__fix--menu
-        MENU
+        .fas.fa-user-cog
       #menu-lists
         - if customer_signed_in?
           %ul.header-menu
@@ -30,6 +30,11 @@
               %li.header-menu__list
                 .fas.fa-store
                   店舗作成画面
+            - if current_customer.admin?
+              = link_to new_category_path do
+                %li.header-menu__list
+                  .fas.fa-tag
+                    カテゴリを作成
             = link_to destroy_customer_session_path, method: :delete, data: { confirm: 'ログアウトしてよろしいですか？' }  do
               %li.header-menu__list--last
                 .fas.fa-sign-out-alt

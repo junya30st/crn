@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'shops#index'
   resources :customers
   resources :users
+  resources :categories
   resources :shops do
     collection do
       get 'search'

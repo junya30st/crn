@@ -14,26 +14,23 @@
         .shop-show--wrapper__fix--contents__left
           .left-contents
             .left-contents--image
-              - if @shop.image.present?
-                = image_tag "#{@shop.image}", class: 'shop-show-img'
-              - else
-                = image_tag("noImage.png", class: 'shop-show-img')
-            .left-contents--small
-              .left-contents--small__img
-                = image_tag 'mina.png', class: 'shop-show-img-sml'
-                .left-contents--small__img
-                = image_tag 'mina.png', class: 'shop-show-img-sml'
-                .left-contents--small__img
-                = image_tag 'mina.png', class: 'shop-show-img-sml'
-                .left-contents--small__img
-                = image_tag 'mina.png', class: 'shop-show-img-sml'
-                .left-contents--small__img
-                = image_tag 'mina.png', class: 'shop-show-img-sml__last'
+              .left-contents--image--main
+                - @shop.shop_images.each_with_index do |image, i|
+                  .left-contents--image--main--box{data: {id: i}}
+                    - if image.present?
+                      = image_tag "#{image.image}", class: 'shop-show-img'
+                    - else
+                      = image_tag("noImage.png", class: 'shop-show-img')
+              .left-contents--image--small
+                - @shop.shop_images.each do |image|
+                  .left-contents--image--small--box
+                    = image_tag "#{image.image}", class: 'shop-show-img-sml'
                 
         .shop-show--wrapper__fix--contents__right
           .right-contents
             .right-contents--category
-              カテゴリ：焼き鳥
+              カテゴリ：
+              -# = @shop.category.name
             %br
             .right-contents--intro
               = @shop.introduction

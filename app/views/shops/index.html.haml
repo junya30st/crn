@@ -13,10 +13,8 @@
               = link_to shop_path(shop.id) do
                 .contents-p-index__box__in
                   .image
-                    - if shop.image.present?
-                      = image_tag "#{shop.image}", class: "index-img"
-                    - else
-                      = image_tag("noImage.png", class: "index-img")
+                    - shop.shop_images.first(1).each do |image|
+                      = image_tag "#{image.image}", class: "index-img"
                   .text-box
                     .text-box__name
                       .fas.fa-store
@@ -25,7 +23,10 @@
                     .text-box__category
                       .fas.fa-tag
                       .category
-                        焼き鳥
+                        - if shop.category.present?
+                          = shop.category.name
+                        - else
+                          カテゴリが登録されていません
                     .intro
                       = shop.introduction
 

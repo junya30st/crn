@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_071639) do
+ActiveRecord::Schema.define(version: 2020_05_08_084329) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_071639) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
@@ -64,6 +65,8 @@ ActiveRecord::Schema.define(version: 2020_05_06_071639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "customer_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_shops_on_category_id"
     t.index ["customer_id"], name: "index_shops_on_customer_id"
   end
 
@@ -74,5 +77,6 @@ ActiveRecord::Schema.define(version: 2020_05_06_071639) do
 
   add_foreign_key "products", "shops"
   add_foreign_key "shop_images", "shops"
+  add_foreign_key "shops", "categories"
   add_foreign_key "shops", "customers"
 end
