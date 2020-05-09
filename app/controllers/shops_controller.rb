@@ -4,6 +4,7 @@ class ShopsController < ApplicationController
 
   def index
     @shop = Shop.includes(:customer).order("id DESC")
+    @category = Category.all
   end
 
   def new
@@ -43,7 +44,7 @@ class ShopsController < ApplicationController
 
   def search
     return nil if params[:keyword] == ""
-    @shops = Shop.where('name LIKE ? OR introduction LIKE ?', "%#{params[:keyword]}%", "%#{params[:keyword]}%").limit(10)
+    @shops = Shop.where('name LIKE ? OR location LIKE ?', "%#{params[:keyword]}%", "%#{params[:keyword]}%").limit(10)
     respond_to do |format|
       format.html
       format.json

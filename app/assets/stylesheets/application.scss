@@ -2,6 +2,7 @@
   margin: 0;
 }
 
+@import url("https://fonts.googleapis.com/css?family=Sawarabi+Gothic");
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "header";
@@ -19,6 +20,9 @@
 
 // @import "scaffolds";
 
+body{
+  font-family: "Sawarabi Gothic"; ;
+}
 
 
 
