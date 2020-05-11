@@ -1,6 +1,7 @@
 .shop-index{
   width: 100%;
   border-top: 1px solid #dddddd;
+  background: #f7fafd;
   &__wrapper{
     width: 80%;
     margin: 0 auto;
@@ -12,7 +13,13 @@
         &--title{
           text-align: center;
           .category-title{
+            display: inline-block;
             font-size: 25px;
+            border-bottom: 1px solid #dddddd;
+            // background: rgb(253, 196, 37);
+            // padding: 0 5px 0;
+            // border: 1px solid rgb(253, 196, 37);
+            // border-radius: 4px;
           }
         }
         .left-contents{
@@ -48,13 +55,16 @@
       }
       &--right{
         width: 80%;
+        text-align: center;
         &--title{
-          text-align: center;
+          display: inline-block;
+          border-bottom: 1px solid #dddddd;
           .title-p-index{
             font-size:  25px;
           }
         }
         &--contents{
+          text-align: initial;
           width: 100%;
           display: flex;
           flex-wrap: wrap;
