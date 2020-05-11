@@ -2,7 +2,7 @@
   width: 100%;
   background-color: #f7fafd;
   &--wrapper{
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     &__fix{
       padding: 50px 0 20px;
@@ -37,11 +37,12 @@
         &__left{
           width: 50%;
           .left-contents{
-            width: 500px;
+            width: 100%;
             margin: 0 auto;
             padding: 0 10px 0;
             &--image{
-              width: 500px;
+              width: 400px;
+              margin: 0 auto;
               overflow: hidden;
               border-radius: 4px;
               &--main{
@@ -50,7 +51,7 @@
                 display: flex;
                 position: relative;
                 &--box{
-                  width: 500px;
+                
                   height: 300px;
                   // position: absolute;
                 }
@@ -119,9 +120,9 @@
 }
 
 .shop-show-img{
-  width: 500px;
+  width: 100%;
   height: 300px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 4px;
   // position: absolute;
 }
@@ -148,7 +149,7 @@
 .shop-products{
   width: 100%;
   &__wrapper{
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     &__fix{
       padding: 20px 0 20px;

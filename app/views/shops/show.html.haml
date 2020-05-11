@@ -29,17 +29,22 @@
         .shop-show--wrapper__fix--contents__right
           .right-contents
             .right-contents--category
-              カテゴリ：
-              -# = @shop.category.name
+              .fas.fa-tag
+                = @shop.category.name
             %br
             .right-contents--intro
+              紹介：
               = @shop.introduction
             %br
             .right-contents--location
+              住所：
               = @shop.location
             %br
             .right-contents--time
-              営業時間:17:00〜24：00
+              営業時間：
+              = @shop.open_time.strftime("%H:%M")
+              〜
+              = @shop.close_time.strftime("%H:%M")
             %br
             .right-contents--url
               URL：http://aaaaaaaaaaaaaaaaaaaaa

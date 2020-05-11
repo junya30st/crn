@@ -2,7 +2,7 @@ $(function(){
   function addShop(shop) {
     let html = `
       <a href="/shops/${shop.id} class="shop_search-list">
-        ${shop.name}：${shop.introduction}
+        <div>${shop.name} - ${shop.location}</div>
       </a>
       `;
       $("#shop_search--result").append(html);

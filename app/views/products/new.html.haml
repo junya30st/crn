@@ -25,6 +25,7 @@
                 %span{class: 'form-want'} 任意
                 %br
                 = f.date_select :limit
+                -# = f.collection_select :limit, Product.all, :id, :name
           .product-new__contents--right
             .product-new__contents--right--area
               %label{class: 'label-product'} 商品説明

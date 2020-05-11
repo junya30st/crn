@@ -2,11 +2,13 @@
   height: 60px;
   &--nav{
     &__fix{
+      width: 80%;
+      margin: 0 auto;
       display: flex;
       position: relative;
       &--logo{
         display: block;
-        margin: 0 18px 0;
+        margin: 0 18px 0 0;
         .logo-image{
           height: 60px;
         }
@@ -40,12 +42,23 @@
         }
         #shop_search--result a{
           display: block;
-          padding: 5px 0 5px 5px;
+          padding: 5px;
           text-decoration: none;
           color: #222222;
-          border-bottom: 1px solid #222222;
-          background: #dddddd;
+          font-weight: bold;
+          border: 1px solid #dddddd;
+          background: white;
+          border-radius: 4px;
         }
+      }
+      &--intro{
+        line-height: 60px;
+        position: absolute;
+        right: 80px;
+        color: #222222
+      }
+      &--intro:hover {
+        color: #6d6d6d;
       }
       &--menu{
         font-size: larger;
@@ -53,9 +66,12 @@
         position: absolute;
         right: 18px;
         display: block;
-        margin: 18px 0 18px;
+        top: 10px;
         cursor: pointer;
         user-select: none;
+        padding: 5px 8px 5px;
+        border: 1px solid #dddddd;
+        border-radius: 50%;
       }
       #menu-lists{
         display: none;
