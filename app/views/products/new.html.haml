@@ -22,9 +22,9 @@
                 = f.text_field :price, placeholder: '例）1000', class: 'form-box'
               .product-new--limit
                 %label{class: 'label-product'} 期限
-                %span{class: 'form-want'} 任意
+                %span{class: 'form-must'} 必須
                 %br
-                = f.date_select :limit
+                = f.select :limit, Product.limits.keys,{}
                 -# = f.collection_select :limit, Product.all, :id, :name
           .product-new__contents--right
             .product-new__contents--right--area
