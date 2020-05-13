@@ -12,19 +12,19 @@
             = f.text_field :text, placeholder: "店舗を検索", id: "shop_search"
           #shop_search--result
             .shop-search-list
-      = link_to new_user_path do
+      = link_to new_guest_path do
         .header--nav__fix--intro
           Food Fundingとは？
       #header-menu.header--nav__fix--menu
         .fas.fa-user-cog
       #menu-lists
-        - if customer_signed_in?
+        - if user_signed_in?
           %ul.header-menu
-            = link_to customer_path(current_customer) do
+            = link_to user_path(current_user) do
               %li.header-menu__list
                 .fas.fa-address-card
                   マイページ
-            = link_to edit_customer_registration_path(current_customer) do
+            = link_to edit_user_registration_path(current_user) do
               %li.header-menu__list
                 .fas.fa-user-edit
                   プロフィール編集
@@ -32,18 +32,18 @@
               %li.header-menu__list
                 .fas.fa-store
                   店舗作成画面
-            - if current_customer.admin?
+            - if current_user.admin?
               = link_to new_category_path do
                 %li.header-menu__list
                   .fas.fa-tag
                     カテゴリを作成
-            = link_to destroy_customer_session_path, method: :delete, data: { confirm: 'ログアウトしてよろしいですか？' }  do
+            = link_to destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしてよろしいですか？' }  do
               %li.header-menu__list--last
                 .fas.fa-sign-out-alt
                   ログアウト
         - else
           %li
-            = link_to "Sign-up", new_customer_registration_path
+            = link_to "Sign-up", new_user_registration_path
           %li
-            = link_to "Sign-in", customer_session_path
+            = link_to "Sign-in", user_session_path
 

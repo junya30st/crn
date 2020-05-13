@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :customers
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    # :sessions => 'users/sessions'
+  }
 
   root 'shops#index'
-  resources :customers
-  resources :users
+  resources :users, only: [:show]
+  resources :guests
   resources :categories
   resources :shops do
     collection do
