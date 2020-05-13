@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Customer, type: :model do
-  describe Customer do
+RSpec.describe user, type: :model do
+  describe user do
     describe '#create' do
 
       context 'can save' do

@@ -1,5 +1,5 @@
 class Shop < ApplicationRecord
-  belongs_to :customer
+  belongs_to :user
   belongs_to :category
   has_many :products, dependent: :delete_all
   has_many :shop_images, dependent: :destroy

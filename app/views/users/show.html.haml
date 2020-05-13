@@ -1,7 +1,42 @@
-%p#notice= notice
-%p
-  %strong Title:
-  = @user.title
-= link_to 'Edit', edit_user_path(@user)
-|
-= link_to 'Back', users_path
+= render "shared/header"
+
+.customer-show
+  .customer-show__wrapper
+    .customer-show__wrapper__fix
+      .customer-show__wrapper__fix--title
+        .customer-show--title
+          プロフィール
+        .customer-show--menu
+          = link_to edit_user_registration_path do
+            .customer-show--menu--edit
+              編集する
+          -# = link_to users_path, method: :delete do
+          -#   .customer-show--menu--destroy
+          -#     ユーザーを削除する
+
+      .customer-show__wrapper__fix--contents
+        .customer-img
+          - if @user.image.present?
+            = image_tag "#{@user.image}", class: "customer-img-show"
+          - else
+            = image_tag("noImage.png", class: "customer-img-show")
+        .customer-texts
+          .customer-texts--name
+            = @user.name
+          .customer-texts--intro
+            = @user.introduction
+
+%section.customers-shop
+  .customers-shop__wrapper
+    .customers-shop__wrapper__fix
+      - @user.shops.each do |product|
+        .product__box
+          .product__box--image
+            = image_tag 'mina.png', class: 'product_box_img'
+          .product__box--intro
+            = product.introduction
+          .product__box--name
+            = product.name
+
+= render "shared/footer"
+

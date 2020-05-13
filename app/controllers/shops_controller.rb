@@ -3,7 +3,7 @@ class ShopsController < ApplicationController
   before_action :set_shops,only: [:show, :edit, :update, :destroy]
 
   def index
-    @shop = Shop.includes(:customer).order("id DESC")
+    @shop = Shop.includes(:user).order("id DESC")
     @category = Category.all
   end
 
@@ -14,7 +14,7 @@ class ShopsController < ApplicationController
   end
 
   def create
-    @shop = current_customer.shops.build(shop_params)
+    @shop = current_user.shops.build(shop_params)
     @shop.save
     redirect_to root_path
   end
@@ -30,7 +30,7 @@ class ShopsController < ApplicationController
 
   def update
     @shop = Shop.find(params[:id])
-    if @shop.customer_id == current_customer.id
+    if @shop.user_id == current_user.id
       @shop.update(shop_params)
       redirect_to shops_path
     end
