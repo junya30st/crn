@@ -73,3 +73,4 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem "mini_magick"
+gem 'payjp'

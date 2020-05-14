@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root 'shops#index'
   resources :users, only: [:show]
+  resources :cards
   resources :guests
   resources :categories
   resources :shops do

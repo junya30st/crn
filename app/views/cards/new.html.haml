@@ -1,0 +1,27 @@
+.signup1-container__main__view__form__box.form-padding
+  = form_with url: cards_path ,id: :card_register, local: true, method: :post do |f|
+    .signup1-container__main__view__form__box__input.form-group.form-nickname
+      = f.label :カード番号
+      %span{class: "form-must"}必須
+      = f.text_field :card_number, type: 'text', class: "input-default-number", placeholder: "半角数字のみ", maxlength: "16"
+      .card-logos
+    .signup1-container__main__view__form__box__input__box.form-group
+      = f.label :有効期限
+      %span{class: "form-must"}必須
+      .signup1-container__main__view__form__box__input__card
+        .signup1-container__main__view__form__box__input__card__month
+          = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , type:"text", class:"select-default-month"
+          %span 月
+        .signup1-container__main__view__form__box__input__card__month
+          = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} ,type:"text", class:"select-default-year"
+          %span 年
+      
+      .signup1-container__main__view__form__box__input.form-group
+        = f.label :セキュリティコード
+        %span{class: "form-must"}必須
+        = f.text_field :cvc, class:"input-default-cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4"
+      .form-group.right.card
+        %p カード背面の番号とは？
+      
+      .button-submit#card_token
+        = f.submit "登録する", class:"card-submit"
