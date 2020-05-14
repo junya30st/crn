@@ -20,16 +20,13 @@ class ShopsController < ApplicationController
   end
 
   def show
-    # @shop = Shop.find(params[:id])
-
   end
 
   def edit
-    # @shop = Shop.find(params[:id])
   end
 
   def update
-    @shop = Shop.find(params[:id])
+    # @shop = Shop.find(params[:id])
     if @shop.user_id == current_user.id
       @shop.update(shop_params)
       redirect_to shops_path
@@ -37,7 +34,7 @@ class ShopsController < ApplicationController
   end
 
   def destroy
-    @shop = Shop.find(params[:id])
+    # @shop = Shop.find(params[:id])
     @shop.destroy
     redirect_to shops_path
   end

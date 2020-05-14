@@ -38,7 +38,8 @@
             %br
       .product-show--wrapper__fix--submit
         -# = f.submit
-        .product-show--wrapper__fix--submit__button
-          この特典をゲットしてお店を応援する
+        = link_to new_shop_product_transaction_path(@shop, @product) do
+          .product-show--wrapper__fix--submit__button
+            この特典をゲットしてお店を応援する
 
 = render "shared/footer"
