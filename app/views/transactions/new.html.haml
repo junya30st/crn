@@ -9,6 +9,7 @@
 = @product.introduction
 
 = form_tag action: :create, method: :post do
+  %input{name: "period",type: "hidden", value: "#{Date.today}"}/
   :plain
     <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_6d89c8792c4bb812515e783f"></script>
 

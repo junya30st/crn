@@ -12,33 +12,32 @@ class TransactionsController < ApplicationController
       card: params['payjp-token'],
       currency: 'jpy'
     )
-    today = Date.today.strftime("%Y-%m-%d")
-    day = today.to_date
-
-    # binding.pry
 
     @transaction = Transaction.new(
       name: @product.name,
       price: @product.price,
+      period: params[:period],
       introduction: @product.introduction,
       product_id: @product.id,
       user_id: current_user.id
     )
+    # binding.pry
     @transaction.save
-    @transaction.period = @transaction.created_at
 
-    if @product.limit == 1
+    if @product.limit == "１ヶ月"
       @transaction.period = 1.months.from_now
-    elsif @product.limit == 2
+    elsif @product.limit == "３ヶ月"
       @transaction.period = 3.months.from_now
-    elsif @product.limit == 3
+    elsif @product.limit == "６ヶ月"
       @transaction.period = 6.months.from_now
-    elsif @product.limit == 4
+    elsif @product.limit == "１年"
       @transaction.period = 1.years.from_now
     else
       @transaction.period = nil
     end
+
     # binding.pry
+
     if @transaction.save
       number = @product.number.to_i - 1
       @product.number = number

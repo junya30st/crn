@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :cards
   resources :guests
   resources :categories
-  resources :shops do
+  resources :shops, shallow: true do
     collection do
       get 'search'
     end

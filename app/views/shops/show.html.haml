@@ -63,7 +63,7 @@
     .shop-products__wrapper__fix
       - @shop.products.each do |product| 
         .product__box
-          = link_to shop_product_path(@shop, product) do
+          = link_to product_path(product) do
             .product__box__in
               .product__box__in--image
                 = image_tag 'mina.png', class: 'product_box_img'
