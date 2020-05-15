@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @shop = Shop.find_by(id: @product.shop_id)
   end
 
   def edit

@@ -25,7 +25,11 @@
                 %span{class: 'form-must'} 必須
                 %br
                 = f.select :limit, Product.limits.keys,{}
-                -# = f.collection_select :limit, Product.all, :id, :name
+              .product-new-number
+                %label{class: 'label-product'} 個数
+                %span{class: 'form-must'} 必須
+                %br
+                = f.number_field :number
           .product-new__contents--right
             .product-new__contents--right--area
               %label{class: 'label-product'} 商品説明

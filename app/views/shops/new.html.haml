@@ -61,23 +61,4 @@
         .button-register-shop
           = f.submit "登録する", class: "submit-button-shop"
 
-  -# .group-create
-  -#   .group-create__wrapper
-  -#     .group-create__wrapper__title
-  -#       Group - Create
-  -#     .group-create__wrapper__form
-  -#       .group-create__wrapper__form--name
-  -#         -# .group-create__wrapper__form--name--label
-  -#         %label{class: 'label-group'} Group-name
-  -#       .group-create__wrapper__form--name--input
-  -#         = f.text_field :name, placeholder: 'グループ名を入力してください', class: 'newgroup-name'
-  -#       .group-create__wrapper__form--member
-  -#         = f.label :追加するメンバーを選んでください, class: '#'
-  -#         %br
-  -#         = f.collection_check_boxes :user_ids, User.all, :id, :nickname, include_hidden: false do |c|
-  -#           = c.check_box
-  -#           = c.label{c.text}
-  -#       .group-create__wrapper__form--submit
-  -#         = f.submit 'グループを作成する'
-
 = render "shared/footer"
