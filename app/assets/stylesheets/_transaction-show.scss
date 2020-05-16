@@ -1,0 +1,45 @@
+.transaction-show{
+  width: 100%;
+  &__wrapper{
+    width: 40%;
+    margin: 0 auto;
+    &__fix{
+      padding: 50px 0 50px;
+      &--title{
+        .transaction-title{
+          display: inline-block;
+          font-size: 25px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid #dddddd;
+        }
+        .transaction-period{
+          margin-top: 20px;
+          text-align: right;
+          &__content{
+            
+          }
+        }
+      }
+      &--contents{
+        .transaction-contents{
+          &--image{
+            width: 100%;
+            height: auto;
+            padding: 20px 0 20px;
+            .transaction-show-img{
+              width: 100%;
+              object-fit: contain;
+              border-radius: 4px;
+            }
+          }
+          &--price{
+
+          }
+          &--introduction{
+
+          }
+        }
+      }
+    }
+  }
+}

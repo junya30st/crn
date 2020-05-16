@@ -31,7 +31,7 @@
     .user-transactions__wrapper__fix
       .user-transactions__wrapper__fix--title
         .user-transaction__title
-          支援品一覧
+          返礼品一覧
       .user-transactions__wrapper__fix--contents
         - @user.transactions.each do |t|
           .user-transactions__wrapper__fix--contents--fix
@@ -42,7 +42,8 @@
                 .user-transaction__box--introduction
                   = t.introduction
                 .user-transaction__box--created
-                  = t.created_at.strftime("%Y-%m-%d")
+                  使用期限：
+                  = t.period
 
 %section.user-shop
   .user-shop__wrapper

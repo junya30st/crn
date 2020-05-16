@@ -42,7 +42,7 @@ class TransactionsController < ApplicationController
       number = @product.number.to_i - 1
       @product.number = number
       @product.save
-      redirect_to root_path
+      redirect_to transaction_path(@transaction)
     else
       render action: "create"
     end
@@ -50,7 +50,7 @@ class TransactionsController < ApplicationController
   end
 
   def show
-    @transaction = Transaction.find_by(params[:id])
+    @transaction = Transaction.find(params[:id])
   end
 
   def edit
