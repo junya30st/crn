@@ -6,10 +6,15 @@
       .shop-show--wrapper__fix--name
         .shop-show--wrapper__fix--name--top
           = @shop.name
-        = link_to edit_shop_path(@shop.id) do
-          .link_shop-edit
-            編集する
-        = link_to "削除する", shop_path(@shop.id),method: :delete
+        - if @shop.user_id == current_user.id
+          .shop-show--wrapper__fix--name--button
+            = link_to edit_shop_path(@shop.id) do
+              .link_shop-edit
+                編集する
+            = link_to shop_path(@shop.id),method: :delete, data: { confirm: '本当に削除してよろしいですか？' } do
+              .link_shop-edit
+                削除する
+
       .shop-show--wrapper__fix--contents
         .shop-show--wrapper__fix--contents__left
           .left-contents
@@ -51,11 +56,12 @@
             %br
             .right-contents--tel
               TEL：080-1234-5678
-
-      .shop-show--wrapper__fix--submit
-        = link_to new_shop_product_path(@shop.id) do
-          .submit-button.show-submit
-            プロダクトを作成する
+              
+      - if @shop.user_id == current_user.id
+        .shop-show--wrapper__fix--submit
+          = link_to new_shop_product_path(@shop.id) do
+            .submit-button.show-submit
+              プロダクトを作成する
 
 
 %section.shop-products

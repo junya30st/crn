@@ -1,5 +1,23 @@
 = render "shared/header"
 
-= @transaction.name
+.transaction-show
+  .transaction-show__wrapper
+    .transaction-show__wrapper__fix
+      .transaction-show__wrapper__fix--title
+        .transaction-title
+          = @transaction.name
+        .transaction-period
+          .transaction-period__content
+            有効期限：2020-06-15
+          -# = @transaction.period
+      .transaction-show__wrapper__fix--contents
+        .transaction-contents
+          .transaction-contents--image
+            = image_tag("mina.png", class: "transaction-show-img")
+          .transaction-contents--price
+            = @transaction.price
+            円で支援中
+          .transaction-contents--introduction
+            = @transaction.introduction
 
 = render "shared/footer"

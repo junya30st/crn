@@ -1,8 +1,8 @@
 .shop-show{
   width: 100%;
-  background-color: #f7fafd;
+  background: #fffbf9;
   &--wrapper{
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
     &__fix{
       padding: 50px 0 20px;
@@ -17,17 +17,24 @@
           font-weight: bold;
         }
         // 編集画面
-        .link_shop-edit{
+        &--button{
+          display: flex;
           position: absolute;
           right: 0;
           top: 4px;
-          background: #fdc425;
-          font-size: 16px;
-          font-weight: bold;
-          color: #222222;
-          padding: 5px 10px 5px;
-          border-radius: 4px;
-          letter-spacing: 0.5px;
+          .link_shop-edit{
+            background: #fdc425;
+            font-size: 16px;
+            font-weight: bold;
+            color: #222222;
+            padding: 5px 10px 5px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            margin-left: 5px;
+          }
+        }
+        &--button a{
+          text-decoration: none;
         }
       }
       &--contents{
@@ -44,7 +51,6 @@
               width: 400px;
               margin: 0 auto;
               overflow: hidden;
-              border-radius: 4px;
               &--main{
                 width: 2000px;
                 height: 300px;
@@ -123,7 +129,6 @@
   width: 100%;
   height: 300px;
   object-fit: contain;
-  border-radius: 4px;
   // position: absolute;
 }
 
@@ -131,7 +136,6 @@
   box-sizing: border-box;
   width: 100px;
   height: auto;
-  border-radius: 4px;
   opacity: 0.5;
   &:hover {
     opacity: 1;
@@ -143,13 +147,12 @@
   width: 20%;
   height: auto;
   padding: initial;
-  border-radius: 4px;
 }
 
 .shop-products{
   width: 100%;
   &__wrapper{
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
     &__fix{
       padding: 20px 0 20px;
@@ -181,6 +184,5 @@
 .product_box_img{
   width: 100%;
   height: auto;
-  border-radius: 4px;
 }
 
