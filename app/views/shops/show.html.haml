@@ -42,9 +42,21 @@
                 = @shop.location
               .right-contents--time
                 営業時間：
+                %br
+                ランチ
                 = @shop.open_time.strftime("%H:%M")
                 〜
                 = @shop.close_time.strftime("%H:%M")
+                L.O.
+                = @shop.lunch_last.strftime("%H:%M")
+                %br
+                ディナー
+                = @shop.dinner_open.strftime("%H:%M")
+                〜
+                = @shop.dinner_close.strftime("%H:%M")
+                L.O.
+                = @shop.dinner_last.strftime("%H:%M")
+
               .right-contents--url
                 URL：http://aaaaaaaaaaaaaaaaaaaaa
               .right-contents--tel
@@ -64,7 +76,6 @@
             = link_to new_shop_product_path(@shop.id) do
               .submit-button.show-submit
                 プロダクトを作成する
-
 
 %section.shop-products
   .shop-products__wrapper
