@@ -7,17 +7,17 @@ window.onload = function(){
     e.preventDefault();
     form.find("input[type=submit]").prop("disabled", true);
     var card = {
-        number: parseInt($(".input-default-number").val()),
-        cvc: parseInt($(".input-default-cvc").val()),
-        exp_month: parseInt($(".select-default-month").val()),
-        exp_year: parseInt($(".select-default-year").val())
+        number: parseInt($(".input-card-number").val()),
+        cvc: parseInt($(".input-card-cvc").val()),
+        exp_month: parseInt($(".select-card-month").val()),
+        exp_year: parseInt($(".select-card-year").val())
     };
     Payjp.createToken(card, function(status, response) {
       if (status == 200) {  //エラーがなければ
-        $(".input-default-number").removeAttr("name");
-        $(".input-default-cvc").removeAttr("name");
-        $(".select-default-month").removeAttr("name");
-        $(".select-default-year").removeAttr("name");
+        $(".input-card-number").removeAttr("name");
+        $(".input-card-cvc").removeAttr("name");
+        $(".select-card-month").removeAttr("name");
+        $(".select-card-year").removeAttr("name");
 
         var token = response.id;
         $("#card_register").append($('<input type="hidden" name="payjp-token" class="payjp-token" />').val(token));

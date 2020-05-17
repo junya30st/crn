@@ -32,6 +32,16 @@ class CardsController < ApplicationController
   end
 
   def show
+    @card = Card.where(user_id: current_user.id).first
+    if @card.blank?
+      redirect_to action: "new" 
+    else
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+      @exp_month = @default_card_information.exp_month.to_s
+      @exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+    end
   end
 
   def edit
@@ -40,7 +50,17 @@ class CardsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+      render "new"
+    else
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer.delete
+      card.delete
+    end
+      redirect_to action: "show"
   end
 
   private
