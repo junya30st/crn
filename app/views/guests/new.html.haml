@@ -1,11 +1,3 @@
--# テスト
-  
--# %h1 New User
-
--# = render 'form', user: @user
-
--# = link_to 'Back', users_path
-
 = render "shared/header"
 
 %section.swipe-img
@@ -39,7 +31,7 @@
         .contents__shop--box
           .contents__shop--box--img
           .contents__shop--box--text
-            食事提供以外の経営資金の確保や新たな価値の創造に役立ててください。
+            食事提供以外の経営資金の確保や新たな価値の創造にお役立てください。
             店舗やスタッフについてより知ってもらうことで、新規顧客とリピーターの獲得に繋がるかも！？
             また、特典の内容は店舗の自由です。ご自身のお店の新たな広告の場としてご活用ください。
 
@@ -48,9 +40,6 @@
     .trying--box--fix
       = link_to new_user_registration_path do
         .user-button
-          顧客として登録する
-      = link_to new_shop_path do
-        .shop-button
-          店舗を登録する
+          登録して使ってみる
 
 = render "shared/footer"

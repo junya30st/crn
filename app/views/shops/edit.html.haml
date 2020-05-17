@@ -12,24 +12,22 @@
               %label{class: 'label-up'} 名前
               %span{class: 'form-must'} 必須
               %br
-              = f.text_field :name, autofocus: true, placeholder: "店舗名", class: "form-box"
+              = f.text_field :name, autofocus: true, placeholder: "店舗名", class: "form-box", value: "#{@shop.name}"
             .shop-create-form
               %label{class: 'label-up'} 所在地
               %span{class: 'form-must'} 必須
               %br
-              = f.text_field :location, placeholder: "〇〇県〇〇市〇〇111-11〇〇ビル〇階", class: "form-box"
+              = f.text_field :location, placeholder: "〇〇県〇〇市〇〇111-11〇〇ビル〇階", class: "form-box", value: "#{@shop.location}"
             .shop-create-form
               %label{class: 'label-up'} 開店時刻
               %span{class: 'form-want'} 任意
               %br
               = f.time_select :open_tome
-              -# , class: "form-box"
             .shop-create-form
               %label{class: 'label-up'} 閉店時刻
               %span{class: 'form-want'} 任意
               %br
-              = f.time_select :close_time
-              -# ,class: "form-box"
+              = f.time_select :close_time, value: "#{@shop.close_time}"
             .shop-create-form
               %label{class: 'label-up'} URL
               %span{class: 'form-want'} 任意

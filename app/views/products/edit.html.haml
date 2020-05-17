@@ -14,7 +14,7 @@
                 %label{class: 'label-product'} 名前
                 %span{class: 'form-must'} 必須
                 %br
-                = f.text_field :name, placeholder: 'プロダクト名', class: 'form-box'
+                = f.text_field :name, placeholder: "#{@product.name}", class: 'form-box'
               .product-edit--price
                 %label{class: 'label-product'} 価格
                 %span{class: 'form-must'} 必須

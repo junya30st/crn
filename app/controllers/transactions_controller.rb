@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :set_product, only:[:new, :create]
   
   def new

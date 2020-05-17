@@ -24,6 +24,11 @@
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-box"
           .button-register
             = f.submit "ログイン", class: "submit-button"
+          .to-signup
+            = link_to new_user_registration_path do
+              .header-menu__list
+                .fas.fa-user-plus
+                アカウントをお持ちでない方はコチラ
 
 = render "shared/footer"
 
