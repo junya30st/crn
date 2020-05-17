@@ -1,0 +1,30 @@
+= render "shared/header"
+
+
+.cards-show
+  .cards-show__wrapper
+    .cards-show__wrapper__fix
+      .cards-show__wrapper__fix__title
+        .cards-show__wrapper__fix__title--content
+          クレジットカード内容確認
+
+      .cards-show__wrapper__fix__details
+        .cards-show__wrapper__fix__details--detail
+          .register-card-number
+            %label{class: "label-up"} カード番号
+            %br
+            = "**** **** **** " + @default_card_information.last4
+          .register-card-limit
+            %label{class: "label-up"} 期限
+            %br
+            = @exp_month + " / " + @exp_year
+
+      .cards-show__wrapper__fix__submits
+        = link_to card_path(@card.id),method: :delete, data: { confirm: '本当に削除してよろしいですか？' } do
+          .cards-show__wrapper__fix__submits--button
+            削除する
+
+
+
+
+= render "shared/footer"

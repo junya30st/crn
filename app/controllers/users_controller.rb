@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @card = Card.find_by(user_id: @user.id)
   end
 
 end
