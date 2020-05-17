@@ -18,18 +18,39 @@
               %span{class: 'form-must'} 必須
               %br
               = f.text_field :location, placeholder: "〇〇県〇〇市〇〇111-11〇〇ビル〇階", class: "form-box"
-            .shop-create-form
-              %label{class: 'label-up'} 開店時刻
-              %span{class: 'form-want'} 任意
-              %br
-              = f.time_select :open_time
-              -# , class: "form-box"
-            .shop-create-form
-              %label{class: 'label-up'} 閉店時刻
-              %span{class: 'form-want'} 任意
-              %br
-              = f.time_select :close_time
-              -# ,class: "form-box"
+            .time-flex
+              .time-flex__form
+                %label{class: 'label-up'} ランチ開店時刻
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :open_time
+              .time-flex__form
+                %label{class: 'label-up'} ランチ閉店時刻
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :close_time
+            .time-flex
+              .time-flex__form
+                %label{class: 'label-up'} ディナー開店時刻
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :dinner_open
+              .time-flex__form
+                %label{class: 'label-up'} ディナー閉店時刻
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :dinner_close
+            .time-flex
+              .time-flex__form
+                %label{class: 'label-up'} ランチL.O.
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :lunch_last
+              .time-flex__form
+                %label{class: 'label-up'} ディナーL.O.
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :dinner_last
             .shop-create-form
               %label{class: 'label-up'} URL
               %span{class: 'form-want'} 任意

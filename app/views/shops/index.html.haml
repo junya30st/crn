@@ -17,7 +17,7 @@
       .shop-index__wrapper__fix--right
         .shop-index__wrapper__fix--right--title
           .title-p-index
-            お店一覧
+            店舗一覧
         .shop-index__wrapper__fix--right--contents
           .contents-p-index
             - @shop.each do |shop|
@@ -42,7 +42,8 @@
                             = shop.category.name
                           - else
                             カテゴリが登録されていません
-                      .intro
-                        = shop.introduction
+                      .text-box__intro
+                        .intro
+                          = truncate(shop.introduction, length:62)
 
 = render "shared/footer"
