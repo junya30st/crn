@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
   protect_from_forgery except: :index
+  before_action :authenticate_user!, only:[:new, :create]
   before_action :set_shops,only: [:show, :edit, :update, :destroy]
 
   def index

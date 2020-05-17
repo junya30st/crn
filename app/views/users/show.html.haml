@@ -1,61 +1,62 @@
 = render "shared/header"
 
-.user-show
-  .user-show__wrapper
-    .user-show__wrapper__fix
-      .user-show__wrapper__fix--title
-        .user-show--title
-          プロフィール
-        .user-show--menu
-          = link_to edit_user_registration_path do
-            .user-show--menu--edit
-              編集する
-          -# = link_to users_path, method: :delete do
-          -#   .user-show--menu--destroy
-          -#     ユーザーを削除する
+.us-wrapper
+  .user-show
+    .user-show__wrapper
+      .user-show__wrapper__fix
+        .user-show__wrapper__fix--title
+          .user-show--title
+            プロフィール
+          .user-show--menu
+            = link_to edit_user_registration_path do
+              .user-show--menu--edit
+                編集する
+            -# = link_to users_path, method: :delete do
+            -#   .user-show--menu--destroy
+            -#     ユーザーを削除する
 
-      .user-show__wrapper__fix--contents
-        .user-img
-          - if @user.image.present?
-            = image_tag "#{@user.image}", class: "user-img-show"
-          - else
-            = image_tag("noImage.png", class: "user-img-show")
-        .user-texts
-          .user-texts--name
-            = @user.name
-          .user-texts--intro
-            = @user.introduction
+        .user-show__wrapper__fix--contents
+          .user-img
+            - if @user.image.present?
+              = image_tag "#{@user.image}", class: "user-img-show"
+            - else
+              = image_tag("noImage.png", class: "user-img-show")
+          .user-texts
+            .user-texts--name
+              = @user.name
+            .user-texts--intro
+              = @user.introduction
 
-.user-transactions
-  .user-transactions__wrapper
-    .user-transactions__wrapper__fix
-      .user-transactions__wrapper__fix--title
-        .user-transaction__title
-          返礼品一覧
-      .user-transactions__wrapper__fix--contents
-        - @user.transactions.each do |t|
-          .user-transactions__wrapper__fix--contents--fix
-            = link_to transaction_path(t) do
-              .user-transaction__box
-                .user-transaction__box--name
-                  = t.name
-                .user-transaction__box--introduction
-                  = t.introduction
-                .user-transaction__box--created
-                  使用期限：
-                  = t.period
+  .user-transactions
+    .user-transactions__wrapper
+      .user-transactions__wrapper__fix
+        .user-transactions__wrapper__fix--title
+          .user-transaction__title
+            返礼品一覧
+        .user-transactions__wrapper__fix--contents
+          - @user.transactions.each do |t|
+            .user-transactions__wrapper__fix--contents--fix
+              = link_to transaction_path(t) do
+                .user-transaction__box
+                  .user-transaction__box--name
+                    = t.name
+                  .user-transaction__box--created
+                    使用期限：
+                    = t.period
+                  .user-transaction__box--introduction
+                    = truncate(t.introduction, length: 60)
 
-%section.user-shop
-  .user-shop__wrapper
-    .user-shop__wrapper__fix
-      - @user.shops.each do |product|
-        .product__box
-          .product__box--image
-            = image_tag 'mina.png', class: 'product_box_img'
-          .product__box--intro
-            = product.introduction
-          .product__box--name
-            = product.name
+  %section.user-shop
+    .user-shop__wrapper
+      .user-shop__wrapper__fix
+        - @user.shops.each do |product|
+          .product__box
+            .product__box--image
+              = image_tag 'mina.png', class: 'product_box_img'
+            .product__box--intro
+              = product.introduction
+            .product__box--name
+              = product.name
 
 = render "shared/footer"
 

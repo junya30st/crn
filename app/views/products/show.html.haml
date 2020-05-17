@@ -10,34 +10,25 @@
           .left-contents
             .left-contents--image
               = image_tag 'mina.png',class: 'product-show-img'
-            .left-contents--small
-              .left-contents--small__img
-                = image_tag 'mina.png', class: 'product-show-img-sml'
-                .left-contents--small__img
-                = image_tag 'mina.png', class: 'product-show-img-sml'
-                .left-contents--small__img
-                = image_tag 'mina.png', class: 'product-show-img-sml'
-                .left-contents--small__img
-                = image_tag 'mina.png', class: 'product-show-img-sml'
-                .left-contents--small__img
-                = image_tag 'mina.png', class: 'product-show-img-sml__last'
                 
         .product-show--wrapper__fix--contents__right
           .right-contents
-            .right-contents--category
-              カテゴリ：
-            %br
             .right-contents--intro
-              = @product.introduction
+              紹介：
+              %br
+              = simple_format(@product.introduction)
             %br
             .right-contents--price
+              価格：
               = @product.price
+              円
             %br
             .right-contents--limit
-              5月15日
+              有効期限：
+              = @product.limit
             %br
+            
       .product-show--wrapper__fix--submit
-        -# = f.submit
         = link_to new_product_transaction_path(@product) do
           .product-show--wrapper__fix--submit__button
             この特典をゲットしてお店を応援する

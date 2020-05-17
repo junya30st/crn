@@ -29,9 +29,12 @@
                         = image_tag "#{image.image}", class: "index-img"
                     .text-box
                       .text-box__name
-                        .fas.fa-store
                         .name
                           = shop.name
+                      .text-box__location
+                        .fas.fa-map-marker-alt
+                        .location
+                          = shop.location
                       .text-box__category
                         .fas.fa-tag
                         .category

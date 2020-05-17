@@ -71,7 +71,7 @@
             &__box{
               box-sizing: border-box;
               width: 33%;
-              padding: 15px;
+              padding: 8px;
               display: flex;
               &__in{
                 background: #fff;
@@ -87,11 +87,29 @@
                     font-size: 18px;
                     height: 25px;
                     position: relative;
+                    // .fas{
+                    //   position: absolute;
+                    //   top: 3px;
+                    // }
+                    .name{
+                      // padding-left: 30px;
+                      margin-top: 8px;
+                      border-bottom: 1px solid #dddddd;
+                    }
+                  }
+                  &__location{
+                    font-size: smaller;
+                    font-weight: lighter;
+                    // color: #969696;
+                    position: relative;
+                    height: 25px;
                     .fas{
                       position: absolute;
                       top: 3px;
+                      left: 2px;
+                      color: rgb(255, 193, 78);
                     }
-                    .name{
+                    .location{
                       padding-left: 30px;
                       margin-top: 8px;
                       border-bottom: 1px solid #dddddd;
@@ -107,10 +125,12 @@
                       position: absolute;
                       top: 3px;
                       left: 2px;
+                      color: rgb(255, 193, 77);
+
                     }
                     .category{
                       padding-left: 30px;
-                      margin-top: 8px;
+                      // margin-top: 8px;
                       border-bottom: 1px solid #dddddd;
                     }
                   }

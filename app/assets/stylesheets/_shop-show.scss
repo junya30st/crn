@@ -1,9 +1,9 @@
 .shop-show{
   width: 100%;
-  background: #fffbf9;
   &--wrapper{
     width: 50%;
     margin: 0 auto;
+    background: #fffbf9;
     &__fix{
       padding: 50px 0 20px;
       &--name{
@@ -28,7 +28,6 @@
             font-weight: bold;
             color: #222222;
             padding: 5px 10px 5px;
-            border-radius: 4px;
             letter-spacing: 0.5px;
             margin-left: 5px;
           }
@@ -73,53 +72,89 @@
           }
         }
         &__right{
-          width: 40%;
+          width: 50%;
           margin: 0 auto;
-          .right-contents{
+          .right{
+            // background: #f3f3f3;
             font-weight: bold;
             width: 90%;
             margin: 0 auto;
-            padding: 20px 0 20px;
-            &--category{
-              font-size: 16px;
-              color: #222222;
-            }
-            &--intro{
-              font-size: 16px;
-              color: #222222;
-            }
-            &--location{
-              font-size: 16px;
-              color: #222222;
-            }
-            &--time{
-              font-size: 16px;
-              color: #222222;
-            }
-            &--url{
-              font-size: 16px;
-              color: #222222;
-            }
-            &--tel{
-              font-size: 16px;
-              color: #222222;
+            &-contents{
+              padding: 10px;
+              &--category{
+                font-size: 16px;
+                color: #222222;
+                padding: 5px;
+                border-bottom: 1px solid #dddddd;
+              }
+              &--intro{
+                font-size: 16px;
+                color: #222222;
+                padding: 5px;
+                border-bottom: 1px solid #dddddd;
+              }
+              &--location{
+                font-size: 16px;
+                color: #222222;
+                padding: 5px;
+                border-bottom: 1px solid #dddddd;
+              }
+              &--time{
+                font-size: 16px;
+                color: #222222;
+                padding: 5px;
+                border-bottom: 1px solid #dddddd;
+              }
+              &--url{
+                font-size: 16px;
+                color: #222222;
+                padding: 5px;
+                border-bottom: 1px solid #dddddd;
+              }
+              &--tel{
+                font-size: 16px;
+                color: #222222;
+                padding: 5px;
+              }
             }
           }
         }
       }
-      &--submit{
-        text-align: center;
-        .show-submit{
-          line-height: 42px;
-          margin: 20px auto 0;
-          width: 200px;
-          text-decoration: none;
-          font-weight: bold;
-        }
+      &--introduction{
+        width: 90%;
+        margin: 0 auto;
       }
-      &--submit a{
-        text-decoration: none;
-        color: #222222;
+      &--button{
+        display: flex;
+        justify-content: space-evenly;
+        &--menu{
+          text-align: center;
+          .show-submit{
+            line-height: 42px;
+            margin: 20px auto 0;
+            width: 200px;
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+        &--menu a{
+          text-decoration: none;
+          color: #222222;
+        }
+        &--product{
+          text-align: center;
+          .show-submit{
+            line-height: 42px;
+            margin: 20px auto 0;
+            width: 200px;
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+        &--product a{
+          text-decoration: none;
+          color: #222222;
+        }
       }
     }
   }
@@ -154,6 +189,7 @@
   &__wrapper{
     width: 50%;
     margin: 0 auto;
+    // background: #fffbf9;
     &__fix{
       padding: 20px 0 20px;
       display: flex;

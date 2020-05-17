@@ -1,9 +1,9 @@
 .product-show{
-  width: 100%;
-  background-color: #f7fafd;
+  width: 50%;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+  background: #fffbf9;
   &--wrapper{
-    width: 80%;
-    margin: 0 auto;
     &__fix{
       padding: 20px 0 20px;
       &--name{

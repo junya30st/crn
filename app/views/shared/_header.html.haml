@@ -3,13 +3,12 @@
     .header--nav__fix
       .header--nav__fix--logo
         = link_to root_path do
-          -# = link_to '食らうどファンディング', root_path
           = image_tag "applogo.JPG", class:"logo-image"
       = form_with url: search_shops_path do |f|
         .search-field
           .fas.fa-search
           .shop_search
-            = f.text_field :text, placeholder: "店舗を検索", id: "shop_search"
+            = f.text_field :text, placeholder: "店舗・住所で検索", id: "shop_search"
           #shop_search--result
             .shop-search-list
       = link_to new_guest_path do
@@ -42,8 +41,13 @@
                 .fas.fa-sign-out-alt
                   ログアウト
         - else
-          %li
-            = link_to "Sign-up", new_user_registration_path
-          %li
-            = link_to "Sign-in", user_session_path
+          %ul.header-menu
+            = link_to new_user_registration_path do
+              %li.header-menu__list
+                .fas.fa-user-plus
+                ユーザー新規作成
+            = link_to user_session_path do
+              %li.header-menu__list
+                .fas.fa-sign-in-alt
+                ログイン
 
