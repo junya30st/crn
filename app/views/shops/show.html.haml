@@ -26,10 +26,10 @@
                       = image_tag "#{image.image}", class: 'shop-show-img'
                     - else
                       = image_tag("noImage.png", class: 'shop-show-img')
-              -# .left-contents--image--small
-              -#   - @shop.shop_images.each do |image|
-              -#     .left-contents--image--small--box
-              -#       = image_tag "#{image.image}", class: 'shop-show-img-sml'
+              .left-contents--image--small
+                - @shop.shop_images.each do |image|
+                  .left-contents--image--small--box
+                    = image_tag "#{image.image}", class: 'shop-show-img-sml'
                 
         .shop-show--wrapper__fix--contents__right
           .right
