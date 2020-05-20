@@ -40,6 +40,7 @@
         }
         .button-register{
           padding-top: 30px;
+          color: #fff;
         }
       }
     }
@@ -52,7 +53,8 @@
   width: 100px;
   border: 1px solid rgb(253, 196, 37);
   cursor: pointer;
-  font-size: 16px #222222;
+  font-size: 16px;
+  color: #222222;
 }
 
 // サインインページ
@@ -106,4 +108,18 @@
       }
     }
   }
+}
+
+.sns-registration{
+  margin-top: 30px;
+  &__twitter{
+    display: inline-block;
+    padding: 5px 10px 5px;
+    background: #1da1f2;
+    color: #fff;
+  }
+}
+
+.sns-registration a{
+  text-decoration: none;
 }

@@ -14,7 +14,8 @@
             -# = link_to users_path, method: :delete do
             -#   .user-show--menu--destroy
             -#     ユーザーを削除する
-            = link_to "カード詳細", card_path(@card)
+            - if @card.present?
+              = link_to "カード詳細", card_path(@card)
 
         .user-show__wrapper__fix--contents
           .user-img

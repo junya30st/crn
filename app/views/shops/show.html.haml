@@ -1,98 +1,115 @@
 = render "shared/header"
 
-%section.shop-show
-  .shop-show--wrapper
-    .shop-show--wrapper__fix
-      .shop-show--wrapper__fix--name
-        .shop-show--wrapper__fix--name--top
-          = @shop.name
-        - if user_signed_in? && @shop.user_id == current_user.id
-          .shop-show--wrapper__fix--name--button
-            = link_to edit_shop_path(@shop.id) do
-              .link_shop-edit
-                編集する
-            = link_to shop_path(@shop.id),method: :delete, data: { confirm: '本当に削除してよろしいですか？' } do
-              .link_shop-edit
-                削除する
+.shop-show-all
+  .shop-show-main
+    %section.shop-show
+      .shop-show--wrapper
+        .shop-show--wrapper__fix
+          .shop-show--wrapper__fix--name
+            .shop-show--wrapper__fix--name--top
+              = @shop.name
+            - if user_signed_in? && @shop.user_id == current_user.id
+              .shop-show--wrapper__fix--name--button
+                = link_to edit_shop_path(@shop.id) do
+                  .link_shop-edit
+                    編集する
+                = link_to shop_path(@shop.id),method: :delete, data: { confirm: '本当に削除してよろしいですか？' } do
+                  .link_shop-edit
+                    削除する
 
-      .shop-show--wrapper__fix--contents
-        .shop-show--wrapper__fix--contents__left
-          .left-contents
-            .left-contents--image
-              .left-contents--image--main
-                - @shop.shop_images.each_with_index do |image, i|
-                  .left-contents--image--main--box{data: {id: i}}
-                    - if image.present?
-                      = image_tag "#{image.image}", class: 'shop-show-img'
-                    - else
-                      = image_tag("noImage.png", class: 'shop-show-img')
-              .left-contents--image--small
-                - @shop.shop_images.each do |image|
-                  .left-contents--image--small--box
-                    = image_tag "#{image.image}", class: 'shop-show-img-sml'
-                
-        .shop-show--wrapper__fix--contents__right
-          .right
-            .right-contents
-              .right-contents--category
-                .fas.fa-tag
-                  = @shop.category.name
-              .right-contents--location
-                住所：
-                = @shop.location
-              .right-contents--time
-                営業時間：
-                %br
-                ランチ
-                = @shop.open_time.strftime("%H:%M")
-                〜
-                = @shop.close_time.strftime("%H:%M")
-                L.O.
-                = @shop.lunch_last.strftime("%H:%M")
-                %br
-                ディナー
-                = @shop.dinner_open.strftime("%H:%M")
-                〜
-                = @shop.dinner_close.strftime("%H:%M")
-                L.O.
-                = @shop.dinner_last.strftime("%H:%M")
+          .shop-show--wrapper__fix--contents
+            .shop-show--wrapper__fix--contents__left
+              .left-contents
+                .left-contents--image
+                  .left-contents--image--main
+                    - @shop.shop_images.each_with_index do |image, i|
+                      .left-contents--image--main--box{data: {id: i}}
+                        - if image.present?
+                          = image_tag "#{image.image}", class: 'shop-show-img'
+                        - else
+                          = image_tag("noImage.png", class: 'shop-show-img')
+                  .left-contents--image--small
+                    - @shop.shop_images.each do |image|
+                      .left-contents--image--small--box
+                        = image_tag "#{image.image}", class: 'shop-show-img-sml'
+                    
+            .shop-show--wrapper__fix--contents__right
+              .right
+                .right-contents
+                  .right-contents--category
+                    .fas.fa-tag
+                      = @shop.category.name
+                  .right-contents--location
+                    住所：
+                    = @shop.location
+                  .right-contents--time
+                    営業時間：
+                    %br
+                    ランチ
+                    = @shop.open_time.strftime("%H:%M")
+                    〜
+                    = @shop.close_time.strftime("%H:%M")
+                    L.O.
+                    = @shop.lunch_last.strftime("%H:%M")
+                    %br
+                    ディナー
+                    = @shop.dinner_open.strftime("%H:%M")
+                    〜
+                    = @shop.dinner_close.strftime("%H:%M")
+                    L.O.
+                    = @shop.dinner_last.strftime("%H:%M")
 
-              .right-contents--url
-                URL：http://aaaaaaaaaaaaaaaaaaaaa
-              .right-contents--tel
-                TEL：080-1234-5678
-              
-      .shop-show--wrapper__fix--introduction
-        = @shop.introduction
-      .shop-show--wrapper__fix--button
-        - if user_signed_in? && @shop.user_id == current_user.id
-          .shop-show--wrapper__fix--button--menu
-            = link_to "#" do
-              .submit-button.show-submit
-                メニューを作成する
-        
-        - if user_signed_in? && @shop.user_id == current_user.id
-          .shop-show--wrapper__fix--button--product
-            = link_to new_shop_product_path(@shop.id) do
-              .submit-button.show-submit
-                プロダクトを作成する
+                  .right-contents--url
+                    URL：http://aaaaaaaaaaaaaaaaaaaaa
+                  .right-contents--tel
+                    TEL：080-1234-5678
+                  
+          .shop-show--wrapper__fix--introduction
+            = @shop.introduction
+          .shop-show--wrapper__fix--button
+            - if user_signed_in? && @shop.user_id == current_user.id
+              .shop-show--wrapper__fix--button--menu
+                = link_to "#" do
+                  .submit-button.show-submit
+                    メニューを作成する
+            
+            - if user_signed_in? && @shop.user_id == current_user.id
+              .shop-show--wrapper__fix--button--product
+                = link_to new_shop_product_path(@shop.id) do
+                  .submit-button.show-submit
+                    プロダクトを作成する
 
-%section.shop-products
-  .shop-products__wrapper
-    .shop-products__wrapper__fix
-      - @shop.products.each do |product| 
-        .product__box
-          = link_to product_path(product) do
-            .product__box__in
-              .product__box__in--image
-                = image_tag 'mina.png', class: 'product_box_img'
-                -# = product.image
-              .product__box__in--name
-                = product.name
-              .product__box__in--price
-                = product.price
-                円
-              .product__box__in--intro
-                = product.introduction
+    %section.shop-products
+      .shop-products__wrapper
+        .shop-products__wrapper__fix
+          - @shop.products.each do |product| 
+            .product__box
+              = link_to product_path(product) do
+                .product__box__in
+                  .product__box__in--image
+                    = image_tag 'mina.png', class: 'product_box_img'
+                    -# = product.image
+                  .product__box__in--name
+                    = product.name
+                  .product__box__in--price
+                    = product.price
+                    円
+                  .product__box__in--intro
+                    = product.introduction
+
+  .shop-show-sub
+    .shop-show-sub__wrapper
+      .shop-show-sub__wrapper__fix
+        .twitter-timeline
+          タイムライン
+    
+        .shop-blog
+          .shop-blog--image
+            .shop-blog--image__content
+
+          .shop-blog--title
+            .shop-blog--title__content
+              ブログタイトル
+
 
 = render "shared/footer"
