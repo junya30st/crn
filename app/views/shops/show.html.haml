@@ -22,8 +22,8 @@
               .left-contents
                 .left-contents--image
                   .left-contents--image--main
-                    - @shop.shop_images.each_with_index do |image, i|
-                      .left-contents--image--main--box{data: {id: i}}
+                    - @shop.shop_images.each_with_index do |image|
+                      .left-contents--image--main--box
                         - if image.present?
                           = image_tag "#{image.image}", class: 'shop-show-img'
                         - else
@@ -100,16 +100,22 @@
   .shop-show-sub
     .shop-show-sub__wrapper
       .shop-show-sub__wrapper__fix
-        .twitter-timeline
-          タイムライン
-    
         .shop-blog
-          .shop-blog--image
-            .shop-blog--image__content
-
           .shop-blog--title
             .shop-blog--title__content
-              ブログタイトル
-
-
+              最新の投稿
+          .shop-blog--box
+            .shop-blog--box--title
+              .shop-blog--box--title__content
+                ブログタイトル
+            .shop-blog--box--image
+              .shop-blog--box--image__content
+                = image_tag "mina.png", class:"blog-img-shop-show"
+            .shop-blog--box--text
+              .shop-blog--box--text__content
+                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          .shop-blog--more
+            = link_to "" do
+              .link-blog-index
+                もっと見る→
 = render "shared/footer"
