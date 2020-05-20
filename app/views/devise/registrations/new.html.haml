@@ -30,6 +30,13 @@
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-box"
           .button-register
             = f.submit "登録する", class: "submit-button"
+          
+          .sns-registration
+            = link_to user_twitter_omniauth_authorize_path do
+              .sns-registration__twitter
+                .fab.fa-twitter
+                Twitterアカウントで登録
+
 
 = render "shared/footer"
 
