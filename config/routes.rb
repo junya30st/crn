@@ -11,12 +11,17 @@ Rails.application.routes.draw do
   resources :guests
   resources :categories
   resources :shops, shallow: true do
+    resources :blogs 
     resources :products do
       resources :transactions
     end
     collection do
       get 'search'
     end
+    member do
+      get 'blog'
+    end
+
   end
   
 end

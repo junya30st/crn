@@ -14,7 +14,7 @@
                   .link_shop-edit
                     編集する
                 = link_to shop_path(@shop.id),method: :delete, data: { confirm: '本当に削除してよろしいですか？' } do
-                  .link_shop-edit
+                  .link_shop-delete
                     削除する
 
           .shop-show--wrapper__fix--contents
@@ -63,21 +63,20 @@
                     URL：http://aaaaaaaaaaaaaaaaaaaaa
                   .right-contents--tel
                     TEL：080-1234-5678
+                .right-create
+                  - if user_signed_in? && @shop.user_id == current_user.id
+                    .right-create__menu
+                      = link_to "#" do
+                        .button-menu-create
+                          メニューを作成する
+                  - if user_signed_in? && @shop.user_id == current_user.id
+                    .right-create__product
+                      = link_to new_shop_product_path(@shop.id) do
+                        .button-menu-create
+                          プロダクトを作成する
                   
           .shop-show--wrapper__fix--introduction
             = @shop.introduction
-          .shop-show--wrapper__fix--button
-            - if user_signed_in? && @shop.user_id == current_user.id
-              .shop-show--wrapper__fix--button--menu
-                = link_to "#" do
-                  .submit-button.show-submit
-                    メニューを作成する
-            
-            - if user_signed_in? && @shop.user_id == current_user.id
-              .shop-show--wrapper__fix--button--product
-                = link_to new_shop_product_path(@shop.id) do
-                  .submit-button.show-submit
-                    プロダクトを作成する
 
     %section.shop-products
       .shop-products__wrapper
@@ -104,18 +103,24 @@
           .shop-blog--title
             .shop-blog--title__content
               最新の投稿
-          .shop-blog--box
-            .shop-blog--box--title
-              .shop-blog--box--title__content
-                ブログタイトル
-            .shop-blog--box--image
-              .shop-blog--box--image__content
-                = image_tag "mina.png", class:"blog-img-shop-show"
-            .shop-blog--box--text
-              .shop-blog--box--text__content
-                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          .shop-blog--more
-            = link_to "" do
-              .link-blog-index
-                もっと見る→
+            - if user_signed_in? && @shop.user_id == current_user.id
+              .shop-blog--title__link
+                = link_to new_shop_blog_path(@shop.id) do
+                  投稿する
+          = link_to blog_path(@blog) do
+            .shop-blog--box
+              .shop-blog--box--image
+                .shop-blog--box--image__content
+                  = image_tag "#{@blog.image}", class: "blog-img-shop-show"
+              .shop-blog--box--title
+                .shop-blog--box--title__content
+                  = @blog.title
+              .shop-blog--box--text
+                .shop-blog--box--text__content
+                  = @blog.content
+            .shop-blog--more
+              = link_to blog_shop_path(@shop) do
+                .link-blog-index
+                  もっと見る→
+
 = render "shared/footer"
