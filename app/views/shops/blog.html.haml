@@ -1,0 +1,19 @@
+= render "shared/header"
+
+.shop-blog
+  .shop-blog__wrapper
+    .shop-blog__wrapper__fix
+      .shop-blog__wrapper__fix--copy
+        .copy-content
+          = @shop.name + "のブログ一覧"
+      .shop-blog__wrapper__fix--contents
+        - @shop.blogs.each do |blog|
+          .contents-box
+            .contents-box--date
+              = blog.created_at.strftime("%Y-%m-%d")
+            .contents-box--title
+              = blog.title
+            .contents-box--content
+              = blog.content
+
+= render "shared/footer"

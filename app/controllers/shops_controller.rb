@@ -1,7 +1,7 @@
 class ShopsController < ApplicationController
   protect_from_forgery except: :index
   before_action :authenticate_user!, only:[:new, :create]
-  before_action :set_shops,only: [:show, :edit, :update, :destroy]
+  before_action :set_shops,only: [:show, :edit, :update, :destroy, :blog]
 
   def index
     @shop = Shop.includes(:user).order("id DESC")
@@ -21,6 +21,7 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @blog = Blog.where(shop_id: @shop.id).order("id DESC").first
   end
 
   def edit
@@ -38,6 +39,10 @@ class ShopsController < ApplicationController
     # @shop = Shop.find(params[:id])
     @shop.destroy
     redirect_to shops_path
+  end
+
+  def blog
+    
   end
 
   def search
