@@ -107,6 +107,7 @@
               .shop-blog--title__link
                 = link_to new_shop_blog_path(@shop.id) do
                   投稿する
+        - if @blog.present?
           = link_to blog_path(@blog) do
             .shop-blog--box
               .shop-blog--box--image
@@ -122,5 +123,7 @@
               = link_to blog_shop_path(@shop) do
                 .link-blog-index
                   もっと見る→
+        - else
+          まだ投稿がありません
 
 = render "shared/footer"
