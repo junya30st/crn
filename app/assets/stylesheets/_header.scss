@@ -1,7 +1,7 @@
 .header{
   width: 100%;
   height: 60px;
-  min-width: 1120px;
+  // min-width: 1120px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.2);
   position: relative;
   &--nav{
@@ -108,3 +108,126 @@
   }
 }
 
+// レスポンシブ
+
+@media (max-width: 559px) {
+  .header{
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.2);
+    position: relative;
+    &--nav{
+      &__fix{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        position: relative;
+        &--logo{
+          display: block;
+          margin: 0 18px 0 0;
+          .logo-image{
+            height: 60px;
+          }
+        }
+        .search-field{
+          position: relative;
+          .fas{
+            position: absolute;
+            top: 23px;
+            color: #a3a3a3;
+          }
+          .shop_search{
+            // line-height: 60px;
+            line-height: 60px;
+            #shop_search{
+              padding: 0 0 0 25px;
+              height: 40px;
+              width: 8rem;
+              border: none;
+              border-bottom: 1px solid #dddddd;
+              font-size: 14px;
+            }
+            #shop_search:focus {
+              outline: none;
+            }
+          }
+          #shop_search--result{
+            .shop-search-list {
+            }
+          }
+          #shop_search--result a{
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            color: #222222;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border: 1px solid #dddddd;
+            background: white;
+            border-radius: 4px;
+            z-index: 100;
+            position: sticky;
+          }
+        }
+        &--intro{
+          line-height: 60px;
+          position: absolute;
+          right: 80px;
+          color: #222222
+        }
+        &--intro:hover {
+          color: #6d6d6d;
+        }
+        &--menu{
+          font-size: larger;
+          color: #aaaaaa;
+          position: absolute;
+          right: 18px;
+          display: block;
+          top: 10px;
+          cursor: pointer;
+          user-select: none;
+          padding: 5px 8px 5px;
+          border: 1px solid #dddddd;
+          border-radius: 50%;
+        }
+        #menu-lists{
+          display: none;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          border: 1px solid #dddddd;
+          border-radius: 4px;
+          z-index: 100;
+          background: white;
+          .header-menu{
+            padding: 0;
+            &__list{
+              list-style: none;
+              padding: 10px;
+              border-bottom: 1px solid #dddddd;
+            }
+            &__list--last{
+              list-style: none;
+              padding: 10px;
+            }
+          }
+          .header-menu a{
+            text-decoration: none;
+            color: #222222;
+          }
+        }
+      }
+    }
+  }
+  .footer{
+    height: 100px;
+    width: 100%;
+    &--box{
+      text-align: center;
+      &--copy{
+        line-height: 100px;
+      }
+    }
+  }
+}
