@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
   before_action :set_shops,only: [:show, :edit, :update, :destroy, :blog]
 
   def index
-    @shop = Shop.includes(:user).order("id DESC")
+    @shop = Shop.includes(:user).order("id DESC").page(params[:page]).without_count.per(6)
     @category = Category.all
   end
 

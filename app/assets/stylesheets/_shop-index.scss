@@ -51,6 +51,7 @@
         &--title{
           display: inline-block;
           border-bottom: 1px solid #dddddd;
+          margin-bottom: 10px;
           .title-p-index{
             font-size:  25px;
           }
@@ -63,7 +64,7 @@
           border-left: 1px solid #dddddd;
           border-right: 1px solid #dddddd;
           .contents-p-index{
-            padding: 20px 0 40px;
+            // padding: 20px 0 0;
             width: 95%;
             margin: 0 auto;
             display: flex;
