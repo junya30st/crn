@@ -75,3 +75,89 @@
     font-size: 20px #222222;
   }
 }
+
+
+
+
+@media (max-width: 559px) {
+  .cards-new{width: 100%;
+    min-height: calc(100vh - 160px);
+    &__wrapper{
+      width: 100%;
+      margin: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      &__fix{
+        padding: 10px 0 10px;
+        &__title{
+          text-align: center;
+          &--content{
+            font-size: 25px;
+          }
+        }
+        &__form{
+          background: #dddddd;
+          padding: 10px;
+          &--number{
+            width: 90%;
+            margin: 0 auto;
+            text-align: left;
+            .input-card-number{
+              margin-top: 8px;
+              width: 100%;
+              height: 2rem;
+            }
+          }
+          &--logo{
+  
+          }
+          &--limit{
+            width: 90%;
+            margin: 10px auto 0;
+            text-align: left;
+            .select-card-month{
+              height: 2rem;
+              width: 20%;
+              background: #fff;
+              margin-top: 8px;
+              border: 1px solid #dddddd;
+              border-radius: 0;
+            }
+            .select-card-year{
+              height: 2rem;
+              width: 20%;
+              background: #fff;
+              margin-top: 8px;
+              border: 1px solid #dddddd;
+              border-radius: 0;
+            }
+          }
+          &--cvc{
+            width: 90%;
+            margin: 10px auto 0;
+            text-align: left;
+            .input-card-cvc{
+              margin-top: 8px;
+                width: 100%;
+                height: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .button-submit{
+    font-size: 16px;
+    margin-top: 50px;
+    text-align: center;
+    .card-submit{
+      background: rgb(253, 196, 37);
+      height: 40px;
+      width: 100px;
+      border: 1px solid rgb(253, 196, 37);
+      cursor: pointer;
+      font-size: 20px #222222;
+    }
+  }
+}
