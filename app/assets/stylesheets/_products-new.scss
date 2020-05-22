@@ -91,3 +91,119 @@
     }
   }
 }
+
+@media (max-width: 559px) {
+  .product-new{
+    width: 100%;
+    &__wrapper{
+      width: 100%;
+      margin: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      &__fix{
+        padding: 20px 0 20px;
+        &--title{
+          text-align: center;
+          .product-new__title{
+            font-size: 25px;
+            margin: 20px 0 20px;
+          }
+        }
+        &--contents{
+          display: flex;
+          background-color: #dddddd;
+          padding-bottom: 30px;
+          flex-direction: column;
+          .product-new__contents--left{
+            width: 100%;
+            .product-new__contents--left__forms{
+              width: 90%;
+              margin: 0 auto;
+              text-align: left;
+              .product-new--form{
+                .form-must{
+                  padding: 3px;
+                  border-radius: 4px;
+                  background-color: rgb(243, 86, 65);
+                  color: white;
+                }
+                width: 100%;
+                padding-top: 30px;
+                .form-box{
+                  margin-top: 8px;
+                  width: 100%;
+                  height: 2rem;
+                }
+              }
+              .product-new--price{
+                .form-must{
+                  padding: 3px;
+                  border-radius: 4px;
+                  background-color: rgb(243, 86, 65);
+                  color: white;
+                }
+                width: 100%;
+                padding-top: 30px;
+                .form-box{
+                  margin-top: 8px;
+                  width: 100%;
+                  height: 2rem;
+                }
+              }
+              .product-new--limit{
+                width: 100%;
+                padding-top: 30px;
+                .select{
+                  font-size: 1rem;
+                  margin-top: 8px;
+                  width: 100%;
+                  height: 2rem;
+                }
+                .form-must{
+                  padding: 3px;
+                  border-radius: 4px;
+                  background-color: rgb(243, 86, 65);
+                  color: white;
+                }
+              }
+              .product-new--number{
+                .number-field{
+                  font-size: 1rem;
+                  margin-top: 8px;
+                  width: 100%;
+                  height: 2rem;
+                }
+              }
+            }
+          }
+          .product-new__contents--right{
+            width: 100%;
+            .form-must{
+              padding: 3px;
+              border-radius: 4px;
+              background-color: rgb(243, 86, 65);
+              color: white;
+            }
+            &--area{
+              padding-top: 30px;
+              width: 90%;
+              margin: 0 auto;
+              .form-area{
+                margin-top: 8px;
+                width: 100%;
+                height: 10rem;
+                resize: none;
+              }
+            }
+          }
+        }
+        .product-new--submit{
+          text-align: center;
+          .submit-button-shop{
+
+          }
+        }
+      }
+    }
+  }
+}

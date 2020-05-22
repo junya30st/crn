@@ -24,12 +24,13 @@
                 %label{class: 'label-product'} 期限
                 %span{class: 'form-must'} 必須
                 %br
-                = f.select :limit, Product.limits.keys,{}
+                = f.select :limit, Product.limits.keys,{}, class: "select"
               .product-new-number
                 %label{class: 'label-product'} 個数
                 %span{class: 'form-must'} 必須
                 %br
-                = f.number_field :number
+                = f.number_field :number, class: "number-field"
+                個
           .product-new__contents--right
             .product-new__contents--right--area
               %label{class: 'label-product'} 商品説明

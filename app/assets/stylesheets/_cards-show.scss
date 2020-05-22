@@ -52,3 +52,65 @@
     }
   }
 }
+
+
+
+
+@media (max-width: 559px) {
+  .cards-show{
+    width: 100%;
+    min-height: calc(100vh - 160px);
+    &__wrapper{
+      width: 100%;
+      margin: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      &__fix{
+        &__title{
+          padding: 10px 0 10px;
+          text-align: center;
+          &--content{
+            font-size: 25px;
+          }
+        }
+        &__details{
+          background-color: #eeeeee;
+          padding: 10px;
+          &--detail{
+            .label-up{
+              display: inline-block;
+              font-size: 16px;
+              border-bottom: 1px solid #222222;
+            }
+            .register-card-number{
+              font-size: 22px;
+  
+            }
+            .register-card-limit{
+              font-size: 22px;
+            }
+          }
+        }
+        &__submits{
+          font-size: 16px;
+          margin-top: 50px;
+          text-align: center;
+          align-items: center;
+          &--button{
+            background: #eeeeee;
+            width: 100px;
+            padding: 5px 10px 5px;
+            border: 1px solid #eeeeee;
+            cursor: pointer;
+            margin: 0 auto;
+            align-items: center;
+          }
+        }
+        &__submits a{
+          text-decoration: none;
+          color: #222222;
+        }
+      }
+    }
+  }
+}  
