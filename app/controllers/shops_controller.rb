@@ -10,7 +10,7 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
-    6.times {@shop.shop_images.build}
+    4.times {@shop.shop_images.build}
     @category = Category.all
   end
 
