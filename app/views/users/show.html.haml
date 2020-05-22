@@ -11,7 +11,7 @@
             = link_to edit_user_registration_path do
               .user-show--menu--edit
                 編集する
-            -# = link_to users_path, method: :delete do
+            -# = link_to users_path, method: :destroy do
             -#   .user-show--menu--destroy
             -#     ユーザーを削除する
             - if @card.present?
@@ -51,14 +51,17 @@
   %section.user-shop
     .user-shop__wrapper
       .user-shop__wrapper__fix
-        - @user.shops.each do |product|
-          .product__box
-            .product__box--image
-              = image_tag 'mina.png', class: 'product_box_img'
-            .product__box--intro
-              = product.introduction
-            .product__box--name
-              = product.name
+        .user-shop__wrapper__fix--title
+          .user-shop-title
+            店舗一覧
+          - @user.shops.each do |product|
+            .product__box
+              .product__box--image
+                = image_tag 'mina.png', class: 'product_box_img'
+              .product__box--intro
+                = product.introduction
+              .product__box--name
+                = product.name
 
 = render "shared/footer"
 
