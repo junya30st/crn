@@ -45,5 +45,7 @@
                       .text-box__intro
                         .intro
                           = truncate(shop.introduction, length:62)
+          = link_to_prev_page @shop, '前のページ', class: "prev"
+          = link_to_next_page @shop, '次のページ', class: "next"
 
 = render "shared/footer"

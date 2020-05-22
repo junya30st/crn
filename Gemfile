@@ -75,3 +75,4 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem "mini_magick"
 gem 'payjp'
 gem 'omniauth-twitter'
+gem 'kaminari'

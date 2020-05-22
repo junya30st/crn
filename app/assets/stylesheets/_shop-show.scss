@@ -6,9 +6,9 @@
 
   .shop-show-main{
     width: 75%;
+    min-height: calc(100vh - 210px);
     .shop-show{
       width: 100%;
-      min-height: calc(100vh - 210px);
       &--wrapper{
         // width: 50%;
         margin: 0 auto;
@@ -56,7 +56,7 @@
           &--contents{
             display: flex;
             border-top: 1px solid #dddddd;
-            padding: 20px 10px 10px;
+            padding: 20px 0 10px;
             &__left{
               width: 50%;
               .left-contents{
@@ -64,17 +64,17 @@
                 margin: 0 auto;
                 // padding: 0 10px 0;
                 &--image{
-                  width: 400px;
-                  margin: 0 auto;
+                  width: 500px;
+                  // margin: 0 auto;
                   overflow: hidden;
                   &--main{
                     width: 2000px;
-                    height: 300px;
+                    // height: 300px;
                     display: flex;
                     position: relative;
                     &--box{
                     
-                      height: 300px;
+                      // height: 300px;
                       // position: absolute;
                     }
                   }
@@ -162,9 +162,7 @@
     .shop-products{
       width: 100%;
       &__wrapper{
-        width: 50%;
-        margin: 0 auto;
-        // background: #fffbf9;
+
         &__fix{
           padding: 20px 0 20px;
           display: flex;
@@ -201,13 +199,13 @@
         padding: 50px 0 20px;
         .shop-blog{
           box-sizing: border-box;
-          padding: 10px;
+          // padding: 10px;
           &--title{
             padding-bottom: 10px;
             display: flex;
             justify-content: space-between;
             &__content{
-              font-size: 22px;
+              font-size: 28px;
             }
             &__link{
 
@@ -266,6 +264,10 @@
           text-decoration: none;
           color: #222222;
         }
+      }
+      &__fix a{
+        text-decoration: none;
+        color: #222222;
       }
     }
   }

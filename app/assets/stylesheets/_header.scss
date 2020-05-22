@@ -41,7 +41,6 @@
         }
         #shop_search--result{
           .shop-search-list {
-            
           }
         }
         #shop_search--result a{
@@ -53,6 +52,8 @@
           border: 1px solid #dddddd;
           background: white;
           border-radius: 4px;
+          z-index: 100;
+          position: sticky;
         }
       }
       &--intro{
