@@ -22,6 +22,7 @@
 @import "cards";
 @import "cards-show";
 @import "shop-blog";
+@import "category-show";
 
 
 // @import "scaffolds";
@@ -30,7 +31,12 @@ body{
   font-family: "Sawarabi Gothic"; ;
 }
 
+input{
+  border: 1px solid #dddddd;
+}
 
+select{
+}
 
 
 /*

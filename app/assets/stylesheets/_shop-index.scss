@@ -1,5 +1,5 @@
 .shop-index{
-  width: 100%;
+  min-width: 1680px;
 
   &__wrapper{
     width: 70%;
@@ -41,6 +41,10 @@
                   top: 9px;
                 }
               }
+            }
+            &__box a{
+              text-decoration: none;
+              color: #222222;
             }
           }
         }
@@ -171,7 +175,7 @@
 
 @media (max-width: 559px) {
   .shop-index{
-    width: 100%;
+    min-width: 100%;
     &__wrapper{
       width: 100%;
       background: #fffbf9;

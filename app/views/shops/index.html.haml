@@ -11,9 +11,10 @@
           .left-contents__fix
             .left-contents__fix__box
               - @category.each do |category|
-                .left-contents__fix__box--inner
-                  = category.name
-                  .fas.fa-angle-right
+                = link_to category_path(category.id) do
+                  .left-contents__fix__box--inner
+                    = category.name
+                    .fas.fa-angle-right
       .shop-index__wrapper__fix--right
         .shop-index__wrapper__fix--right--title
           .title-p-index

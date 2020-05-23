@@ -1,0 +1,34 @@
+= render "shared/header"
+
+.category-show
+  .category-show__wrapper
+    .category-show__wrapper__fix
+      .category-show__wrapper__fix--copy
+        .copy-content
+          ジャンル別一覧：
+          = @category.name
+      .category-show__wrapper__fix--contents
+        .category-show__wrapper__fix--contents__wrapper
+          - if @shops.present?
+            - @shops.each do |shop|
+              .contents-box
+                = link_to shop_path(shop.id) do
+                  .contents-box__in
+                    .contents-box__in--image
+                      - shop.shop_images.first(1).each do |image|
+                        = image_tag "#{image.image}", class: "category-show-img"
+                    .contents-box__in--texts
+                      .contents-box__in--texts--name
+                        .name
+                          = shop.name
+                      .contents-box__in--texts--location
+                        .fas.fa-map-marker-alt
+                        .location
+                          = shop.location
+                      .contents-box__in--texts--introduction
+                        .intro
+                          = shop.introduction
+          - else
+            このカテゴリの店舗はまだありません。
+
+= render "shared/footer"
