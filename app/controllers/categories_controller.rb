@@ -10,6 +10,11 @@ class CategoriesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @category = Category.find(params[:id])
+    @shops = Shop.where(category_id: @category.id)
+  end
+
   private
 
   def category_params
