@@ -66,7 +66,7 @@
                 .right-create
                   - if user_signed_in? && @shop.user_id == current_user.id
                     .right-create__menu
-                      = link_to "#" do
+                      = link_to new_shop_menu_path(@shop.id) do
                         .button-menu-create
                           メニューを作成する
                   - if user_signed_in? && @shop.user_id == current_user.id
@@ -80,6 +80,22 @@
             %br
             = @shop.introduction
 
+    %section.shop-menu
+      .shop-menu__wrapper
+        .shop-menu__wrapper__fix
+          - @shop.menus.first(4).each do |menu|
+            .menu-box
+              .menu-box__in
+                .menu-box__in--up
+                  .menu-box__in--up__name
+                    = menu.name
+                  .menu-box__in--up__price
+                    = menu.price
+                    円(税抜)
+                .menu-box__in--down
+                  .menu-box__in--down__introduction
+                    = menu.introduction
+                    
     %section.shop-products
       .shop-products__wrapper
         .shop-products__wrapper__fix

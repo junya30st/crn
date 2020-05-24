@@ -1,7 +1,7 @@
 class ShopsController < ApplicationController
   protect_from_forgery except: :index
   before_action :authenticate_user!, only:[:new, :create]
-  before_action :set_shops,only: [:show, :edit, :update, :destroy, :blog]
+  before_action :set_shops,only: [:show, :edit, :update, :destroy, :blog, :menu]
 
   def index
     @shop = Shop.includes(:user).order("id DESC").page(params[:page]).without_count.per(6)
@@ -42,7 +42,9 @@ class ShopsController < ApplicationController
   end
 
   def blog
-    
+  end
+
+  def menu
   end
 
   def search

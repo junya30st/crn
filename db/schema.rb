@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_000524) do
+ActiveRecord::Schema.define(version: 2020_05_24_055651) do
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 2020_05_21_000524) do
   create_table "guests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "introduction"
+    t.integer "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "shop_id"
+    t.index ["shop_id"], name: "index_menus_on_shop_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -118,6 +128,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_000524) do
 
   add_foreign_key "blogs", "shops"
   add_foreign_key "cards", "users"
+  add_foreign_key "menus", "shops"
   add_foreign_key "products", "shops"
   add_foreign_key "shop_images", "shops"
   add_foreign_key "shops", "categories"
