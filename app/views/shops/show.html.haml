@@ -1,5 +1,6 @@
 = render "shared/header"
 
+-# タイトル表示部
 .shop-show-all
   .shop-show-main
     %section.shop-show
@@ -17,6 +18,7 @@
                   .link_shop-delete
                     削除する
 
+          -# 画像表示部
           .shop-show--wrapper__fix--contents
             .shop-show--wrapper__fix--contents__left
               .left-contents
@@ -32,9 +34,13 @@
                     - @shop.shop_images.each do |image|
                       .left-contents--image--small--box
                         = image_tag "#{image.image}", class: 'shop-show-img-sml'
-                    
+
+            -# 基本情報表示部
             .shop-show--wrapper__fix--contents__right
               .right
+                .right-copy
+                  .right-copy-contents
+                    基本情報
                 .right-contents
                   .right-contents--category
                     .fas.fa-tag
@@ -58,7 +64,6 @@
                     = @shop.dinner_close.strftime("%H:%M")
                     L.O.
                     = @shop.dinner_last.strftime("%H:%M")
-
                   .right-contents--url
                     URL：http://aaaaaaaaaaaaaaaaaaaaa
                   .right-contents--tel
@@ -74,14 +79,22 @@
                       = link_to new_shop_product_path(@shop.id) do
                         .button-menu-create
                           プロダクトを作成する
-                  
+
+          -# 店舗紹介文表示部
           .shop-show--wrapper__fix--introduction
             店舗紹介：
             %br
             = @shop.introduction
 
+    -# メニュー表示部
     %section.shop-menu
       .shop-menu__wrapper
+        .shop-menu__wrapper--copy
+          .shop-menu__wrapper--copy__contents
+            メニュー
+          = link_to menu_shop_path(@shop) do
+            .shop-menu__wrapper--copy__more
+              もっと見る →
         .shop-menu__wrapper__fix
           - @shop.menus.first(4).each do |menu|
             .menu-box
@@ -95,25 +108,30 @@
                 .menu-box__in--down
                   .menu-box__in--down__introduction
                     = menu.introduction
-                    
+
+    -# プロダクト表示部
     %section.shop-products
       .shop-products__wrapper
+        .shop-products__wrapper--copy
+          .shop-products__wrapper--copy__contents
+            プロダクト一覧
         .shop-products__wrapper__fix
-          - @shop.products.each do |product| 
+          - @shop.products.first(4).each do |product| 
             .product__box
               = link_to product_path(product) do
                 .product__box__in
                   .product__box__in--image
                     = image_tag 'mina.png', class: 'product_box_img'
-                    -# = product.image
                   .product__box__in--name
                     = product.name
                   .product__box__in--price
                     = product.price
                     円
                   .product__box__in--intro
-                    = product.introduction
+                    .product__box__in--intro__content
+                      = product.introduction
 
+  -# ブログ表示部
   .shop-show-sub
     .shop-show-sub__wrapper
       .shop-show-sub__wrapper__fix

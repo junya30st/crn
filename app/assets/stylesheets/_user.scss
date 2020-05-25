@@ -48,7 +48,7 @@
           .user-img{
             width: 30%;
             height: auto;
-            padding: 20px;
+            margin: 20px 0 0 20px;
           }
           .user-texts{
             width: 70%;
@@ -98,9 +98,6 @@
           width: 100%;
           display: inline-flex;
           flex-wrap: wrap;
-          // width: 50%;
-          // display: flex;
-          // flex-wrap: wrap;
           &--fix{
             width: 50%;
             padding: 10px;
@@ -109,17 +106,37 @@
             .user-transaction__box{
               width: 100%;
               height: 100px;
-              box-shadow: 0 3px 7px 0 rgba(0,0,0,.35);
+              // box-shadow: 0 3px 7px 0 rgba(0,0,0,.35);
               border-radius: 4px;
               overflow: hidden;
-              &--name{
-                font-size: 18px;
-                font-weight: bold;
+              display: flex;
+              &--image{
+                height: 100%;
+                width: auto;
+                
+                .transaction_box_img{
+                  height: 100%;
+                  width: auto;
+                  object-fit: cover;
+                }
               }
-              &--introduction{
-
-              }
-              &--created{
+              &--texts{
+                padding: 0 10px 0;
+                font-size: 12px;
+                &--name{
+                  font-size: 14px;
+                  font-weight: bold;
+                }
+                &--created{
+                  margin-top: 4px;
+                }
+                &--introduction{
+                  margin-top: 4px;
+                  height: 3rem;
+                  overflow: hidden;
+                  .inner-content{
+                  }
+                }
 
               }
             }
@@ -141,6 +158,10 @@
       &__fix{
         &--title{
           .user-shop-title{
+            display: inline-block;
+            font-size: 25px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #dddddd;
           }
         }
         &--contents{
@@ -156,14 +177,11 @@
               &__in{
                 &--image{
                 }
-                &--intro{
-                  padding: 10px;
-                }
                 &--name{
-                  padding: 10px;
+                  margin-top: 8px;
                 }
-                &--price{
-                  padding: 10px;
+                &--intro{
+                  margin-top: 8px;
                 }
               }
             }
