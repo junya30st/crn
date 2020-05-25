@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks'
-    # :sessions => 'users/sessions'
   }
 
   root 'shops#index'
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
   resources :guests
   resources :categories
   resources :shops, shallow: true do
+    resources :menus, only: [:new, :create, :edit, :update, :destroy]
     resources :blogs 
     resources :products do
       resources :transactions
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end
     member do
       get 'blog'
+      get 'menu'
     end
 
   end

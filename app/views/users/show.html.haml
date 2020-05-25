@@ -22,7 +22,7 @@
             - if @user.image.present?
               = image_tag "#{@user.image}", class: "user-img-show"
             - else
-              = image_tag("noImage.png", class: "user-img-show")
+              = image_tag("mina.png", class: "user-img-show")
           .user-texts
             .user-texts--name
               = @user.name
@@ -35,18 +35,22 @@
         .user-transactions__wrapper__fix--title
           .user-transaction__title
             返礼品一覧
-        .user-transactions__wrapper__fix--contents
-          - @user.transactions.each do |t|
+        .user-transactions__wrapper__fix--contents 
+          - @user.transactions.first(4).each do |t|
             .user-transactions__wrapper__fix--contents--fix
               = link_to transaction_path(t) do
                 .user-transaction__box
-                  .user-transaction__box--name
-                    = t.name
-                  .user-transaction__box--created
-                    使用期限：
-                    = t.period
-                  .user-transaction__box--introduction
-                    = truncate(t.introduction, length: 60)
+                  .user-transaction__box--image
+                    = image_tag 'mina.png', class: 'transaction_box_img'
+                  .user-transaction__box--texts
+                    .user-transaction__box--texts--name
+                      = truncate(t.name, length: 20)
+                    .user-transaction__box--texts--created
+                      使用期限：
+                      = t.period
+                    .user-transaction__box--texts--introduction
+                      .inner-content
+                        = truncate(t.introduction, length: 60)
 
   %section.user-shop
     .user-shop__wrapper
@@ -54,14 +58,17 @@
         .user-shop__wrapper__fix--title
           .user-shop-title
             店舗一覧
-          - @user.shops.each do |product|
-            .product__box
-              .product__box--image
-                = image_tag 'mina.png', class: 'product_box_img'
-              .product__box--intro
-                = product.introduction
-              .product__box--name
-                = product.name
+        .user-shop__wrapper__fix--contents
+          .user-shop__wrapper__fix--contents__wrapper
+            - @user.shops.first(4).each do |product|
+              .product__box
+                .product__box__in
+                  .product__box__in--image
+                    = image_tag 'mina.png', class: 'product_box_img'
+                  .product__box__in--name
+                    = product.name
+                  .product__box__in--intro
+                    = product.introduction
 
 = render "shared/footer"
 

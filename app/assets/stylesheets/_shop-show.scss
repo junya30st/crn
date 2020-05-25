@@ -80,9 +80,10 @@
                   }
                   &--small{
                     width: 500px;
+                    margin: 0 auto;
                     display: flex;
                     &--box{
-                      width: 100px
+                      width: 100px;
                     }
                   }
                 }
@@ -96,7 +97,16 @@
                 font-weight: bold;
                 width: 90%;
                 margin: 0 auto;
+                &-copy{
+                  &-contents{
+                    display: inline-block;
+                    font-size: 22px;
+                    padding-bottom: 2px;
+                    border-bottom: 1px solid #dddddd;
+                  }
+                }
                 &-contents{
+                  background: #fff;
                   &--category{
                     font-size: 16px;
                     color: #222222;
@@ -136,12 +146,12 @@
                 &-create{
                   &__menu{
                     text-align: center;
-                    background-color: orange;
+                    background-color: #ff953d;
                     margin-top: 10px;
                   }
                   &__product{
                     text-align: center;
-                    background-color: orange;
+                    background-color: #ff953d;
                     margin-top: 10px;
                   }
                 }
@@ -153,38 +163,107 @@
             }
           }
           &--introduction{
-            width: 90%;
-            margin: 0 auto;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dddddd;
           }
         }
       }
     }
+    .shop-menu{
+      width: 100%;
+      
+      &__wrapper{
+        padding: 0 10px 0;
+        &--copy{
+          display: flex;
+          justify-content: space-between;
+          &__contents{
+            display: inline-block;
+            font-size: 22px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #dddddd;
+          }
+          &__more{
+            font-size: 14px;
+            padding: 5px 10px 5px;
+            background-color: #ff953d;
+          }
+        }
+        &__fix{
+          padding: 0 0 10px;
+          display: flex;
+          border-bottom: 1px solid #dddddd;
+          .menu-box{
+            padding: 10px;
+            box-sizing: border-box;
+            width: 50%;
+            &__in{
+              &--up{
+                font-size: 16px;
+                display: flex;
+                justify-content: space-between;
+                &__name{
+                }
+                &__price{
+
+                }
+              }
+              &--down{
+                &__introduction{
+                  font-size: 12px;
+                  color: #888888;
+                }
+              }
+            }
+          }
+        }
+        &--copy a{
+          text-decoration: none;
+          color: #222222;
+        }
+      }
+    }
+
+
     .shop-products{
       width: 100%;
       &__wrapper{
-
+        &--copy{
+          padding: 20px 0 0 10px;
+          &__contents{
+            display: inline-block;
+            font-size: 22px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #dddddd;
+          }
+        }
         &__fix{
-          padding: 20px 0 20px;
           display: flex;
           .product__box{
             font-size: 14px;
             box-sizing: border-box;
             width: 25%;
-            height: 380px;
+            height: 300px;
             padding: 10px;
-            &--image{
-              // padding: 0 10px 0;
+            &__in{
+              &--image{
+              }
+              &--name{
+                font-size: larger;
+              }
+              &--price{
+                margin-top: 8px;
+              }
+              &--intro{
+                margin-top: 8px;
+                height: 60px;
+                overflow: hidden;
+              }
             }
-            &--intro{
-              padding: 10px;
-              height: 60px;
-            }
-            &--name{
-              padding: 10px;
-            }
-            &--price{
-              padding: 10px;
-            }
+          }
+          .product__box a{
+            text-decoration: none;
+            color: #222222;
           }
         }
       }
@@ -251,7 +330,7 @@
               right: 0;
               display: inline-block;
               padding: 5px 10px 5px;
-              background: orange;
+              background: #ff953d;
               font-size: 14px;
             }
           }
