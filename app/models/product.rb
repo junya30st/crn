@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   
-belongs_to :shop, dependent: :destroy
+belongs_to :shop
+has_many :transactions, dependent: :destroy
 
 validates :name, presence: true
 validates :introduction, presence: true

@@ -3,6 +3,7 @@
   .user-show{
     width: 100%;
     border-top: 1px solid #dddddd;
+    padding: 20px 0 20px;
     &__wrapper{
       width: 60%;
       margin: 0 auto;
@@ -80,6 +81,7 @@
 
   .user-transactions{
     width: 100%;
+    padding: 20px 0 0 0;
     &__wrapper{
       width: 60%;
       margin: 0 auto;
@@ -152,6 +154,7 @@
 
   .user-shop{
     width: 100%;
+    padding: 20px 0 0 0;
     &__wrapper{
       width: 60%;
       margin: 0 auto;
@@ -178,12 +181,17 @@
                 &--image{
                 }
                 &--name{
-                  margin-top: 8px;
+                  margin-top: 4px;
                 }
                 &--intro{
-                  margin-top: 8px;
+                  font-size: 12px;
+                  margin-top: 4px;
                 }
               }
+            }
+            .product__box a{
+              text-decoration: none;
+              color: #222222;
             }
           }
         }

@@ -20,15 +20,29 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    @shop = Shop.find_by(id: @blog.shop_id)
   end
 
   def edit
+    @blog = Blog.find(params[:id])
   end
 
   def update
+    @blog = Blog.find(params[:id])
+    shops = current_user.shops
+    if shops.include?(@blog.shop)
+      @blog.update(blog_params) 
+      redirect_to blog_path(@blog)
+    else
+      render "edit"
+    end
   end
 
-  def delete
+  def destroy
+    @blog = Blog.find(params[:id])
+    shops = current_user.shops
+    if shops.include?(@blog.shop)
+    @blog.destroy
   end
 
   private

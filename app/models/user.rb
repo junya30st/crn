@@ -30,7 +30,7 @@ class User < ApplicationRecord
   
   has_many :shops
   has_many :card
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 

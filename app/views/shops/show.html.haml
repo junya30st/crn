@@ -24,7 +24,7 @@
               .left-contents
                 .left-contents--image
                   .left-contents--image--main
-                    - @shop.shop_images.each_with_index do |image|
+                    - @shop.shop_images.each do |image|
                       .left-contents--image--main--box
                         - if image.present?
                           = image_tag "#{image.image}", class: 'shop-show-img'

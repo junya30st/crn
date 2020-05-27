@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :transactions
     end
     collection do
+      get 'top'
       get 'search'
     end
     member do

@@ -1,27 +1,29 @@
 = render "shared/header"
 
-= form_with(model: [@shop, @blog], local: true, method: :post) do |f|
+= form_with(model: [@shop, @blog], local: true, method: :patch) do |f|
   .blog-new
     .blog-new--wrapper
       .blog-new--wrapper--fix
         .blog-new--wrapper__fix--title
-          ブログ新規投稿
+          ブログ編集
         .blog-new--wrapper__fix--contents
           .blog-new-form
             %label{class: 'label-up'} タイトル
             %span{class: 'form-must'} 必須
             %br
-            = f.text_field :title, placeholder: "タイトルを入力してください", class: "form-box"
+            = f.text_field :title, placeholder: "タイトルを入力してください", class: "form-box", value: "#{@blog.title}"
           .blog-new-form
             %label{class: 'label-up'} 画像
             %span{class: 'form-want'} 任意
             %br
             = f.file_field :image
+          .blog-new-form.notice
+            ※変更しない場合は画像選択なし
           .blog-new-form
             %label{class: 'label-up'} 本文
             %span{class: 'form-must'} 必須
             %br
-            = f.text_area :content, placeholder: "本文を入力してください", class: "blog-content-box"
+            = f.text_area :content, placeholder: "本文を入力してください", class: "blog-content-box", value: "#{@blog.content}"
           .button-register
             = f.submit "投稿する", class: "submit-button"
 
