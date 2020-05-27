@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   
-belongs_to :shop, dependent: :destroy
+belongs_to :shop
+has_many :transactions, dependent: :destroy
 
 validates :name, presence: true
 validates :introduction, presence: true
@@ -13,5 +14,7 @@ enum limit:{
   ６ヶ月:3,
   １年:4,
 },_prefix: true
+
+mount_uploader :image, ImageUploader
 
 end

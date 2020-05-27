@@ -1,1 +1,35 @@
-= @blog.title
+= render "shared/header"
+
+.blog-show
+  .blog-show--wrapper
+    .blog-show--wrapper__fix
+      .blog-show--wrapper__fix--date
+        .blog-show-date
+          投稿日：
+          = @blog.created_at.strftime("%Y-%m-%d")
+        .blog-show-edit
+          = link_to edit_blog_path(@blog) do
+            .command
+              編集
+          = link_to blog_path(@blog), method: :delete, data: { confirm: '本当に削除してよろしいですか？' }  do
+            .command
+              削除
+
+      .blog-show--wrapper__fix--name
+        = @blog.title
+      .blog-show--wrapper__fix--contents
+        .blog-show--wrapper__fix--contents__left
+          .left-contents
+            .left-contents--image
+              = image_tag "#{@blog.image}",class: 'blog-show-img'
+                
+        .blog-show--wrapper__fix--contents__right
+          .right-title
+            .right-title__content
+              = @blog.content
+        .link-blog-more
+          = link_to blog_shop_path(@shop) do
+            .link-blog-more--index
+              他の投稿も見る
+
+= render "shared/footer"

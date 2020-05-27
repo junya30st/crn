@@ -1,5 +1,5 @@
 .product-show{
-  width: 50%;
+  width: 25%;
   margin: 0 auto;
   min-height: calc(100vh - 160px);
   background: #fffbf9;
@@ -13,9 +13,8 @@
 
       }
       &--contents{
-        display: flex;
+        // display: flex;
         &__left{
-          width: 50%;
           .left-contents{
             // width: 90%;
             // margin: 0 auto;
@@ -37,25 +36,34 @@
           }
         }
         &__right{
-          width: 50%;
+          width: 90%;
+          margin: 0 auto;
+          .right-title{
+
+          }
           .right-contents{
-            width: 90%;
-            margin: 0 auto;
             &--category{
               font-size: 16px;
               color: #222222;
+              margin-top: 8px;
             }
             &--intro{
               font-size: 16px;
               color: #222222;
+              margin-top: 8px;
+
             }
             &--price{
               font-size: 16px;
               color: #222222;
+              margin-top: 8px;
+
             }
             &--limit{
               font-size: 16px;
               color: #222222;
+              margin-top: 8px;
+
             }
           }
         }
@@ -66,10 +74,9 @@
         &__button{
           font-size: 20px;
           display: inline-block;
-          background: rgb(255, 191, 72);
-          color: white;
+          background-color: #ff953d;
+          color: #fff;
           padding: 10px 15px 10px;
-          border-radius: 4px;
         }
       }
     }

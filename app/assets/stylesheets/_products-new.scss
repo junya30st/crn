@@ -48,7 +48,6 @@
               padding-top: 30px;
               .form-box{
                 margin-top: 8px;
-                width: 100%;
                 height: 2rem;
               }
             }
@@ -62,6 +61,12 @@
                 color: white;
               }
             }
+            .product-new-number{
+              padding-top: 30px;
+              .number-field{
+                height: 2rem;
+              }
+            }
           }
         }
         .product-new__contents--right{
@@ -71,6 +76,17 @@
             border-radius: 4px;
             background-color: rgb(243, 86, 65);
             color: white;
+          }
+          .form-want{
+            padding: 3px;
+            border-radius: 4px;
+            background-color: rgb(105, 195, 247);
+            color: white;
+          }
+          &--image{
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 30px;
           }
           &--area{
             padding-top: 30px;
@@ -86,7 +102,7 @@
         }
       }
       .product-new--submit{
-        
+        text-align: center;
       }
     }
   }
@@ -167,6 +183,7 @@
                 }
               }
               .product-new--number{
+                padding-top: 30px;
                 .number-field{
                   font-size: 1rem;
                   margin-top: 8px;

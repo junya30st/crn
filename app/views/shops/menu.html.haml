@@ -1,0 +1,21 @@
+= render "shared/header"
+
+.shop-menu-list
+  .shop-menu-list__wrapper
+    .shop-menu-list__wrapper__fix
+      .shop-menu-list__wrapper__fix--copy
+        .copy-content
+          = @shop.name + "のメニュー"
+      .shop-menu-list__wrapper__fix--contents
+        - @shop.menus.each do |menu|
+          .contents-box
+            .contents-box__upper
+              .contents-box__upper--name
+                = menu.name
+              .contents-box__upper--price
+                = menu.price
+                円
+            .contents-box--content
+              = menu.introduction
+
+= render "shared/footer"

@@ -3,6 +3,9 @@ class ShopsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create]
   before_action :set_shops,only: [:show, :edit, :update, :destroy, :blog, :menu]
 
+  def top
+  end
+
   def index
     @shop = Shop.includes(:user).order("id DESC").page(params[:page]).without_count.per(6)
     @category = Category.all
@@ -28,7 +31,6 @@ class ShopsController < ApplicationController
   end
 
   def update
-    # @shop = Shop.find(params[:id])
     if @shop.user_id == current_user.id
       @shop.update(shop_params)
       redirect_to shops_path
@@ -36,7 +38,6 @@ class ShopsController < ApplicationController
   end
 
   def destroy
-    # @shop = Shop.find(params[:id])
     @shop.destroy
     redirect_to shops_path
   end

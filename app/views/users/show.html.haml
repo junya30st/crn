@@ -15,7 +15,13 @@
             -#   .user-show--menu--destroy
             -#     ユーザーを削除する
             - if @card.present?
-              = link_to "カード詳細", card_path(@card)
+              = link_to card_path(@card) do
+                .user-show--menu--edit
+                  カード詳細情報確認
+            - else
+              = link_to new_card_path do
+                .user-show--menu--edit
+                  カード情報登録
 
         .user-show__wrapper__fix--contents
           .user-img
@@ -41,7 +47,10 @@
               = link_to transaction_path(t) do
                 .user-transaction__box
                   .user-transaction__box--image
-                    = image_tag 'mina.png', class: 'transaction_box_img'
+                    - if t.image.present?
+                      = image_tag "#{t.image}", class: 'transaction_box_img'
+                    - else
+                      = image_tag 'noImage.png',class: 'transaction_box_img'
                   .user-transaction__box--texts
                     .user-transaction__box--texts--name
                       = truncate(t.name, length: 20)
@@ -62,13 +71,15 @@
           .user-shop__wrapper__fix--contents__wrapper
             - @user.shops.first(4).each do |product|
               .product__box
-                .product__box__in
-                  .product__box__in--image
-                    = image_tag 'mina.png', class: 'product_box_img'
-                  .product__box__in--name
-                    = product.name
-                  .product__box__in--intro
-                    = product.introduction
+                = link_to shop_path(product) do
+                  .product__box__in
+                    .product__box__in--image
+                      - product.shop_images.first(1).each do |image|
+                        = image_tag "#{image.image}", class: 'product_box_img'
+                    .product__box__in--name
+                      = product.name
+                    .product__box__in--intro
+                      = product.introduction
 
 = render "shared/footer"
 

@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   require 'payjp'
+  before_action :authenticate_user!
 
   def new
     card = Card.where(user_id: current_user.id).first

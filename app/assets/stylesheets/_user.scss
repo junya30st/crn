@@ -3,6 +3,7 @@
   .user-show{
     width: 100%;
     border-top: 1px solid #dddddd;
+    padding: 20px 0 20px;
     &__wrapper{
       width: 60%;
       margin: 0 auto;
@@ -80,6 +81,7 @@
 
   .user-transactions{
     width: 100%;
+    padding: 20px 0 0 0;
     &__wrapper{
       width: 60%;
       margin: 0 auto;
@@ -106,18 +108,14 @@
             .user-transaction__box{
               width: 100%;
               height: 100px;
-              // box-shadow: 0 3px 7px 0 rgba(0,0,0,.35);
-              border-radius: 4px;
               overflow: hidden;
               display: flex;
               &--image{
-                height: 100%;
-                width: auto;
+                max-width: 30%;
                 
                 .transaction_box_img{
-                  height: 100%;
-                  width: auto;
-                  object-fit: cover;
+                  width: 100%;
+                  object-fit: contain;
                 }
               }
               &--texts{
@@ -152,6 +150,7 @@
 
   .user-shop{
     width: 100%;
+    padding: 20px 0 0 0;
     &__wrapper{
       width: 60%;
       margin: 0 auto;
@@ -178,12 +177,17 @@
                 &--image{
                 }
                 &--name{
-                  margin-top: 8px;
+                  margin-top: 4px;
                 }
                 &--intro{
-                  margin-top: 8px;
+                  font-size: 12px;
+                  margin-top: 4px;
                 }
               }
+            }
+            .product__box a{
+              text-decoration: none;
+              color: #222222;
             }
           }
         }

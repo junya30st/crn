@@ -9,24 +9,29 @@
         .product-show--wrapper__fix--contents__left
           .left-contents
             .left-contents--image
-              = image_tag 'mina.png',class: 'product-show-img'
+              - if @product.image.present?
+                = image_tag "#{@product.image}", class: 'product-show-img'
+              - else
+                = image_tag 'noImage.png',class: 'product-show-img'
                 
         .product-show--wrapper__fix--contents__right
+          .right-title
+            .right-title__content
+              詳細情報
           .right-contents
+            .right-contents--number
+              残数：
+              = @product.number
             .right-contents--intro
               紹介：
-              %br
               = simple_format(@product.introduction)
-            %br
             .right-contents--price
               価格：
               = @product.price
               円
-            %br
             .right-contents--limit
               有効期限：
               = @product.limit
-            %br
             
       .product-show--wrapper__fix--submit
         = link_to new_product_transaction_path(@product) do

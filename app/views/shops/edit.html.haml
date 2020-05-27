@@ -5,51 +5,80 @@
     .shop-create--wrapper
       .shop-create--wrapper--fix
         .shop-create--wrapper__fix--title
-          店舗情報の編集
+          店舗登録
         .shop-create--wrapper__fix--contents
           .shop-create--wrapper__fix--contents__left
             .shop-create-form
               %label{class: 'label-up'} 名前
               %span{class: 'form-must'} 必須
               %br
-              = f.text_field :name, autofocus: true, placeholder: "店舗名", class: "form-box", value: "#{@shop.name}"
+              = f.text_field :name, autofocus: true, placeholder: "店舗名", class: "form-box", value: "@ahop.name"
             .shop-create-form
               %label{class: 'label-up'} 所在地
               %span{class: 'form-must'} 必須
               %br
               = f.text_field :location, placeholder: "〇〇県〇〇市〇〇111-11〇〇ビル〇階", class: "form-box", value: "#{@shop.location}"
-            .shop-create-form
-              %label{class: 'label-up'} 開店時刻
-              %span{class: 'form-want'} 任意
-              %br
-              = f.time_select :open_tome
-            .shop-create-form
-              %label{class: 'label-up'} 閉店時刻
-              %span{class: 'form-want'} 任意
-              %br
-              = f.time_select :close_time, value: "#{@shop.close_time}"
+            .time-flex
+              .time-flex__form
+                %label{class: 'label-up'} ランチ開店時刻
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :open_time
+              .time-flex__form
+                %label{class: 'label-up'} ランチ閉店時刻
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :close_time
+            .time-flex
+              .time-flex__form
+                %label{class: 'label-up'} ディナー開店時刻
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :dinner_open
+              .time-flex__form
+                %label{class: 'label-up'} ディナー閉店時刻
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :dinner_close
+            .time-flex
+              .time-flex__form
+                %label{class: 'label-up'} ランチL.O.
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :lunch_last
+              .time-flex__form
+                %label{class: 'label-up'} ディナーL.O.
+                %span{class: 'form-must'} 必須
+                %br
+                = f.time_select :dinner_last
             .shop-create-form
               %label{class: 'label-up'} URL
               %span{class: 'form-want'} 任意
               %br
-              = f.text_field :url, placeholder: "http://………………………", class: "form-box"
+              = f.text_field :url, placeholder: "http://………………………", class: "form-box", value: "#{@shop.url}"
             .shop-create-form
               %label{class: 'label-up'} 電話番号
               %span{class: 'form-want'} 任意
               %br
-              = f.text_field :tel, placeholder: "080-1234-5678", class: "form-box"
+              = f.text_field :tel, placeholder: "080-1234-5678", class: "form-box", value: "#{@shop.tel}"
           .shop-create--wrapper__fix--contents__right
+            .shop-create-form
+              %label{class: 'label-up'} 店舗紹介
+              %span{class: 'form-want'} 任意
+              %br
+              = f.text_area :introduction, placeholder: "閲覧ありがとうございます。宜しくお願いします。", class: "shop-r-intro", value: "#{@shop.introduction}"
+            .shop-create-form
+              %label{class: 'label-up'} カテゴリー
+              %span{class: 'form-want'} 任意
+              %br
+              -# - @category.each do |category|
+              = f.collection_select :category_id, Category.all, :id, :name
             .shop-create-form
               %label{class: 'label-up'} 店舗画像等
               %span{class: 'form-want'} 任意
               %br
-              = f.file_field :image
-              -# , class: "form-box"
-            .shop-create-form
-              %label{class: 'label-up'} 所在地
-              %span{class: 'form-want'} 任意
-              %br
-              = f.text_area :introduction, placeholder: "閲覧ありがとうございます。宜しくお願いします。", class: "shop-r-intro"
+              = f.fields_for :shop_images do |i|
+                = i.file_field :image
         .button-register-shop
           = f.submit "登録する", class: "submit-button-shop"
 
