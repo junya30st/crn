@@ -47,7 +47,10 @@
               = link_to transaction_path(t) do
                 .user-transaction__box
                   .user-transaction__box--image
-                    = image_tag 'mina.png', class: 'transaction_box_img'
+                    - if t.image.present?
+                      = image_tag "#{t.image}", class: 'transaction_box_img'
+                    - else
+                      = image_tag 'noImage.png',class: 'transaction_box_img'
                   .user-transaction__box--texts
                     .user-transaction__box--texts--name
                       = truncate(t.name, length: 20)

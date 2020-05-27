@@ -1,3 +1,18 @@
+= render "shared/header"
+
 = form_with model:@category, local: true , method: :post do |f|
-  = f.text_field :name
-  = f.submit "登録する"
+  .blog-new
+    .blog-new--wrapper
+      .blog-new--wrapper--fix
+        .blog-new--wrapper__fix--title
+          ジャンル新規登録
+        .blog-new--wrapper__fix--contents
+          .blog-new-form
+            %label{class: 'label-up'} ジャンル名
+            %span{class: 'form-must'} 必須
+            %br
+            = f.text_field :name, placeholder: "タイトルを入力してください", class: "form-box"
+          .button-register
+            = f.submit "登録する", class: "submit-button"
+
+= render "shared/footer"

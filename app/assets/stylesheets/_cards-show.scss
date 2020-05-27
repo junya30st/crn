@@ -13,7 +13,8 @@
         }
       }
       &__details{
-        background-color: #eeeeee;
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
         padding: 10px;
         &--detail{
           .label-up{
