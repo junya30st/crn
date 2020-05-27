@@ -116,12 +116,15 @@
           .shop-products__wrapper--copy__contents
             プロダクト一覧
         .shop-products__wrapper__fix
-          - @shop.products.first(4).each do |product| 
+          - @shop.products.first(5).each do |product| 
             .product__box
               = link_to product_path(product) do
                 .product__box__in
                   .product__box__in--image
-                    = image_tag 'mina.png', class: 'product_box_img'
+                    - if product.image.present?
+                      = image_tag "#{product.image}", class: 'product_box_img'
+                    - else
+                      = image_tag 'noImage.png',class: 'product_box_img'
                   .product__box__in--name
                     = product.name
                   .product__box__in--price

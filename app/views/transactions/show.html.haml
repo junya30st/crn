@@ -13,7 +13,10 @@
       .transaction-show__wrapper__fix--contents
         .transaction-contents
           .transaction-contents--image
-            = image_tag("mina.png", class: "transaction-show-img")
+            - if @transaction.image.present?
+              = image_tag "#{@transaction.image}", class: 'product-show-img'
+            - else
+              = image_tag 'noImage.png',class: 'product-show-img'
           .transaction-contents--price
             = @transaction.price
             円で支援中

@@ -9,7 +9,10 @@
         .product-show--wrapper__fix--contents__left
           .left-contents
             .left-contents--image
-              = image_tag 'mina.png',class: 'product-show-img'
+              - if @product.image.present?
+                = image_tag "#{@product.image}", class: 'product-show-img'
+              - else
+                = image_tag 'noImage.png',class: 'product-show-img'
                 
         .product-show--wrapper__fix--contents__right
           .right-title

@@ -15,4 +15,6 @@ enum limit:{
   １年:4,
 },_prefix: true
 
+mount_uploader :image, ImageUploader
+
 end

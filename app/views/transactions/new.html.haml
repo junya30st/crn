@@ -9,13 +9,16 @@
       .transaction-new__wrapper__fix--contents
         .transaction-contents
           .transaction-contents--image
-            = image_tag("mina.png", class: "transaction-new-img")
+            - if @product.image.present?
+              = image_tag "#{@product.image}", class: 'product-show-img'
+            - else
+              = image_tag 'noImage.png',class: 'product-show-img'
           .transaction-contents--price
             支援金額：
             = @product.price
             円
           .transaction-contents--introduction
-            = @product.introduction
+            = simple_format(@product.introduction)
       .transaction-new__wrapper__fix--submit
         .submit-pay
         = form_tag action: :create, method: :post do

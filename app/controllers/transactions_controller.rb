@@ -19,6 +19,7 @@ class TransactionsController < ApplicationController
       price: @product.price,
       period: params[:period],
       introduction: @product.introduction,
+      image: @product.image,
       product_id: @product.id,
       user_id: current_user.id
     )
