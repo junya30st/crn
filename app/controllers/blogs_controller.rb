@@ -42,7 +42,11 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     shops = current_user.shops
     if shops.include?(@blog.shop)
-    @blog.destroy
+      @blog.destroy
+      redirect_to shop_path(@blog.shop)
+    else
+      render "show"
+    end
   end
 
   private
