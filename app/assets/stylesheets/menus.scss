@@ -1,3 +1,32 @@
-// Place all the styles related to the menus controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.menu-new{
+  width: 100%;
+  &-wrapper{
+    width: 30%;
+    margin: 0 auto;
+    &__fix{
+      padding: 20px 0 20px;
+      &--title{
+        text-align: center;
+        .menu-new__title{
+          font-size: 25px;
+        }
+      }
+      &--contents{
+        .menu-new--forms{
+          &__name{
+
+          }
+          &__introduction{
+
+          }
+          &__price{
+
+          }
+        }
+        .menu-new--submit{
+
+        }
+      }
+    }
+  }
+}

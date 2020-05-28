@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'shops#index'
   resources :users, only: [:show]
-  resources :cards
+  resources :cards, except: [:index, :edit, :update]
   resources :guests
   resources :categories
   resources :shops, shallow: true do

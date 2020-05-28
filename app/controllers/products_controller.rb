@@ -21,8 +21,9 @@ class ProductsController < ApplicationController
       shop_id: @shop.id)
 
     if @product.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'プロダクトを作成しました'
     else
+      flash.now[:alert] = '作成に失敗しました'
       render "new"
     end
 
