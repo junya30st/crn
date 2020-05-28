@@ -38,8 +38,10 @@ class ShopsController < ApplicationController
   end
 
   def destroy
-    @shop.destroy
-    redirect_to shops_path
+    if @shop.user_id == current_user.id
+      @shop.destroy
+      redirect_to shops_path
+    end
   end
 
   def blog

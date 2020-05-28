@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   resources :guests
   resources :categories
   resources :shops, shallow: true do
-    resources :menus, only: [:new, :create, :edit, :update, :destroy]
-    resources :blogs 
-    resources :products do
+    resources :menus, except: [:index, :show]
+    resources :blogs, except: [:index]
+    resources :products, except: [:edit, :update] do
       resources :transactions
     end
     collection do

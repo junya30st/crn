@@ -9,11 +9,16 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.new(title: blog_params[:title], content: blog_params[:content], image: blog_params[:image], shop_id: @shop.id)
-    # binding.pry
+    @blog = Blog.new(
+      title: blog_params[:title],
+      content: blog_params[:content],
+      image: blog_params[:image],
+      shop_id: @shop.id)
+      
     if @blog.save
-      redirect_to blog_path(@blog)
+      redirect_to blog_path(@blog), notice: '投稿に成功しました'
     else
+      flash.now[:alert] = '投稿に失敗しました'
       render "new"
     end
   end
@@ -32,8 +37,9 @@ class BlogsController < ApplicationController
     shops = current_user.shops
     if shops.include?(@blog.shop)
       @blog.update(blog_params) 
-      redirect_to blog_path(@blog)
+      redirect_to blog_path(@blog), notice: '情報を更新しました'
     else
+      flash.now[:alert] = '更新に失敗しました'
       render "edit"
     end
   end
@@ -43,8 +49,9 @@ class BlogsController < ApplicationController
     shops = current_user.shops
     if shops.include?(@blog.shop)
       @blog.destroy
-      redirect_to shop_path(@blog.shop)
+      redirect_to shop_path(@blog.shop), notice: '削除に成功しました'
     else
+      flash.now[:alert] = '削除に失敗しました'
       render "show"
     end
   end

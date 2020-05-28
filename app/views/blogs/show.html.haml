@@ -26,7 +26,7 @@
         .blog-show--wrapper__fix--contents__right
           .right-title
             .right-title__content
-              = @blog.content
+              = simple_format(@blog.content)
         .link-blog-more
           = link_to blog_shop_path(@shop) do
             .link-blog-more--index

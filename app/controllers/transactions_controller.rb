@@ -3,6 +3,9 @@ class TransactionsController < ApplicationController
   before_action :set_product, only:[:new, :create]
   
   def new
+    unless current_user.card.present?
+      redirect_to new_card_path
+    end
   end
 
   def create
