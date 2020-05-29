@@ -6,6 +6,7 @@
       .menu-new-wrapper__fix
         .menu-new-wrapper__fix--title
           .menu-new__title
+            メニュー新規作成
         .menu-new-wrapper__fix--contents
           .menu-new--forms
             .menu-new--forms__name
@@ -14,7 +15,7 @@
               = f.text_field :introduction, placeholder: "説明を入力してください"
             .menu-new--forms__price
               = f.text_field :price, placeholder: "半角数字のみ" 
-          .manu-new-submit
+          .manu-new--submit
             = f.submit "作成する"
 
 

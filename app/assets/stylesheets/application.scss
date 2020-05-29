@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css?family=Sawarabi+Gothic");
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "config/colors";
 @import "header";
 @import "users";
 @import "signup&in";
@@ -27,6 +28,7 @@
 @import "blog-new";
 @import "shop-menu";
 @import "category-new";
+@import "modules/flash.scss";
 
 
 // @import "scaffolds";

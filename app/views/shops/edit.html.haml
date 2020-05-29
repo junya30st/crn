@@ -1,6 +1,6 @@
 = render "shared/header"
 
-= form_with url: "/shops/#{@shop.id}", local: true, method: :patch do |f|
+= form_with model: @shop, local: true, method: :patch do |f|
   .shop-create
     .shop-create--wrapper
       .shop-create--wrapper--fix
@@ -12,7 +12,7 @@
               %label{class: 'label-up'} 名前
               %span{class: 'form-must'} 必須
               %br
-              = f.text_field :name, autofocus: true, placeholder: "店舗名", class: "form-box", value: "@ahop.name"
+              = f.text_field :name, autofocus: true, placeholder: "店舗名", class: "form-box", value: "#{@shop.name}"
             .shop-create-form
               %label{class: 'label-up'} 所在地
               %span{class: 'form-must'} 必須
@@ -71,7 +71,6 @@
               %label{class: 'label-up'} カテゴリー
               %span{class: 'form-want'} 任意
               %br
-              -# - @category.each do |category|
               = f.collection_select :category_id, Category.all, :id, :name
             .shop-create-form
               %label{class: 'label-up'} 店舗画像等

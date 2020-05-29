@@ -192,6 +192,7 @@
         &__fix{
           padding: 0 0 10px;
           display: flex;
+          flex-wrap: wrap;
           border-bottom: 1px solid #dddddd;
           .menu-box{
             padding: 10px;
@@ -239,10 +240,11 @@
         }
         &__fix{
           display: flex;
+          flex-wrap: wrap;
           .product__box{
             font-size: 14px;
             box-sizing: border-box;
-            width: 25%;
+            width: 20%;
             height: 300px;
             padding: 10px;
             &__in{
@@ -409,7 +411,6 @@
                 letter-spacing: 2px;
                 font-weight: bold;
               }
-              // 編集画面
               &--button{
                 position: initial;
                 right: 0;
@@ -451,19 +452,21 @@
                   margin: 0 auto;
                   overflow: hidden;
                   &--image{
-                    width: 300%;
+                    width: 100%;
+
                     &--main{
                       width: 100%;
                       display: flex;
                       position: relative;
                       &--box{
+                        width: 100%;
                       }
                     }
                     &--small{
-                      width: 25%;
+                      width: 100%;
                       display: flex;
                       &--box{
-                        width: 100px
+                        width: 20%;
                       }
                     }
                   }
@@ -658,7 +661,7 @@
     }
   }
   .shop-show-img{
-    width: 100%;
+    width: 350px;
     height: 200px;
     object-fit: contain;
     // position: absolute;

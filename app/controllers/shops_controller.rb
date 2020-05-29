@@ -13,14 +13,18 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
-    4.times {@shop.shop_images.build}
+    5.times {@shop.shop_images.build}
     @category = Category.all
   end
 
   def create
     @shop = current_user.shops.build(shop_params)
-    @shop.save
-    redirect_to root_path
+    if @shop.save
+      redirect_to shop_path(@shop), notice: '店舗を作成しました'
+    else
+      flash.now[:alert] = '作成に失敗しました'
+      render "new"
+    end
   end
 
   def show
@@ -33,13 +37,15 @@ class ShopsController < ApplicationController
   def update
     if @shop.user_id == current_user.id
       @shop.update(shop_params)
-      redirect_to shops_path
+      redirect_to shop_path(@shop)
     end
   end
 
   def destroy
-    @shop.destroy
-    redirect_to shops_path
+    if @shop.user_id == current_user.id
+      @shop.destroy
+      redirect_to shops_path
+    end
   end
 
   def blog

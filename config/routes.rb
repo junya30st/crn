@@ -6,13 +6,13 @@ Rails.application.routes.draw do
 
   root 'shops#index'
   resources :users, only: [:show]
-  resources :cards
+  resources :cards, except: [:index, :edit, :update]
   resources :guests
   resources :categories
   resources :shops, shallow: true do
-    resources :menus, only: [:new, :create, :edit, :update, :destroy]
-    resources :blogs 
-    resources :products do
+    resources :menus, except: [:index, :show]
+    resources :blogs, except: [:index]
+    resources :products, except: [:edit, :update] do
       resources :transactions
     end
     collection do

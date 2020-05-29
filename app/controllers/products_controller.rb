@@ -1,27 +1,32 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_shop, only: [:new, :create]
+  before_action :correct_owner, only: [:new, :create, :destroy]
 
   def index
     @products = Product.where(params[:id])
   end
 
   def new
-    if @shop.user_id == current_user.id
-      @product = Product.new
-    else
-      redirect_to root_path
-    end
+    @product = Product.new
   end
 
   def create
-    @shop = Shop.find(params[:shop_id])
-    @product = Product.new(name: p_params[:name], introduction: p_params[:introduction], price: p_params[:price], limit: p_params[:limit],number: p_params[:number], image: p_params[:image], shop_id: @shop.id)
+    @product = Product.new(
+      name: p_params[:name],
+      introduction: p_params[:introduction],
+      price: p_params[:price],
+      limit: p_params[:limit],
+      number: p_params[:number],
+      image: p_params[:image],
+      shop_id: @shop.id)
+
     if @product.save
-      redirect_to root_path
+      redirect_to product_path(@product), notice: 'プロダクトを作成しました'
     else
+      flash.now[:alert] = '作成に失敗しました'
       render "new"
     end
+
   end
 
   def show
@@ -29,7 +34,9 @@ class ProductsController < ApplicationController
     @shop = Shop.find_by(id: @product.shop_id)
   end
 
-  def edit
+  def destroy
+    @product.destroy
+    redirect_to shop_path(@shop)
   end
 
   private
@@ -37,8 +44,12 @@ class ProductsController < ApplicationController
   def p_params
     params.require(:product).permit(:name, :introduction, :price, :limit, :number, :image, :shop_id)
   end
-  
-  def set_shop
+
+  def correct_owner
     @shop = Shop.find(params[:shop_id])
+    unless @shop.user_id == current_user.id
+      redirect_to root_path, notice: '店舗オーナー以外は操作できません'
+    end
   end
+
 end

@@ -78,7 +78,8 @@
               %span{class: 'form-want'} 任意
               %br
               = f.fields_for :shop_images do |i|
-                = i.file_field :image
+                = i.file_field :image, id: 'image-post'
+            #result
         .button-register-shop
           = f.submit "登録する", class: "submit-button-shop"
 

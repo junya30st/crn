@@ -1,7 +1,7 @@
 = render "shared/header"
 
 .product-edit
-  = form_with model: @product do |f|
+  = form_with model: @product, local: true, method: :patch do |f|
     .product-edit__wrapper
       .product-edit__wrapper__fix
         .product-edit__wrapper__fix--title
