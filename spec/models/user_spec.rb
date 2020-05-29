@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe user, type: :model do
+RSpec.describe User, type: :model do
   describe user do
     describe '#create' do
 
