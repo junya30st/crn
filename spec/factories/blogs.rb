@@ -3,5 +3,6 @@ FactoryBot.define do
     title { "MyString" }
     content { "MyText" }
     image { "MyText" }
+    association :shop
   end
 end

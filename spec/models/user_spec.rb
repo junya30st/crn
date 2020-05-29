@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe user do
+  describe User do
     describe '#create' do
 
       context 'can save' do
@@ -16,25 +16,25 @@ RSpec.describe User, type: :model do
         it 'nameがないと登録できない' do
           user = build(:user, name: "")
           user.valid?
-          expect(user.errors[:name]).to include("can't be blank")
+          expect(user.errors[:name]).to include("を入力してください")
         end
 
         it 'emailがないと登録できない' do
           user = build(:user, email: "")
           user.valid?
-          expect(user.errors[:email]).to include("can't be blank")
+          expect(user.errors[:email]).to include("を入力してください")
         end
 
         it 'passwordがないと登録できない' do
           user = build(:user, password: "")
           user.valid?
-          expect(user.errors[:password]).to include("can't be blank")
+          expect(user.errors[:password]).to include("を入力してください")
         end
 
         it 'password_confirmationがないと登録できない' do
           user = build(:user, password_confirmation: "")
           user.valid?
-          expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+          expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
         end
 
       end
