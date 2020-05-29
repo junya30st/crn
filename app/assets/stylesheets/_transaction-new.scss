@@ -5,10 +5,19 @@
     margin: 0 auto;
     &__fix{
       padding: 50px 0 50px;
+      &--copy{
+        text-align: center;
+        .copy-content{
+          display: inline-block;
+          padding-bottom: 5px;
+          border-bottom: 1px solid #ddd;
+          font-size: 25px;
+        }
+      }
       &--title{
         .transaction-title{
           display: inline-block;
-          font-size: 25px;
+          font-size: 18px;
           padding-bottom: 5px;
           border-bottom: 1px solid #dddddd;
         }
@@ -63,11 +72,18 @@
       padding: 10px;
       box-sizing: border-box;
       &__fix{
+        &--copy{
+          text-align: center;
+          .copy-content{
+            font-size: 25px;
+          }
+        }
         padding: 10px 0 10px;
         &--title{
+          margin-top: 10px;
           .transaction-title{
             display: inline-block;
-            font-size: 25px;
+            font-size: 18px;
             padding-bottom: 5px;
             border-bottom: 1px solid #dddddd;
           }
@@ -80,7 +96,7 @@
             &--image{
               width: 100%;
               height: auto;
-              padding: 20px 0 20px;
+              padding: 10px 0 20px;
               .transaction-new-img{
                 width: 100%;
                 object-fit: contain;

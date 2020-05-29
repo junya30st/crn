@@ -47,8 +47,9 @@ class TransactionsController < ApplicationController
       number = @product.number.to_i - 1
       @product.number = number
       @product.save
-      redirect_to transaction_path(@transaction)
+      redirect_to transaction_path(@transaction), notice: '購入が完了しました'
     else
+      flash.now[:alert] = '購入に失敗しました'
       render action: "create"
     end
 

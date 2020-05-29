@@ -39,7 +39,7 @@ class MenusController < ApplicationController
   def correct_owner
     @shop = Shop.find(params[:shop_id])
     unless @shop.user_id == current_user.id
-      redirect_to root_path
+      redirect_to root_path, notice: '店舗オーナー以外は操作できません'
     end
   end
 

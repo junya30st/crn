@@ -211,10 +211,11 @@
         width: 100%;
         margin: 0 auto;
         &__fix{
-          padding: 50px 0 20px;
+          padding: 50px 0 0;
           &--title{
             display: flex;
             justify-content: space-between;
+            align-items: center;
             .user-show--title{
               display: inline-block;
               font-size: 25px;
@@ -226,7 +227,7 @@
               font-size: 14px;
               display: flex;
               &--edit{
-                margin-right: 0;
+                margin-right: 5px;
                 padding: 5px;
                 background-color: #dddddd;
                 color: #222222;
@@ -246,8 +247,9 @@
             }
           }
           &--contents{
+            margin-top: 20px;
             width: 100%;
-            height: 250px;
+            min-height: 250px;
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -318,7 +320,7 @@
 
               .user-transaction__box{
                 width: 100%;
-                height: 100px;
+                max-height: 80px;
                 box-shadow: 0 3px 7px 0 rgba(0,0,0,.15);
                 border-radius: 4px;
                 overflow: hidden;

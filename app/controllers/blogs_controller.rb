@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   before_action :set_shop, only:[:new, :create]
+  before_action :correct_owner, only: [:new, :create, :destroy]
 
   def index
   end
@@ -64,6 +66,13 @@ class BlogsController < ApplicationController
 
   def set_shop
     @shop = Shop.find(params[:shop_id])
+  end
+
+  def correct_owner
+    @shop = Shop.find(params[:shop_id])
+    unless @shop.user_id == current_user.id
+      redirect_to root_path, notice: '店舗オーナー以外は操作できません'
+    end
   end
 
 end

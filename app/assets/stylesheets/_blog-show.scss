@@ -118,3 +118,9 @@
   padding: initial;
   border-radius: 4px;
 }
+
+@media (max-width: 559px) {
+  .blog-show{
+      width: 100%;
+  }
+}
