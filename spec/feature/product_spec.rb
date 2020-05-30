@@ -15,13 +15,13 @@ feature 'product', type: :feature do
     within '.button-register' do
       click_on 'ログイン'
     end
-    
+
     time = Time.now
     @shop = create(:shop,
       name: "test", location: "東京都渋谷区1234", category: category, 
       open_time: time, close_time: time,dinner_open: time,dinner_close: time,
       lunch_last: time,dinner_last: time, user_id: user.id)
-
+      
   end
 
   scenario 'プロダクトを作成する' do
@@ -38,7 +38,7 @@ feature 'product', type: :feature do
     click_on '登録する'
     expect(page).to have_content 'プロダクトを作成しました'
   end
-  
+
   # 現状編集機能なし
   # scenario 'プロダクト編集' do
   #   product = create(:product, name: 'test', price: 1000, limit: 1, introduction: 'test', shop_id:@shop.id)

@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :set_shop, only:[:new, :create]
-  before_action :correct_owner, only: [:new, :create, :destroy]
+  before_action :correct_owner, only: [:new, :create]
 
   def index
   end

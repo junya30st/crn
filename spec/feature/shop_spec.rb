@@ -46,4 +46,5 @@ feature 'shop', type: :feature do
     click_on '登録する'
     expect(page).to have_content '店舗情報を更新しました'
   end
+  
 end
