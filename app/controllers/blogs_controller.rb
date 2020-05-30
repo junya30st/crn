@@ -51,7 +51,7 @@ class BlogsController < ApplicationController
     shops = current_user.shops
     if shops.include?(@blog.shop)
       @blog.destroy
-      redirect_to shop_path(@blog.shop), notice: '削除に成功しました'
+      redirect_to shop_path(@blog.shop), notice: 'ブログを削除しました'
     else
       flash.now[:alert] = '削除に失敗しました'
       render "show"
