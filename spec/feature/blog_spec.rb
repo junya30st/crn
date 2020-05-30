@@ -25,7 +25,7 @@ feature 'blog', type: :feature do
     )
       
   end
-
+  
   scenario 'ブログを作成する' do
     visit shop_path(@shop)
     expect(current_path).to eq shop_path(@shop)
