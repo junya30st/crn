@@ -7,7 +7,8 @@ RSpec.describe ShopImage, type: :model do
   #     context 'can save' do
 
   #       it '揃っていれば保存できる' do
-  #         shopImage = build(:shop_image)
+  #         shop = build(:shop)
+  #         shopImage = build(:shop_image, shop_id: shop.id)
   #         expect(shopImage).to be_valid
   #       end
 
