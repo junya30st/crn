@@ -14,12 +14,6 @@ RSpec.describe Card, type: :model do
 
       context 'can not save' do
 
-        it 'user_idがないと登録できない' do
-          card = build(:card, user_id: "")
-          card.valid?
-          expect(card.errors[:user_id]).to include("を入力してください")
-        end
-
         it 'customer_idがないと登録できない' do
           card = build(:card, customer_id: "")
           card.valid?
@@ -31,7 +25,9 @@ RSpec.describe Card, type: :model do
           card.valid?
           expect(card.errors[:card_id]).to include("を入力してください")
         end
+
       end
+      
     end
   end
 end

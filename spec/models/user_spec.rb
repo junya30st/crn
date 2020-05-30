@@ -25,6 +25,13 @@ RSpec.describe User, type: :model do
           expect(user.errors[:email]).to include("を入力してください")
         end
 
+        it 'emailが重複すると登録できない' do
+          user = create(:user)
+          anotherUser = build(:user, email: user.email)
+          anotherUser.valid?
+          expect(anotherUser.errors[:email]).to include("はすでに存在します")
+        end
+
         it 'passwordがないと登録できない' do
           user = build(:user, password: "")
           user.valid?

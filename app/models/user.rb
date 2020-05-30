@@ -18,14 +18,14 @@ class User < ApplicationRecord
         name: auth.info.name,
         )
     end
-    # binding.pry
+
     user
   end
 
   private
 
   def self.dummy_email(auth)
-  "#{auth.uid}-#{auth.provider}@example.com"
+    "#{auth.uid}-#{auth.provider}@example.com"
   end
   
   has_many :shops
@@ -35,4 +35,7 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
+  validates :password_confirmation, presence: true
 end

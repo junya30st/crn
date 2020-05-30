@@ -9,6 +9,7 @@ RSpec.describe Blog, type: :model do
           blog = build(:blog, image: "")
           expect(blog).to be_valid
         end
+        
       end
     end
   end
