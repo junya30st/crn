@@ -13,10 +13,11 @@ RSpec.describe Shop, type: :model do
         it 'introduction,open_time,close_time,url,tel,imageがなくても登録できる' do
           shop = build(:shop, introduction: "", open_time: "", close_time: "", url: "", tel: "", image: "")
           expect(shop).to be_valid
-        end        
+        end
       end
 
       context 'can not save' do
+
         it 'nameがないと登録できない' do
           shop = build(:shop, name: "")
           shop.valid?
@@ -28,6 +29,7 @@ RSpec.describe Shop, type: :model do
           shop.valid?
           expect(shop.errors[:location]).to include("を入力してください")
         end
+
       end
 
     end
