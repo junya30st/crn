@@ -1,5 +1,34 @@
 require 'rails_helper'
 
 RSpec.describe ShopImage, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe ShopImage do
+    describe '#create' do
+    
+      context 'can save' do
+
+        it '揃っていれば保存できる' do
+          shop = create(:shop)
+          shopImage = build(:shop_image, shop_id: shop.id)
+          expect(shopImage).to be_valid
+        end
+
+      end
+
+      context 'can not save' do
+
+        it 'imageがないと保存できない' do
+          shop_image = build(:shop_image, image: "")
+          shop_image.valid?
+          expect(shop_image.errors[:image]).to include("を入力してください")
+        end
+
+        it 'shop_idがないと保存できない' do
+          shop_image = build(:shop_image, shop_id: "")
+          shop_image.valid?
+          expect(shop_image.errors[:shop]).to include("を入力してください")
+        end
+
+      end
+    end
+  end
 end

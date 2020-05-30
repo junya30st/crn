@@ -26,7 +26,7 @@ class CardsController < ApplicationController
         card_id: customer.default_card)
         
       if @card.save
-        redirect_to root_path
+        redirect_to root_path, notice: 'カードの登録に成功しました'
       else
         flash.now[alert] = 'カード情報を登録できませんでした'
         render "new"

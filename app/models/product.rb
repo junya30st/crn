@@ -17,4 +17,9 @@ enum limit:{
 
 mount_uploader :image, ImageUploader
 
+validates :name, presence: true
+validates :price, presence: true
+validates :introduction, presence: true
+validates :limit, presence: true
+
 end

@@ -8,5 +8,7 @@ FactoryBot.define do
     url                     {}
     tel                     {1234567890}
     image                   {"text"}
+    association :user
+    association :category
   end
 end
