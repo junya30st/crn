@@ -8,17 +8,17 @@
           ブログ新規投稿
         .blog-new--wrapper__fix--contents
           .blog-new-form
-            %label{class: 'label-up'} タイトル
+            = f.label :title, 'タイトル', class: 'label-up'
             %span{class: 'form-must'} 必須
             %br
             = f.text_field :title, placeholder: "タイトルを入力してください", class: "form-box"
           .blog-new-form
-            %label{class: 'label-up'} 画像
+            = f.label :image, '画像', class: 'label-up'
             %span{class: 'form-want'} 任意
             %br
             = f.file_field :image
           .blog-new-form
-            %label{class: 'label-up'} 本文
+            = f.label :content, '本文', class: 'label-up'
             %span{class: 'form-must'} 必須
             %br
             = f.text_area :content, placeholder: "本文を入力してください", class: "blog-content-box"

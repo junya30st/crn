@@ -9,22 +9,22 @@
           ユーザー新規登録
         .signup--wrapper__fix--contents
           .signup-form
-            %label{class: 'label-up'} 名前
+            = f.label :name, '名前', class: 'label-up'
             %span{class: 'form-must'} 必須
             %br
             = f.text_field :name, autofocus: true, placeholder: "ニックネーム（5文字以上）", class: "form-box"
           .signup-form
-            %label{class: 'label-up'} メールアドレス
+            =f.label :email, "メールアドレス", class: 'label-up'
             %span{class: 'form-must'} 必須
             %br
             = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例) xxx@xxx.com", class: "form-box"
           .signup-form
-            %label{class: 'label-up'} パスワード
+            = f.label :password, "パスワード", class: 'label-up'
             %span{class: 'form-must'} 必須
             %br
             = f.password_field :password, autocomplete: "new-password", class: "form-box"
           .signup-form
-            %label{class: 'label-up'} パスワード確認
+            = f.label :password_confirmation, "パスワード確認", class: 'label-up'
             %span{class: 'form-must'} 必須
             %br
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-box"

@@ -37,7 +37,7 @@ class ShopsController < ApplicationController
   def update
     if @shop.user_id == current_user.id
       @shop.update(shop_params)
-      redirect_to shop_path(@shop)
+      redirect_to shop_path(@shop), notice: '店舗情報を更新しました'
     end
   end
 
