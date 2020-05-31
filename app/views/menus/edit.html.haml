@@ -1,0 +1,25 @@
+= render "shared/header"
+
+= form_with(model: [@shop,@menu], local: true, method: :patch) do |f|
+  .menu-new
+    .menu-new-wrapper
+      .menu-new-wrapper__fix
+        .menu-new-wrapper__fix--title
+          .menu-new__title
+            メニュー編集
+        .menu-new-wrapper__fix--contents
+          .menu-new--forms
+            .menu-new--forms__name
+              = f.label :name, 'メニュー名'
+              = f.text_field :name, placeholder: "メニュー名を入力してください", value: "#{@menu.name}"
+            .menu-new--forms__introduction
+              = f.label :introduction, 'メニュー詳細'
+              = f.text_field :introduction, placeholder: "説明を入力してください", value: "#{@menu.introduction}"
+            .menu-new--forms__price
+              = f.label :price, '価格'
+              = f.text_field :price, placeholder: "半角数字のみ", value: "#{@menu.price}"
+          .manu-new--submit
+            = f.submit "作成する"
+
+
+= render "shared/footer"
