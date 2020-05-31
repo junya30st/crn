@@ -11,17 +11,17 @@
           .product-edit__contents--left
             .product-edit__contents--left__forms
               .product-edit--form
-                = f.label :name, '名前', class: 'label-product'
+                %label{class: 'label-product'} 名前
                 %span{class: 'form-must'} 必須
                 %br
                 = f.text_field :name, placeholder: "#{@product.name}", class: 'form-box'
               .product-edit--price
-                = f.label :price, '価格', class: 'label-product'
+                %label{class: 'label-product'} 価格
                 %span{class: 'form-must'} 必須
                 %br
                 = f.text_field :price, placeholder: '例）1000', class: 'form-box'
               .product-edit--limit
-                = f.label :limit, '期限', class: 'label-product'
+                %label{class: 'label-product'} 期限
                 %span{class: 'form-want'} 任意
                 %br
                 = f.date_select :limit

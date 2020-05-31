@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :set_shop, only:[:new, :create]
-  before_action :correct_owner, only: [:new, :create]
+  before_action :correct_owner, only: [:new, :create, :destroy]
 
   def index
   end
@@ -51,7 +51,7 @@ class BlogsController < ApplicationController
     shops = current_user.shops
     if shops.include?(@blog.shop)
       @blog.destroy
-      redirect_to shop_path(@blog.shop), notice: 'ブログを削除しました'
+      redirect_to shop_path(@blog.shop), notice: '削除に成功しました'
     else
       flash.now[:alert] = '削除に失敗しました'
       render "show"

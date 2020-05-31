@@ -10,13 +10,10 @@
         .menu-new-wrapper__fix--contents
           .menu-new--forms
             .menu-new--forms__name
-              = f.label :name, 'メニュー名'
               = f.text_field :name, placeholder: "メニュー名を入力してください"
             .menu-new--forms__introduction
-              = f.label :introduction, 'メニュー詳細'
               = f.text_field :introduction, placeholder: "説明を入力してください"
             .menu-new--forms__price
-              = f.label :price, '価格'
               = f.text_field :price, placeholder: "半角数字のみ" 
           .manu-new--submit
             = f.submit "作成する"

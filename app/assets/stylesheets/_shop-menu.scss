@@ -21,42 +21,16 @@
           &__upper{
             display: flex;
             justify-content: space-between;
-            &--name{
-              font-size: 12px;
-              display: flex;
-              align-items: center;
-              .name-content{
-                font-size: 18px;
-                margin-right: 5px;
-              }
-              .edit-link{
-                display: flex;
-                &--edit{
-                  display: inline-block;
-                  margin-right: 5px;
-                  &:hover {
-                    opacity: 0.8;
-                    border-bottom: 1px solid #222222;
-                  }
-                }
-                
-                &--destroy{
-                  display: inline-block;
-                  &:hover {
-                    opacity: 0.8;
-                    border-bottom: 1px solid #222222;
-                  }
-                }
-              }
-            }
             &--price{
               font-size: 14px;
               color: #222222;
             }
+            &--name{
+              font-size: 18px;
+            }
           }
           &--content{
             font-size: 14px;
-            color: #888888;
           }
         }
       }
