@@ -11,35 +11,35 @@
           .product-new__contents--left
             .product-new__contents--left__forms
               .product-new--form
-                = f.label :name, '名前', class: 'label-product'
+                %label{class: 'label-product'} 名前
                 %span{class: 'form-must'} 必須
                 %br
                 = f.text_field :name, placeholder: 'プロダクト名を入力してください。', class: 'form-box'
               .product-new--price
-                = f.label :price, '価格', class: 'label-product'
+                %label{class: 'label-product'} 価格
                 %span{class: 'form-must'} 必須
                 %br
                 = f.text_field :price, placeholder: '例）1000(半角数字)', class: 'form-box'
                 円
               .product-new--limit
-                = f.label :limit, '期限', class: 'label-product'
+                %label{class: 'label-product'} 期限
                 %span{class: 'form-must'} 必須
                 %br
                 = f.select :limit, Product.limits.keys,{}, class: "select"
               .product-new-number
-                = f.label :number, '個数', class: 'label-product'
+                %label{class: 'label-product'} 個数
                 %span{class: 'form-must'} 必須
                 %br
                 = f.number_field :number, class: "number-field", placeholder: "例) 10(半角英数字)"
                 個
           .product-new__contents--right
             .product-new__contents--right--image
-              = f.label :image, '商品関連画像', class: 'label-product'
+              %label{class: 'label-product'} 商品関連画像
               %span{class: 'form-want'} 任意
               %br
               = f.file_field :image
             .product-new__contents--right--area
-              = f.label :introduction, '商品説明', class: 'label-product'
+              %label{class: 'label-product'} 商品説明
               %span{class: 'form-must'} 必須
               %br
               = f.text_area :introduction, placeholder: '商品の詳細を入力してください。', class: 'form-area'

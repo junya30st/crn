@@ -8,17 +8,17 @@
           ログイン
         .signin--wrapper__fix--contents
           .signin-form
-            =f.label :email, "メールアドレス", class: 'label-up'
+            %label{class: 'label-up'} メールアドレス
             %span{class: 'form-must'} 必須
             %br
             = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例) xxx@xxx.com", class: "form-box"
           .signin-form
-            = f.label :password, "パスワード", class: 'label-up'
+            %label{class: 'label-up'} パスワード
             %span{class: 'form-must'} 必須
             %br
             = f.password_field :password, autocomplete: "new-password", class: "form-box"
           .signin-form
-            = f.label :password_confirmation, "パスワード確認", class: 'label-up'
+            %label{class: 'label-up'} パスワード確認
             %span{class: 'form-must'} 必須
             %br
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-box"

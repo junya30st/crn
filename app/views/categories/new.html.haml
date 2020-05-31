@@ -8,7 +8,7 @@
           ジャンル新規登録
         .blog-new--wrapper__fix--contents
           .blog-new-form
-            = f.label :name, 'ジャンル名', class: 'label-up'
+            %label{class: 'label-up'} ジャンル名
             %span{class: 'form-must'} 必須
             %br
             = f.text_field :name, placeholder: "タイトルを入力してください", class: "form-box"

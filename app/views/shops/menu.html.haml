@@ -11,16 +11,7 @@
           .contents-box
             .contents-box__upper
               .contents-box__upper--name
-                .name-content
-                  = menu.name
-                - if user_signed_in? && @shop.user_id == current_user.id
-                  .edit-link
-                    = link_to edit_menu_path(menu) do
-                      .edit-link--edit
-                        編集
-                    = link_to menu_path(menu), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } do
-                      .edit-link--destroy
-                        削除
+                = menu.name
               .contents-box__upper--price
                 = menu.price
                 円

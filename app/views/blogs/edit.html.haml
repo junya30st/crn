@@ -8,19 +8,19 @@
           ブログ編集
         .blog-new--wrapper__fix--contents
           .blog-new-form
-            = f.label :title, 'タイトル', class: 'label-up'
+            %label{class: 'label-up'} タイトル
             %span{class: 'form-must'} 必須
             %br
             = f.text_field :title, placeholder: "タイトルを入力してください", class: "form-box", value: "#{@blog.title}"
           .blog-new-form
-            = f.label :image, '画像', class: 'label-up'
+            %label{class: 'label-up'} 画像
             %span{class: 'form-want'} 任意
             %br
             = f.file_field :image
           .blog-new-form.notice
             ※変更しない場合は画像選択なし
           .blog-new-form
-            = f.label :content, '本文', class: 'label-up'
+            %label{class: 'label-up'} 本文
             %span{class: 'form-must'} 必須
             %br
             = f.text_area :content, placeholder: "本文を入力してください", class: "blog-content-box", value: "#{@blog.content}"
