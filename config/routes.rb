@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  root 'shops#index'
+  root 'shops#top'
   resources :users, only: [:show]
   resources :cards, except: [:index, :edit, :update]
   resources :guests
