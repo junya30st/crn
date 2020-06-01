@@ -33,66 +33,92 @@
 .intro{
   width: 100%;
   &__fix{
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
-    text-align: center;
     &__title{
-      font-size: 25px;
-      padding: 20px 0 10px;
-      display: inline-block;
-      border-bottom: 2px solid #e4e4e4;
-      &__content{
-        padding: 20px 0 20px;
+      text-align: center;
+
+      .title-content{
+        display: inline-block;
+        font-size: 25px;
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: -10px;/*線の上下位置*/
+          display: inline-block;
+          width: 50%;/*線の長さ*/
+          height: 5px;/*線の太さ*/
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);/*位置調整*/
+          background-color: #dddddd;/*線の色*/
+          border-radius: 2px;/*線の丸み*/
+        }
+      }
+      .title-texts{
+        margin-top: 15px;
+        font-size: 18px;
       }
     }
     &__contents{
-      text-align: initial;
+      margin-top: 20px;
       .contents__user{
-        padding: 10px 0 10px;
         &--title{
+          font-size: 25px;
+          padding-bottom: 5px;
           display: inline-block;
-          border-bottom: 1px solid #e4e4e4;
-          margin-bottom: 10px;
-          font-size: 20px;
+          border-bottom: 1px solid #dddddd;
         }
         &--box{
           display: flex;
-          align-items: center;
-          text-align: center;
-          &--img{
-            width: 50%;
-            height: 350px;
-            background-image: url(yakitori2.jpeg);
-            background-size: cover;
-            background-repeat: no-repeat;
-          }
-          &--text{
-            display: block;
-            width: 50%;
+          padding-top: 10px;
+          justify-content: space-between;
+
+          &__inner{
+            width: 30%;
+            &--img{
+              .top-contents-img{
+                width: 100%;
+                height: auto;
+              }
+            }
+            &--text{
+              text-align: center;
+              .contents-box-test{
+                
+              }
+            }
           }
         }
       }
-      .contents__shop{
-        padding: 10px 0 10px;
+      .contents__owner{
+        margin-top: 20px;
         &--title{
+          font-size: 25px;
+          padding-bottom: 5px;
           display: inline-block;
-          border-bottom: 1px solid #e4e4e4;
-          margin-bottom: 10px;
-          font-size: 20px;
+          border-bottom: 1px solid #dddddd;
         }
         &--box{
           display: flex;
-          align-items: center;
-          &--img{
-            width: 50%;
-            height: 350px;
-            background-image: url(yakitori4.jpeg);
-            background-size: cover;
-            background-repeat: no-repeat;
-          }
-          &--text{
-            display: block;
-            width: 50%;
+          padding-top: 10px;
+          justify-content:space-between;
+
+          &__inner{
+            width: 30%;
+            &--img{
+              .top-contents-img{
+                width: 100%;
+                height: auto;
+              }
+            }
+            &--text{
+              text-align: center;
+              .contents-box-test{
+
+              }
+            }
           }
         }
       }
