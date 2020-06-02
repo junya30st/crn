@@ -12,47 +12,78 @@
 %section.intro
   .intro__fix
     .intro__fix__title
-      ファンなるとは？
-    .intro__fix__title__content
-      飲食店特化のクラウドファンディング / クーポンサイトです。
+      .title-content
+        ファンなるとは？
+      .title-texts
+        飲食店特化のクラウドファンディングサイトです。
     .intro__fix__contents
-      .contents__user
-        .contents__user--title
+      .contents__how-to
+        .contents__how-to--title
           顧客視点
-        .contents__user--box
-          .contents__user--box--img
-          .contents__user--box--text
-            よく行くお店・大好きなお店の支援をしながら様々な特典を受ける事ができます。
-            特典の内容は利用店舗によって異なりますが、例えば割引や料理、ドリンクのサービス。
-            メニュー開発の企画に加わることもできるかも！？
-        -# .wrap
-        -#   .bg
-        -#     .fas.fa-search
-        -#     .text
-        -#       まずは支援するお店を検索
-        -#   .bg
-        -#     .fas.fa-yen-sign
-        -#     .text
-        -#       希望の支援品を購入
-        -#   .bg
-        -#     .fas.fa-utensils
-        -#     .text
-        -#       お店で利用
-      .contents__shop
-        .contents__shop--title
+        .contents__how-to--box
+          .contents__how-to--box__inner
+            .contents__how-to--box__inner--img
+              = image_tag "user1.jpeg", class: "top-contents-img"
+            .contents__how-to--box__inner--text
+              .contents-box-text
+                応援したい店舗,
+                %br.br-sp
+                店舗が掲載しているプロダクトを探してみましょう
+                %br
+                
+
+
+          .contents__how-to--box__inner
+            .contents__how-to--box__inner--img
+              = image_tag "user2.jpeg", class: "top-contents-img"
+            .contents__how-to--box__inner--text
+              .contents-box-text
+                気に入ったプロダクトがあれば購入。
+                %br.br-sp
+                内容は様々です。
+
+          .contents__how-to--box__inner
+            .contents__how-to--box__inner--img
+              = image_tag "user3.jpeg", class: "top-contents-img"
+            .contents__how-to--box__inner--text
+              .contents-box-text
+                購入で得たクーポンや特典を自由に使ってみましょう。
+
+
+      .contents__how-to
+        .contents__how-to--title
           店舗視点
-        .contents__shop--box
-          .contents__shop--box--img
-          .contents__shop--box--text
-            食事提供以外の経営資金の確保や新たな価値の創造にお役立てください。
-            店舗やスタッフについてより知ってもらうことで、新規顧客とリピーターの獲得に繋がるかも！？
-            また、特典の内容は店舗の自由です。ご自身のお店の新たな広告の場としてご活用ください。
+        .contents__how-to--box
+          .contents__how-to--box__inner
+            .contents__how-to--box__inner--img
+              = image_tag "user1.jpeg", class: "top-contents-img"
+            .contents__how-to--box__inner--text
+              .contents-box-text
+                ご自身の店舗情報とプロダクトを作成。ブログやメニューも作成できます。
+
+          .contents__how-to--box__inner
+            .contents__how-to--box__inner--img
+              = image_tag "user2.jpeg", class: "top-contents-img"
+            .contents__how-to--box__inner--text
+              .contents-box-text
+                ブログ投稿やSNSへの共有でお店のことをもっと知ってもらいましょう。
+
+          .contents__how-to--box__inner
+            .contents__how-to--box__inner--img
+              = image_tag "user3.jpeg", class: "top-contents-img"
+            .contents__how-to--box__inner--text
+              .contents-box-text
+                応援で得た資金でより良い環境・サービスの提供に取り組めます。
 
 %section.trying
   .trying--box
     .trying--box--fix
       = link_to new_user_registration_path do
         .user-button
-          登録して使ってみる
+          無料利用登録
+      = link_to shops_path do
+        .user-button
+          掲載店舗の確認
+
 
 = render "shared/footer"
