@@ -56,7 +56,6 @@
         // text-align: center;
         &--title{
           display: inline-block;
-          white-space: nowrap;
           border-bottom: 1px solid #dddddd;
           // margin-bottom: 10px;
           .title-p-index{
@@ -228,6 +227,7 @@
           text-align: center;
           &--title{
             display: inline-block;
+            white-space: nowrap;
             border-bottom: 1px solid #dddddd;
             margin-bottom: 10px;
             .title-p-index{
