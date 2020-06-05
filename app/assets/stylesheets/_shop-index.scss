@@ -194,6 +194,7 @@
               display: inline-block;
               font-size: 25px;
               border-bottom: 1px solid #dddddd;
+              white-space: nowrap;
             }
           }
           .left-contents{
@@ -232,6 +233,7 @@
             margin-bottom: 10px;
             .title-p-index{
               font-size:  25px;
+              white-space: nowrap;
             }
           }
           &--contents{
