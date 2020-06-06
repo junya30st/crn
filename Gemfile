@@ -76,3 +76,4 @@ gem "mini_magick"
 gem 'payjp'
 gem 'omniauth-twitter'
 gem 'kaminari'
+gem 'twitter'
