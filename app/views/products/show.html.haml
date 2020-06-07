@@ -13,7 +13,7 @@
                 = image_tag "#{@product.image}", class: 'product-show-img'
               - else
                 = image_tag 'noImage.png',class: 'product-show-img'
-                
+
         .product-show--wrapper__fix--contents__right
           .right-title
             .right-title__content
@@ -37,5 +37,7 @@
         = link_to new_product_transaction_path(@product) do
           .product-show--wrapper__fix--submit__button
             この特典をゲットしてお店を応援する
+    = link_to "ツイート", "https://twitter.com/share", class: "twitter-share-button", data: {hashtags: "fannaru", lang: "ja", text: "#{@shop.name}"}
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 = render "shared/footer"
