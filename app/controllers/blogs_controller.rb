@@ -19,7 +19,7 @@ class BlogsController < ApplicationController
       shop_id: @shop.id)
       
     if @blog.save
-      @client.update("#{@shop.name}がfannaruでブログを更新しました。\r#{@blog.title}\r#{blog_url(@blog.id)>}")
+      @client.update("#{@shop.name}がfannaruでブログを更新しました。\r#{@blog.title}\r#{blog_url(@blog.id)}")
       redirect_to blog_path(@blog), notice: '投稿に成功しました'
     else
       flash.now[:alert] = '投稿に失敗しました'
