@@ -12,10 +12,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def callback_from(provider)
+    auth = request.env["omniauth.auth"]
     provider = provider.to_s
     @user = User.find_for_oauth(request.env['omniauth.auth'].except('extra'))
 
     if @user.persisted? # DBに保存済みかどうかを判定
+      @user.update(token: auth.extra.access_token.token, token_s: auth.extra.access_token.secret)
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
       sign_in_and_redirect @user, event: :authentication
     else

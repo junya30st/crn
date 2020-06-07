@@ -2,6 +2,7 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :set_shop, only:[:new, :create]
   before_action :correct_owner, only: [:new, :create]
+  before_action :twitter_client, only: [:create]
 
   def index
   end
@@ -18,6 +19,7 @@ class BlogsController < ApplicationController
       shop_id: @shop.id)
       
     if @blog.save
+      @client.update("#{@shop.name}がfannaruでブログを更新しました。\r#{@blog.title}\r#{blog_url(@blog.id)>}")
       redirect_to blog_path(@blog), notice: '投稿に成功しました'
     else
       flash.now[:alert] = '投稿に失敗しました'
@@ -72,6 +74,15 @@ class BlogsController < ApplicationController
     @shop = Shop.find(params[:shop_id])
     unless @shop.user_id == current_user.id
       redirect_to root_path, notice: '店舗オーナー以外は操作できません'
+    end
+  end
+
+  def twitter_client
+    @client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = Rails.application.credentials.twitter[:twitter_api_key]
+      config.consumer_secret     = Rails.application.credentials.twitter[:twitter_api_secret]
+      config.access_token        = current_user.token
+      config.access_token_secret = current_user.token_s
     end
   end
 
