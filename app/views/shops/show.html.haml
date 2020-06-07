@@ -68,6 +68,10 @@
                     URL：http://aaaaaaaaaaaaaaaaaaaaa
                   .right-contents--tel
                     TEL：080-1234-5678
+
+                = link_to "ツイート", "https://twitter.com/share", class: "twitter-share-button", data: {hashtags: "fannaru", lang: "ja", text: "#{@shop.name}"}
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
                 .right-create
                   - if user_signed_in? && @shop.user_id == current_user.id
                     .right-create__menu
