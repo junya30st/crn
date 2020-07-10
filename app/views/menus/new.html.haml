@@ -2,24 +2,29 @@
 
 = form_with(model: [@shop,@menu], local: true, method: :post) do |f|
   .menu-new
-    .menu-new-wrapper
-      .menu-new-wrapper__fix
-        .menu-new-wrapper__fix--title
+    .menu-new--wrapper
+      .menu-new--wrapper__fix
+        .menu-new--wrapper__fix--title
           .menu-new__title
             メニュー新規作成
-        .menu-new-wrapper__fix--contents
-          .menu-new--forms
-            .menu-new--forms__name
-              = f.label :name, 'メニュー名'
-              = f.text_field :name, placeholder: "メニュー名を入力してください"
-            .menu-new--forms__introduction
-              = f.label :introduction, 'メニュー詳細'
-              = f.text_field :introduction, placeholder: "説明を入力してください"
-            .menu-new--forms__price
-              = f.label :price, '価格'
-              = f.text_field :price, placeholder: "半角数字のみ" 
-          .manu-new--submit
-            = f.submit "作成する"
+        .menu-new--wrapper__fix--contents
+          .menu-new-form
+            = f.label :name, 'メニュー名', class: 'label-up'
+            %span{class: 'form-must'} 必須
+            %br
+            = f.text_field :name, placeholder: "メニュー名を入力してください", class: "form-box"
+          .menu-new-form
+            = f.label :introduction, 'メニュー詳細', class: 'label-up'
+            %span{class: 'form-must'} 必須
+            %br
+            = f.text_field :introduction, placeholder: "説明を入力してください", class: "form-box"
+          .menu-new-form
+            = f.label :price, '価格', class: 'label-up'
+            %span{class: 'form-must'} 必須
+            %br
+            = f.text_field :price, placeholder: "半角数字のみ" , class: "form-box"
+          .menu-new--submit
+            = f.submit "作成する", class: "submit-button"
 
 
 = render "shared/footer"

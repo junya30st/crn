@@ -2,7 +2,6 @@
   width: 25%;
   margin: 0 auto;
   min-height: calc(100vh - 160px);
-  background: #fffbf9;
   &--wrapper{
     &__fix{
       padding: 20px 0 20px;
@@ -40,7 +39,6 @@
           .left-contents{
             // width: 90%;
             // margin: 0 auto;
-            padding: 0 10px 0;
             &--name{
               font-size: 32px;
               color: #222222;
@@ -58,8 +56,7 @@
           }
         }
         &__right{
-          width: 90%;
-          margin: 0 auto;
+
           .right-title{
             .__content{
 
@@ -101,7 +98,6 @@
 .blog-show-img{
   width: 100%;
   object-fit: cover;
-  border-radius: 4px;
 }
 
 .blog-show-img-sml{

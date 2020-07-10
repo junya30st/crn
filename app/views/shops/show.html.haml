@@ -90,83 +90,147 @@
             %br
             = @shop.introduction
 
-    -# メニュー表示部
-    %section.shop-menu
-      .shop-menu__wrapper
-        .shop-menu__wrapper--copy
-          .shop-menu__wrapper--copy__contents
-            メニュー
-          = link_to menu_shop_path(@shop) do
-            .shop-menu__wrapper--copy__more
-              もっと見る
-        .shop-menu__wrapper__fix
-          - @shop.menus.first(4).each do |menu|
-            .menu-box
-              .menu-box__in
-                .menu-box__in--up
-                  .menu-box__in--up__name
-                    = menu.name
-                  .menu-box__in--up__price
-                    = menu.price
-                    円(税抜)
-                .menu-box__in--down
-                  .menu-box__in--down__introduction
-                    = menu.introduction
+    .shop-content
+      %ul.shop-tab
+        %li.shop-tab__content
+          %a.shop-tab__content__click.current{href: "#tab1"} プロダクト一覧
+        %li.shop-tab__content
+          %a.shop-tab__content__click{href: "#tab2"} メニュー
+        %li.shop-tab__content
+          %a.shop-tab__content__click{href: "#tab3"} ブログ
+      #tab-contents
+        #tab1.tab-content
+          .shop-products__wrapper
+            .shop-products__wrapper__fix
+              - @shop.products.first(5).each do |product| 
+                .product__box
+                  = link_to product_path(product) do
+                    .product__box__in
+                      .product__box__in--image
+                        - if product.image.present?
+                          = image_tag "#{product.image}", class: 'product_box_img'
+                        - else
+                          = image_tag 'noImage.png',class: 'product_box_img'
+                      .product__box__in--name
+                        = product.name
+                      .product__box__in--price
+                        = product.price
+                        円
+                      .product__box__in--intro
+                        .product__box__in--intro__content
+                          = product.introduction
+        #tab2.tab-content
+          .shop-menu__wrapper
+            -# .shop-menu__wrapper--copy
+            -#   = link_to menu_shop_path(@shop) do
+            -#     .shop-menu__wrapper--copy__more
+            -#       もっと見る
+            .shop-menu__wrapper__fix
+              - @shop.menus.first(4).each do |menu|
+                .menu-box
+                  .menu-box__in
+                    .menu-box__in--up
+                      .menu-box__in--up__name
+                        = menu.name
+                      .menu-box__in--up__price
+                        = menu.price
+                        円(税抜)
+                    .menu-box__in--down
+                      .menu-box__in--down__introduction
+                        = menu.introduction
+        #tab3.tab-content
+          .shop-blog
+            = link_to "作成", new_shop_blog_path(@shop.id)
+            - @blog.each do |blog|
+              .shop-blog__box
+                = link_to blog_path(blog) do
+                  .shop-blog__box__in
+                    .blog-img
+                      .blog-img-fix
+                        = image_tag "#{blog.image}", class: "shop-blog-img"
+                    .blog-text
+                      .blog-text-date
+                        = blog.created_at.strftime("%Y-%m-%d")
+                      .blog-text-fix
+                        = blog.content
 
-    -# プロダクト表示部
-    %section.shop-products
-      .shop-products__wrapper
-        .shop-products__wrapper--copy
-          .shop-products__wrapper--copy__contents
-            プロダクト一覧
-        .shop-products__wrapper__fix
-          - @shop.products.first(5).each do |product| 
-            .product__box
-              = link_to product_path(product) do
-                .product__box__in
-                  .product__box__in--image
-                    - if product.image.present?
-                      = image_tag "#{product.image}", class: 'product_box_img'
-                    - else
-                      = image_tag 'noImage.png',class: 'product_box_img'
-                  .product__box__in--name
-                    = product.name
-                  .product__box__in--price
-                    = product.price
-                    円
-                  .product__box__in--intro
-                    .product__box__in--intro__content
-                      = product.introduction
+    -# -# メニュー表示部
+    -# %section.shop-menu
+    -#   .shop-menu__wrapper
+    -#     .shop-menu__wrapper--copy
+    -#       .shop-menu__wrapper--copy__contents
+    -#         メニュー
+    -#       = link_to menu_shop_path(@shop) do
+    -#         .shop-menu__wrapper--copy__more
+    -#           もっと見る
+    -#     .shop-menu__wrapper__fix
+    -#       - @shop.menus.first(4).each do |menu|
+    -#         .menu-box
+    -#           .menu-box__in
+    -#             .menu-box__in--up
+    -#               .menu-box__in--up__name
+    -#                 = menu.name
+    -#               .menu-box__in--up__price
+    -#                 = menu.price
+    -#                 円(税抜)
+    -#             .menu-box__in--down
+    -#               .menu-box__in--down__introduction
+    -#                 = menu.introduction
 
-  -# ブログ表示部
-  .shop-show-sub
-    .shop-show-sub__wrapper
-      .shop-show-sub__wrapper__fix
-        .shop-blog
-          .shop-blog--title
-            .shop-blog--title__content
-              最新の投稿
-            - if user_signed_in? && @shop.user_id == current_user.id
-              .shop-blog--title__link
-                = link_to new_shop_blog_path(@shop.id) do
-                  投稿する
-        - if @blog.present?
-          = link_to blog_path(@blog) do
-            .shop-blog--box
-              .shop-blog--box--image
-                .shop-blog--box--image__content
-                  = image_tag "#{@blog.image}", class: "blog-img-shop-show"
-              .shop-blog--box--title
-                .shop-blog--box--title__content
-                  = @blog.title
-              .shop-blog--box--text
-                .shop-blog--box--text__content
-                  = @blog.content
-            .shop-blog--more
-              = link_to blog_shop_path(@shop) do
-                .link-blog-index
-                  もっと見る→
-        - else
-          まだ投稿がありません
+    -# -# プロダクト表示部
+    -# %section.shop-products
+    -#   .shop-products__wrapper
+    -#     .shop-products__wrapper--copy
+    -#       .shop-products__wrapper--copy__contents
+    -#         プロダクト一覧
+    -#     .shop-products__wrapper__fix
+    -#       - @shop.products.first(5).each do |product| 
+    -#         .product__box
+    -#           = link_to product_path(product) do
+    -#             .product__box__in
+    -#               .product__box__in--image
+    -#                 - if product.image.present?
+    -#                   = image_tag "#{product.image}", class: 'product_box_img'
+    -#                 - else
+    -#                   = image_tag 'noImage.png',class: 'product_box_img'
+    -#               .product__box__in--name
+    -#                 = product.name
+    -#               .product__box__in--price
+    -#                 = product.price
+    -#                 円
+    -#               .product__box__in--intro
+    -#                 .product__box__in--intro__content
+    -#                   = product.introduction
+
+  -# -# ブログ表示部
+  -# .shop-show-sub
+  -#   .shop-show-sub__wrapper
+  -#     .shop-show-sub__wrapper__fix
+  -#       .shop-blog
+  -#         .shop-blog--title
+  -#           .shop-blog--title__content
+  -#             最新の投稿
+  -#           - if user_signed_in? && @shop.user_id == current_user.id
+  -#             .shop-blog--title__link
+  -#               = link_to new_shop_blog_path(@shop.id) do
+  -#                 投稿する
+  -#       - if @blog.present?
+  -#         = link_to blog_path(@blog) do
+  -#           .shop-blog--box
+  -#             .shop-blog--box--image
+  -#               .shop-blog--box--image__content
+  -#                 = image_tag "#{@blog.image}", class: "blog-img-shop-show"
+  -#             .shop-blog--box--title
+  -#               .shop-blog--box--title__content
+  -#                 = @blog.title
+  -#             .shop-blog--box--text
+  -#               .shop-blog--box--text__content
+  -#                 = @blog.content
+  -#           .shop-blog--more
+  -#             = link_to blog_shop_path(@shop) do
+  -#               .link-blog-index
+  -#                 もっと見る→
+  -#       - else
+  -#         まだ投稿がありません
 
 = render "shared/footer"
