@@ -2,7 +2,7 @@
   width: 100%;
   height: calc(100vh - 210px);
   &--wrapper{
-    width: 80%;
+    width: 1008px;
     margin: 0 auto;
     &__fix{
       padding: 20px 0 20px;
@@ -12,7 +12,8 @@
         font-size: 25px;
       }
       &--contents{
-        background-color: #dddddd;
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
         text-align: center;
         padding-bottom: 20px;
         display: flex;

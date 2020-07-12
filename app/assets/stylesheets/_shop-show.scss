@@ -5,8 +5,9 @@
   // background: #fffbf9;
 
   .shop-show-main{
-    width: 75%;
+    width: 1008px;
     min-height: calc(100vh - 210px);
+    margin: 0 auto;
     .shop-show{
       width: 100%;
       &--wrapper{
@@ -14,7 +15,7 @@
         margin: 0 auto;
         &__fix{
           margin-top: 50px;
-          padding: 0 10px 20px;
+          // padding: 0 10px 20px;
           &--name{
             font-size: 28px;
             color: #222222;
@@ -95,18 +96,18 @@
               .right{
                 // background: #f3f3f3;
                 font-weight: bold;
-                width: 90%;
+                padding: 0 0 0 10px;
                 margin: 0 auto;
                 &-copy{
                   &-contents{
                     display: inline-block;
                     font-size: 22px;
-                    padding-bottom: 2px;
-                    border-bottom: 1px solid #dddddd;
                   }
                 }
                 &-contents{
+                  padding: 10px 0 0 0;
                   background: #fff;
+                  line-height: 30px;
                   &--category{
                     font-size: 16px;
                     color: #222222;
@@ -681,5 +682,179 @@
   }
   .button-menu-create{
     padding: 10px;
+  }
+}
+
+
+
+
+.shop-content{
+  width: 1008px;
+  margin: 0 auto;
+  .shop-tab{
+    list-style: none;
+    display: flex;
+    &__content{
+      list-style-type: none;
+      width: 50%;
+      &__click{
+  
+      }
+    }
+    &__content a{
+      box-sizing: border-box;
+      font-size: 1em;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+      display: block;
+      padding: 4%;
+      text-align: center;
+      width: 100%;
+      background: #eeeeee;
+      border: 1px solid #eeeeee;
+      border-bottom: none;
+    }
+    &__content a:hover {
+      background:#eeeeee;
+      color:#333;
+    }
+    &__content a.current{
+      background: #fff;
+      color: #333;
+      border: none;
+    }
+  }
+  #tab-contents{
+    width: 1018px;
+    margin-left: -10px;
+    .tab-content{
+      // padding-right: 10px;
+      background: white;
+      // text-align: center;
+      border-top: none;
+      .user-transactions__wrapper__fix--contents{
+        padding-top: 20px;
+        width: 100%;
+        display: inline-flex;
+        flex-wrap: wrap;
+        &--fix{
+          width: 50%;
+          padding: 10px 0 0 10px;
+          box-sizing: border-box;
+
+          .user-transaction__box{
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            display: flex;
+            &--image{
+              max-width: 30%;
+              
+              .transaction_box_img{
+                width: 100%;
+                object-fit: contain;
+              }
+            }
+            &--texts{
+              text-align: left;
+              padding-left: 10px;
+              font-size: 12px;
+              &--name{
+                font-size: 14px;
+                font-weight: bold;
+              }
+              &--created{
+                margin-top: 4px;
+              }
+              &--introduction{
+                margin-top: 4px;
+                height: 3rem;
+                overflow: hidden;
+                .inner-content{
+                }
+              }
+
+            }
+          }
+        }
+        &--fix a{
+          text-decoration: none;
+          color: #222222;
+        }
+      }
+      .user-shop__wrapper__fix--contents__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        .product__box{
+          box-sizing: border-box;
+          padding: 30px 0 0 10px;
+          width: 25%;
+          &__in{
+            &--image{
+            }
+            &--name{
+              margin-top: 4px;
+            }
+            &--intro{
+              font-size: 12px;
+              margin-top: 4px;
+            }
+          }
+        }
+        .product__box a{
+          text-decoration: none;
+          color: #222222;
+        }
+      }
+      .shop-blog{
+        
+        padding: 0 0 0 10px;
+        &__box{
+
+          &__in{
+            padding: 20px 0 0 0;
+            display: flex;
+            .blog-img{
+              width: 302px;
+              &-fix{
+                .shop-blog-img{
+                  width: 242px;
+                  margin: 0 auto;
+                  object-fit: cover;
+                }
+              }
+            }
+            .blog-text{
+              &-date{
+                color: #999999;
+              }
+              vertical-align: middle;
+              width: 706px;
+              padding: 0 10px 10px 10px;
+              &-fix{
+                vertical-align: middle;
+                line-height: 30px;
+              }
+            }
+          }
+        }
+      }
+      .shop-blog a{
+        text-decoration: none;
+        color: #222222;
+      }
+    }
+    .tab-content p{
+      margin-top:20px;
+      line-height:2em;
+      color:#eeeeee;
+    }
+    .tab-content strong {
+        font-size: 2em;
+        font-weight: bold;
+        color: #eeeeee;
+        text-decoration: underline;
+    }
   }
 }

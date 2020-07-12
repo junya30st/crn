@@ -6,10 +6,6 @@
       .transaction-show__wrapper__fix--title
         .transaction-title
           = @transaction.name
-        .transaction-period
-          .transaction-period__content
-          有効期限：
-          = @transaction.period
       .transaction-show__wrapper__fix--contents
         .transaction-contents
           .transaction-contents--image
@@ -17,10 +13,13 @@
               = image_tag "#{@transaction.image}", class: 'product-show-img'
             - else
               = image_tag 'noImage.png',class: 'product-show-img'
+          .transaction-contents--period
+            有効期限：
+            = @transaction.period
           .transaction-contents--price
             = @transaction.price
             円で支援中
           .transaction-contents--introduction
-            = @transaction.introduction
+            = simple_format("#{@transaction.introduction}")
 
 = render "shared/footer"

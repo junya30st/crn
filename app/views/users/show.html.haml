@@ -1,44 +1,45 @@
 = render "shared/header"
 
+
+
 .us-wrapper
-  .user-show
-    .user-show__wrapper
-      .user-show__wrapper__fix
-        .user-show__wrapper__fix--title
-          .user-show--title
-            プロフィール
-          .user-show--menu
+
+  .user-profile
+    .user-profile--left
+      .user-profile--left__image
+        = image_tag "mina.png", class: "profile-img"
+      .user-profile--left__text
+        .user-profile--left__text__wrapper
+          %h1.user-profile--left__text__wrapper--name
+            石井 惇也
+          .user-profile--left__text__wrapper--menu
             - if user_signed_in? && @user.id == current_user.id
               = link_to edit_user_registration_path do
-                .user-show--menu--edit
+                .user-profile__menu
                   編集
               - if @card.present?
                 = link_to card_path(@card) do
-                  .user-show--menu--edit
-                    カード詳細情報確認
+                  .user-profile__menu
+                    カード確認
               - else
                 = link_to new_card_path do
-                  .user-show--menu--edit
-                    カード情報登録
-
-        .user-show__wrapper__fix--contents
-          .user-img
-            - if @user.image.present?
-              = image_tag "#{@user.image}", class: "user-img-show"
-            - else
-              = image_tag("mina.png", class: "user-img-show")
-          .user-texts
-            .user-texts--name
-              = @user.name
-            .user-texts--intro
-              = @user.introduction
-
-  .user-transactions
-    .user-transactions__wrapper
-      .user-transactions__wrapper__fix
-        .user-transactions__wrapper__fix--title
-          .user-transaction__title
-            返礼品一覧
+                  .user-profile__menu
+                    カード登録
+        %ul.user-profile--left__text--share
+          %li.share-sns
+    .user-profile--right
+      %p.user-profile--right__text
+        -# = @user.introduction
+        ああああああああああああああああああああああああああああああああああああああああああああああ
+  
+  .mypage-content
+    %ul.mypage-tab
+      %li.mypage-tab__content
+        %a.mypage-tab__content__click.current{href: "#tab1"} 特典一覧
+      %li.mypage-tab__content
+        %a.mypage-tab__content__click{href: "#tab2"} マイショップ
+    #tab-contents
+      #tab1.tab-content
         .user-transactions__wrapper__fix--contents 
           - @user.transactions.first(4).each do |t|
             .user-transactions__wrapper__fix--contents--fix
@@ -58,26 +59,71 @@
                     .user-transaction__box--texts--introduction
                       .inner-content
                         = truncate(t.introduction, length: 60)
+      #tab2.tab-content
+        .user-shop__wrapper__fix--contents__wrapper
+          - @user.shops.first(4).each do |product|
+            .product__box
+              = link_to shop_path(product) do
+                .product__box__in
+                  .product__box__in--image
+                    - product.shop_images.first(1).each do |image|
+                      = image_tag "#{image.image}", class: 'product_box_img'
+                  .product__box__in--name
+                    = product.name
+                  .product__box__in--intro
+                    = product.introduction
 
-  %section.user-shop
-    .user-shop__wrapper
-      .user-shop__wrapper__fix
-        .user-shop__wrapper__fix--title
-          .user-shop-title
-            店舗一覧
-        .user-shop__wrapper__fix--contents
-          .user-shop__wrapper__fix--contents__wrapper
-            - @user.shops.first(4).each do |product|
-              .product__box
-                = link_to shop_path(product) do
-                  .product__box__in
-                    .product__box__in--image
-                      - product.shop_images.first(1).each do |image|
-                        = image_tag "#{image.image}", class: 'product_box_img'
-                    .product__box__in--name
-                      = product.name
-                    .product__box__in--intro
-                      = product.introduction
+
+
+
+
+
+
+  -# .user-transactions
+  -#   .user-transactions__wrapper
+  -#     .user-transactions__wrapper__fix
+  -#       .user-transactions__wrapper__fix--title
+  -#         .user-transaction__title
+  -#           返礼品一覧
+  -#       .user-transactions__wrapper__fix--contents 
+  -#         - @user.transactions.first(4).each do |t|
+  -#           .user-transactions__wrapper__fix--contents--fix
+  -#             = link_to transaction_path(t) do
+  -#               .user-transaction__box
+  -#                 .user-transaction__box--image
+  -#                   - if t.image.present?
+  -#                     = image_tag "#{t.image}", class: 'transaction_box_img'
+  -#                   - else
+  -#                     = image_tag 'noImage.png',class: 'transaction_box_img'
+  -#                 .user-transaction__box--texts
+  -#                   .user-transaction__box--texts--name
+  -#                     = truncate(t.name, length: 20)
+  -#                   .user-transaction__box--texts--created
+  -#                     使用期限：
+  -#                     = t.period
+  -#                   .user-transaction__box--texts--introduction
+  -#                     .inner-content
+  -#                       = truncate(t.introduction, length: 60)
+
+  -# %section.user-shop
+  -#   .user-shop__wrapper
+  -#     .user-shop__wrapper__fix
+  -#       .user-shop__wrapper__fix--title
+  -#         .user-shop-title
+  -#           店舗一覧
+  -#       .user-shop__wrapper__fix--contents
+  -#         .user-shop__wrapper__fix--contents__wrapper
+  -#           - @user.shops.first(4).each do |product|
+  -#             .product__box
+  -#               = link_to shop_path(product) do
+  -#                 .product__box__in
+  -#                   .product__box__in--image
+  -#                     - product.shop_images.first(1).each do |image|
+  -#                       = image_tag "#{image.image}", class: 'product_box_img'
+  -#                   .product__box__in--name
+  -#                     = product.name
+  -#                   .product__box__in--intro
+  -#                     = product.introduction
 
 = render "shared/footer"
 

@@ -3,6 +3,8 @@
 .blog-show
   .blog-show--wrapper
     .blog-show--wrapper__fix
+      .blog-show--wrapper__fix--name
+        = @blog.title
       .blog-show--wrapper__fix--date
         .blog-show-date
           投稿日：
@@ -16,8 +18,6 @@
               .command
                 削除
 
-      .blog-show--wrapper__fix--name
-        = @blog.title
       .blog-show--wrapper__fix--contents
         .blog-show--wrapper__fix--contents__left
           .left-contents

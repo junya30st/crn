@@ -28,7 +28,7 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @blog = Blog.where(shop_id: @shop.id).order("id DESC").first
+    @blog = Blog.where(shop_id: @shop.id).order("id DESC")
   end
 
   def edit

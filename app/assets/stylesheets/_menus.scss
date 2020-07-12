@@ -1,0 +1,63 @@
+.menu-new{
+  width: 100%;
+  height: calc(100vh - 210px);
+  &--wrapper{
+    width: 30%;
+    margin: 0 auto;
+    &__fix{
+      padding: 20px 0 20px;
+      &--title{
+        margin: 50px 0 20px;
+        text-align: center;
+        font-size: 25px;
+      }
+      &--contents{
+        // background-color: rgb(184, 184, 184);
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd; 
+        text-align: center;
+        padding-bottom: 20px;
+        .menu-new-form{
+          width: 90%;
+          margin: 0 auto;
+          padding-top: 30px;
+          text-align: left;
+          .label-up{
+          }
+          .form-must{
+            padding: 3px;
+            border-radius: 4px;
+            background-color: rgb(243, 86, 65);
+            color: white;
+          }
+          .form-want{
+            padding: 3px;
+            border-radius: 4px;
+            background-color: rgb(105, 195, 247);
+            color: white;
+          }
+          .form-box{
+            margin-top: 8px;
+            width: 100%;
+            height: 30px;
+          }
+          .blog-content-box{
+            margin-top: 8px;
+            resize: none;
+            width: 100%;
+            height: 10rem;
+            border: 1px solid #dddddd;
+          }
+        }
+        .menu-new--submit{
+          padding-top: 30px;
+        }
+        .notice{
+          text-align: initial;
+          font-size: 12px;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

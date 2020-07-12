@@ -3,8 +3,12 @@
 %section.product-show
   .product-show--wrapper
     .product-show--wrapper__fix
-      .product-show--wrapper__fix--name
-        = @product.name
+      .product-show--wrapper__fix--upper
+        .product-show--wrapper__fix--upper__name
+          = @product.name
+        .product-show--wrapper__fix--upper__twitter
+          = link_to "ツイート", "https://twitter.com/share", class: "twitter-share-button", data: {hashtags: "fannaru", lang: "ja", text: "#{@shop.name}"}
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       .product-show--wrapper__fix--contents
         .product-show--wrapper__fix--contents__left
           .left-contents
@@ -23,21 +27,39 @@
               残数：
               = @product.number
             .right-contents--intro
-              紹介：
+              説明：
               = simple_format(@product.introduction)
             .right-contents--price
               価格：
               = @product.price
               円
             .right-contents--limit
-              有効期限：
+              有効期限：購入より
               = @product.limit
             
-      .product-show--wrapper__fix--submit
-        = link_to new_product_transaction_path(@product) do
-          .product-show--wrapper__fix--submit__button
-            この特典をゲットしてお店を応援する
-    = link_to "ツイート", "https://twitter.com/share", class: "twitter-share-button", data: {hashtags: "fannaru", lang: "ja", text: "#{@shop.name}"}
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      - if @product.number <= 0
+        .product-show--wrapper__fix--submit
+          .product-show--wrapper__fix--submit__soldout
+            売り切れ
+      - else
+        .product-show--wrapper__fix--submit
+          = link_to new_product_transaction_path(@product) do
+            .product-show--wrapper__fix--submit__button
+              この特典をゲットしてお店を応援する
 
+    .shop-view
+      .shop-view__box
+        .shop-view__box__in
+          .sub-title
+            店舗概要
+          .shop-image
+            - @shop.shop_images.first(1).each do |image|
+              = image_tag "#{image.image}", class: "sub-image"
+          .shop-texts
+            .shop-texts--name
+              = @shop.name
+            .shop-texts--content
+              = @shop.location
+            .shop-texts--intro
+              = @shop.introduction
 = render "shared/footer"
