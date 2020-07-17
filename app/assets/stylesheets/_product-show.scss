@@ -76,7 +76,6 @@
         &__soldout{
           font-size: 16px;
           display: inline-block;
-          // background: #dddddd;
           color: red;
           padding: 10px 15px 10px;
           border-radius: 4px;
@@ -171,16 +170,13 @@
           &__left{
             width: 100%;
             .left-contents{
-              // width: 90%;
-              // margin: 0 auto;
               padding: 0 10px 0;
               &--name{
                 font-size: 24px;
                 color: #222222;
               }
               &--image{
-                // height: 300px;
-                
+
               }
               &--small{
                 display: flex;
