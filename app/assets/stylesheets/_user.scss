@@ -14,7 +14,6 @@
       width: 504px;
       &__image{
         display: table-cell;
-        // padding: 11px 0 0 3px;
         vertical-align: top;
         width: 100px;
         .profile-img{
@@ -27,7 +26,6 @@
       &__text{
         display: table-cell;
         padding: 0 0 0 50px;
-        // vertical-align: middle;
         &__wrapper{
           display: flex;
           align-items: center;

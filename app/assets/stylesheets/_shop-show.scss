@@ -2,8 +2,6 @@
   display: flex;
   width: 80%;
   margin: 0 auto;
-  // background: #fffbf9;
-
   .shop-show-main{
     width: 1008px;
     min-height: calc(100vh - 210px);
@@ -11,11 +9,9 @@
     .shop-show{
       width: 100%;
       &--wrapper{
-        // width: 50%;
         margin: 0 auto;
         &__fix{
           margin-top: 50px;
-          // padding: 0 10px 20px;
           &--name{
             font-size: 28px;
             color: #222222;
@@ -28,7 +24,6 @@
             }
             // 編集画面
             &--button{
-              // display: flex;
               position: absolute;
               right: 0;
               top: 4px;
