@@ -19,7 +19,7 @@ class CardsController < ApplicationController
         card: params['payjp-token'],
         metadata: {user_id: current_user.id}
       )
-      # Pay.jpに登録した顧客情報をデータベース内に保存
+
       @card = Card.new(
         user_id: current_user.id,
         customer_id: customer.id,
