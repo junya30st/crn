@@ -12,7 +12,7 @@ class MenusController < ApplicationController
     if @menu.save
       redirect_to shop_path(@shop.id), notice: 'メニューを作成しました'
     else
-      flash.now[:alert] = 'メニューの作成に失敗しました'
+      flash.now[:alert] = '作成に失敗しました'
       render "new"
     end
   end
