@@ -26,7 +26,7 @@ class MenusController < ApplicationController
     shops = current_user.shops
     if shops.include?(@menu.shop) 
       @menu.update(menu_params)
-      redirect_to menu_shop_path(@menu.shop), notice: 'メニュー情報を更新しました'
+      redirect_to menu_shop_path(@menu.shop), notice: 'メニューを更新しました'
     else
       flash.now[:alert] = '更新に失敗しました'
       render "edit"
