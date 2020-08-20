@@ -38,7 +38,7 @@ class MenusController < ApplicationController
     shops = current_user.shops
     if shops.include?(@menu.shop)
       @menu.destroy
-      redirect_to menu_shop_path(@menu.shop), notice: '指定のメニューを削除しました'
+      redirect_to menu_shop_path(@menu.shop), notice: 'メニューを削除しました'
     else
       flash.now[:alert] = '削除に失敗しました'
       render edit
