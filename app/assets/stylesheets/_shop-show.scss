@@ -58,20 +58,14 @@
               .left-contents{
                 width: 100%;
                 margin: 0 auto;
-                // padding: 0 10px 0;
                 &--image{
                   width: 500px;
-                  // margin: 0 auto;
                   overflow: hidden;
                   &--main{
                     width: 2500px;
-                    // height: 300px;
                     display: flex;
                     position: relative;
                     &--box{
-                    
-                      // height: 300px;
-                      // position: absolute;
                     }
                   }
                   &--small{
@@ -89,7 +83,6 @@
               width: 50%;
               margin: 0 auto;
               .right{
-                // background: #f3f3f3;
                 font-weight: bold;
                 padding: 0 0 0 10px;
                 margin: 0 auto;
