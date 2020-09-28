@@ -13,7 +13,7 @@ window.onload = function(){
         exp_year: parseInt($(".select-card-year").val())
     };
     Payjp.createToken(card, function(status, response) {
-      if (status == 200) {
+      if (status == 200) { //トークン生成に成功した場合
         $(".input-card-number").removeAttr("name");
         $(".input-card-cvc").removeAttr("name");
         $(".select-card-month").removeAttr("name");
