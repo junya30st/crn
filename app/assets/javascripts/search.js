@@ -23,7 +23,7 @@ $(function(){
       dataType: 'json'
     })
     .done(function(shops){
-      console.log(shops);
+      // console.log(shops);
       $("#shop_search--result").empty();
 
       if (shops.length !== 0) {
@@ -42,10 +42,4 @@ $(function(){
       console.log("失敗です")
     });
   });
-  // $(document).on("click", ".added-shop", function(e){
-  //   e.preventDefault();
-  //   let id = 
-  // })
 });
-
-      // <div class = "shop_search-list" data-shop-id="${shop.id}">${shop.name}</div>
