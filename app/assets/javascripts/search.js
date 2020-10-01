@@ -15,7 +15,6 @@ $(function(){
 
   $("#shop_search").on("keyup", function(){
     let input = $("#shop_search").val();
-    // console.log(input)
     $.ajax({
       type: 'GET',
       url: '/shops/search',
@@ -23,7 +22,6 @@ $(function(){
       dataType: 'json'
     })
     .done(function(shops){
-      // console.log(shops);
       $("#shop_search--result").empty();
 
       if (shops.length !== 0) {
