@@ -44,7 +44,7 @@
                 .right-contents
                   .right-contents--category
                     .fas.fa-tag
-                      = @shop.category.name
+                      -# = @shop.category.name
                   .right-contents--location
                     住所：
                     = @shop.location
@@ -52,18 +52,18 @@
                     営業時間：
                     %br
                     ランチ
-                    = @shop.open_time.strftime("%H:%M")
-                    〜
-                    = @shop.close_time.strftime("%H:%M")
-                    L.O.
-                    = @shop.lunch_last.strftime("%H:%M")
-                    %br
-                    ディナー
-                    = @shop.dinner_open.strftime("%H:%M")
-                    〜
-                    = @shop.dinner_close.strftime("%H:%M")
-                    L.O.
-                    = @shop.dinner_last.strftime("%H:%M")
+                    -# = @shop.open_time.strftime("%H:%M")
+                    -# 〜
+                    -# = @shop.close_time.strftime("%H:%M")
+                    -# L.O.
+                    -# = @shop.lunch_last.strftime("%H:%M")
+                    -# %br
+                    -# ディナー
+                    -# = @shop.dinner_open.strftime("%H:%M")
+                    -# 〜
+                    -# = @shop.dinner_close.strftime("%H:%M")
+                    -# L.O.
+                    -# = @shop.dinner_last.strftime("%H:%M")
                   .right-contents--url
                     URL：http://aaaaaaaaaaaaaaaaaaaaa
                   .right-contents--tel
