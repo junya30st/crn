@@ -22,7 +22,7 @@ class ShopsController < ApplicationController
     if @shop.save
       redirect_to shop_path(@shop), notice: '店舗を作成しました'
     else
-      flash.now[:alert] = ' 店舗の作成に失敗しました'
+      flash.now[:alert] = '作成に失敗しました'
       render "new"
     end
   end
